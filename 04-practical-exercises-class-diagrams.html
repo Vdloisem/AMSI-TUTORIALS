@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Practical Exercises: Class Diagrams – AMSI-TUTORIALS</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-practical-exercises-object-diagrams.html" rel="next">
+<link href="./03-class-diagrams.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-practical-exercises-class-diagrams.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Exercises: Class Diagrams</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AMSI-TUTORIALS</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro-modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Modelling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-class-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-practical-exercises-class-diagrams.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Exercises: Class Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-practical-exercises-object-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Practical Exercises: Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Object Constraint Language (OCL): An Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-practical-exercises-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Practical Exercises: OCL Constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-state-machine-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">State Machine Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-practical-exercises-state-machine-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machines</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#exercise-1-people-and-cars" id="toc-exercise-1-people-and-cars" class="nav-link active" data-scroll-target="#exercise-1-people-and-cars"><span class="header-section-number">4.0.1</span> Exercise 1: People and Cars</a></li>
+  <li><a href="#exercise-2-company-organization" id="toc-exercise-2-company-organization" class="nav-link" data-scroll-target="#exercise-2-company-organization"><span class="header-section-number">4.0.2</span> Exercise 2: Company Organization</a></li>
+  <li><a href="#exercise-3-geometric-figures" id="toc-exercise-3-geometric-figures" class="nav-link" data-scroll-target="#exercise-3-geometric-figures"><span class="header-section-number">4.0.3</span> Exercise 3: Geometric Figures</a></li>
+  <li><a href="#exercise-4-family-links" id="toc-exercise-4-family-links" class="nav-link" data-scroll-target="#exercise-4-family-links"><span class="header-section-number">4.0.4</span> Exercise 4: Family Links</a></li>
+  <li><a href="#exercise-5-hotel" id="toc-exercise-5-hotel" class="nav-link" data-scroll-target="#exercise-5-hotel"><span class="header-section-number">4.0.5</span> Exercise 5: Hotel</a></li>
+  <li><a href="#exercise-6-petri-net" id="toc-exercise-6-petri-net" class="nav-link" data-scroll-target="#exercise-6-petri-net"><span class="header-section-number">4.0.6</span> Exercise 6: Petri Net</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Exercises: Class Diagrams</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter provides a series of practical exercises to apply the concepts of UML Class Diagrams discussed previously. Each exercise presents a problem description followed by a detailed solution and an explanation of the key concepts illustrated.</p>
+<hr>
+<section id="exercise-1-people-and-cars" class="level3" data-number="4.0.1">
+<h3 data-number="4.0.1" class="anchored" data-anchor-id="exercise-1-people-and-cars"><span class="header-section-number">4.0.1</span> Exercise 1: People and Cars</h3>
+<p><strong>Problem:</strong> Model a system of people and cars. A person is identified by a unique number and is the sole owner of the cars they possess. A car is characterized by a license plate number, a brand, and a date of first registration.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exo1-personne-voiture.png" class="img-fluid figure-img" alt="Class diagram for People and Cars."></p>
+<figcaption>UML diagram for the People and Cars exercise.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<ul>
+<li><strong>Personne (Person) Class:</strong>
+<ul>
+<li><strong>Attributes:</strong> Contains <code>num: integer</code> as a unique identifier.</li>
+<li><strong>Multiplicity:</strong> The <code>*</code> on the <code>voiture</code> (car) role indicates that an instance of <code>Personne</code> can be linked to zero, one, or many instances of <code>Voiture</code>.</li>
+</ul></li>
+<li><strong>Voiture (Car) Class:</strong>
+<ul>
+<li><strong>Attributes:</strong> Contains <code>numeroPlaque: string</code>, <code>marque: string</code>, and <code>dateMiseCirculation</code>.</li>
+<li><strong>Multiplicity:</strong> The <code>1</code> on the <code>propriétaire</code> (owner) role is a crucial constraint. It means an instance of <code>Voiture</code> <strong>must</strong> be linked to exactly one instance of <code>Personne</code>. This directly models the “sole owner” requirement from the problem description.</li>
+</ul></li>
+<li><strong>possède (owns) Association:</strong>
+<ul>
+<li>This association connects the two classes. The name <code>possède</code> clarifies the nature of the relationship.</li>
+<li>The role names <code>propriétaire</code> and <code>voiture</code> specify the function each class plays in the relationship, making the diagram easier to read and understand.</li>
+</ul></li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong> This introductory exercise is designed to solidify several fundamental concepts:</p>
+<ul>
+<li><strong>Class:</strong> A class is represented as a rectangle containing its name and attributes. It acts as a blueprint for objects.</li>
+<li><strong>Association:</strong> An association models a relationship between two classes. Naming the association and its roles is a critical best practice for clarity.</li>
+<li><strong>Multiplicities (Cardinalities):</strong> This is the most important concept in this exercise. Multiplicities are constraints that define the exact number of instances that can participate in a relationship, allowing the model to precisely capture business rules like “a car has a single owner”.</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercise-2-company-organization" class="level3" data-number="4.0.2">
+<h3 data-number="4.0.2" class="anchored" data-anchor-id="exercise-2-company-organization"><span class="header-section-number">4.0.2</span> Exercise 2: Company Organization</h3>
+<p><strong>Problem:</strong> Model a company’s organization. A department is identified by a number and has a location. An employee has a unique number within their department (but not necessarily within the company), a name, a role, and the department they work in. An enterprise is composed of departments.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exo2-entreprise-departement.png" class="img-fluid figure-img" alt="Class diagram for Company Organization."></p>
+<figcaption>UML diagram for the Company Organization exercise.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<ul>
+<li><p><strong>Entreprise (Company) Class:</strong> The central element of the model. The problem states an enterprise is <em>composed of</em> departments, which strongly implies a whole-part relationship where the parts (departments) cannot exist without the whole. This is modelled with a <strong>Composition</strong> (filled diamond) relationship to <code>Departement</code>. The multiplicity <code>1..*</code> signifies that a company must have at least one department.</p></li>
+<li><p><strong>Departement Class:</strong></p>
+<ul>
+<li>It has a <code>numero: integer</code> as an attribute. The problem states an employee’s number is unique <em>within their department</em>, which means the department number itself doesn’t have to be unique across the entire company (though it often is in reality).</li>
+<li>It is linked to <code>Localisation</code> with a <code>1..*</code> multiplicity, meaning a department must have at least one location.</li>
+<li>It has two distinct associations with the <code>Employe</code> class:
+<ol type="1">
+<li>The <code>travail</code> (working in) association has a <code>*</code> multiplicity, meaning a department has zero or more employees.</li>
+<li>The <code>dirige</code> (manage) association links a department to exactly one <code>directeur</code> (manager), who is an <code>Employe</code>.</li>
+</ol></li>
+</ul></li>
+<li><p><strong>Employe Class:</strong></p>
+<ul>
+<li>The diagram shows the attributes <code>matricule: integer</code>, <code>nom: string</code>, <code>prenom: string</code>, <code>age: integer</code>, and <code>grade: string</code> for this class.</li>
+<li><strong>Important Note:</strong> The problem statement specifies that the employee’s number (<code>matricule</code>) is unique <em>within</em> a department, not across the entire company. modelling it as a direct attribute is a valid choice, and this uniqueness constraint would typically be managed at a higher level or with a formal constraint language like OCL.</li>
+<li>The association to <code>Departement</code> has a multiplicity of <code>0..1</code>, meaning an employee works for at most one department.</li>
+<li>An employee (multiplicity of <code>1</code>) can manage multiple departments, as shown by the <code>directeur</code> role on the <code>dirige</code> (manage) association, which has a multiplicity of <code>*</code> on the <code>Departement</code> side.</li>
+</ul></li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Composition:</strong> This exercise provides a classic example of Composition. The existential dependency is key: a <code>Departement</code> is fundamentally part of an <code>Entreprise</code>. If the company ceases to exist, its departments do as well. This is a much stronger and more precise relationship than a simple association or aggregation.</li>
+<li><strong>Multiple Associations between Classes:</strong> It is common for two classes to be related in more than one way. Here, an <code>Employe</code> has a relationship of “working in” a <code>Departement</code> and a separate relationship of “managing” a <code>Departement</code>. Using distinct, named associations is crucial to model these different roles accurately.</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercise-3-geometric-figures" class="level3" data-number="4.0.3">
+<h3 data-number="4.0.3" class="anchored" data-anchor-id="exercise-3-geometric-figures"><span class="header-section-number">4.0.3</span> Exercise 3: Geometric Figures</h3>
+<p><strong>Problem:</strong> A geometric figure can be either simple or composite. A composite figure is made up of several other figures. A simple figure can be a point, a line, a circle, or a square. Any figure can be drawn or translated.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exo3-figures-geometriques.png" class="img-fluid figure-img" alt="Class diagram for Geometric Figures."></p>
+<figcaption>UML diagram for the Geometric Figures exercise.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<ul>
+<li><p><strong><code>Figure</code> Class:</strong> This class is the core of the hierarchy. It is <strong>abstract</strong> (indicated by the italicized name) because there is no such thing as a generic “Figure” in this system; a figure must be either simple or composite. It defines a common interface for all figures by declaring two abstract operations: <code>dessiner()</code> and <code>translater()</code>. Any class that inherits from <code>Figure</code> will be required to provide its own implementation for these methods.</p></li>
+<li><p><strong>Generalization Hierarchy:</strong> The model uses <strong>Generalization</strong> (inheritance) to create a clear taxonomy.</p>
+<ul>
+<li><code>FigureSimple</code> and <code>FigureComposee</code> both inherit from <code>Figure</code>. This establishes the primary classification.</li>
+<li><code>FigureSimple</code> acts as another superclass for the figure types: <code>Point</code>, <code>Ligne</code>, <code>Cercle</code>, and <code>Carre</code>. This creates a neat, two-level hierarchy.</li>
+</ul></li>
+<li><p><strong><code>FigureComposee</code> Class:</strong> This class models a figure that is made up of other figures.</p>
+<ul>
+<li>The relationship between <code>FigureComposee</code> and <code>Figure</code> is modelled using <strong>Aggregation</strong> (the hollow diamond). This is a crucial design choice. It’s a “whole-part” relationship, but it’s “weak.” If a <code>FigureComposee</code> is deleted, the <code>Figure</code> it was composed of are not necessarily deleted, as they could be part of another composite figure or exist independently. The <code>1..*</code> multiplicity indicates that a composite figure must contain at least one other figure.</li>
+</ul></li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Abstraction &amp; Inheritance:</strong> This is the central theme of the exercise. A common interface (<code>dessiner()</code>, <code>translater()</code>) is defined in an abstract superclass (<code>Figure</code>) and inherited by all subclasses. This allows us to treat all figures uniformly, regardless of their specific type.</li>
+<li><strong>Aggregation vs.&nbsp;Composition:</strong> This exercise provides a classic example of when to use Aggregation. Since a <code>Figure</code> can exist on its own or be part of multiple composite figures, its lifetime is not tied to a single “whole.” This makes the weaker “has-a” relationship of Aggregation the correct choice over the stronger “owns-a” relationship of Composition.</li>
+<li><strong>Polymorphism:</strong> This is the powerful result of the abstraction and inheritance structure. Thanks to polymorphism, we can have a collection of <code>Figure</code> objects and call the <code>dessiner()</code> method on each one. The system will automatically execute the correct implementation of <code>dessiner()</code> based on the object’s actual type (<code>Point</code>, <code>Cercle</code>, <code>FigureComposee</code>, etc.). This allows for highly flexible and extensible code.</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercise-4-family-links" class="level3" data-number="4.0.4">
+<h3 data-number="4.0.4" class="anchored" data-anchor-id="exercise-4-family-links"><span class="header-section-number">4.0.4</span> Exercise 4: Family Links</h3>
+<p><strong>Problem:</strong> Define a schema describing the family links of a population of people, identifiable by their national register number.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exo4-liens-familiaux.png" class="img-fluid figure-img" alt="Class diagram for Family Links."></p>
+<figcaption>UML diagram for the Family Links exercise.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<ul>
+<li><p><strong><code>Personne</code> Class:</strong> This single class is used to model all individuals in the system. It contains a <code>numeroRegistre: integer</code> attribute, which serves as a unique identifier for each person.</p></li>
+<li><p><strong>“épouse” (spouse) Association:</strong> This is a <strong>reflexive association</strong>, meaning it connects the <code>Personne</code> class to itself. It models the marriage relationship.</p>
+<ul>
+<li><strong>Roles:</strong> The roles <code>conjoint(e)</code> and <code>personne</code> are used to clarify the nature of the link.</li>
+<li><strong>Multiplicities:</strong> The <code>0..1</code> multiplicity on both ends is a critical constraint. It precisely models a monogamous relationship, where a person can have either zero or one spouse at a time.</li>
+</ul></li>
+<li><p><strong>“a” (parent/child) Association:</strong> This is a second reflexive association on the <code>Personne</code> class, modelling parent-child relationships.</p>
+<ul>
+<li><strong>Roles:</strong> The roles <code>parent</code> and <code>enfant</code> are absolutely essential here to make the diagram unambiguous. They allow us to read the relationship in two directions: a <code>parent</code> “has” an <code>enfant</code>, and an <code>enfant</code> “has” a <code>parent</code>.</li>
+<li><strong>Multiplicities:</strong> The cardinalities are key to capturing the rules of the domain: a person must have exactly <code>2</code> parents, while a person acting as a <code>parent</code> can have zero, one, or many (<code>*</code>) children.</li>
+</ul></li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Reflexive Association:</strong> This exercise is a classic example of how a class can be related to itself. This pattern is fundamental for modelling any kind of network or hierarchical structure, such as organizational charts, social networks, or, as seen here, family trees.</li>
+<li><strong>The Importance of Roles:</strong> In reflexive associations, role names are not just helpful; they are indispensable. Without them, it would be impossible to distinguish a parent from a child or a spouse from themselves. They are the primary tool for removing ambiguity in these situations.</li>
+<li><strong>modelling Domain Constraints:</strong> The power of a class diagram comes from its ability to enforce real-world rules through multiplicities. The constraints <code>0..1</code> for a spouse and <code>2</code> for parents are not arbitrary; they are a direct translation of the rules of our specific domain into a formal model.</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercise-5-hotel" class="level3" data-number="4.0.5">
+<h3 data-number="4.0.5" class="anchored" data-anchor-id="exercise-5-hotel"><span class="header-section-number">4.0.5</span> Exercise 5: Hotel</h3>
+<p><strong>Problem:</strong> A hotel is composed of at least two “rooms”. Each room consists of several parts such as bedrooms, washrooms, living rooms, and meeting rooms. Each room has a minimum of one bedroom and one washroom. The washrooms can be bathrooms (with a tub) or shower rooms. A room is also characterized by a price and a number. The hotel itself has a category, and an address. Furthermore, the hotel can host clients, employ staff, and is managed by a staff member.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exo5-hotel.png" class="img-fluid figure-img" alt="Class diagram for the Hotel exercise."></p>
+<figcaption>UML diagram for the Hotel exercise.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<ul>
+<li><p><strong><code>Personne</code> Generalization:</strong> The diagram correctly uses <strong>Inheritance</strong> to model that both <code>Client</code> and <code>Personnel</code> are types of <code>Personne</code>. This is a classic “is-a” relationship that factors out common attributes (like <code>nom</code>, <code>age</code>, <code>adresse</code>) into a general superclass, avoiding redundancy.</p></li>
+<li><p><strong>Nested Compositions (Whole-Part Relationships):</strong> The model features two levels of <strong>Composition</strong>, indicated by the filled diamonds. This choice is critical and deliberate:</p>
+<ol type="1">
+<li><strong>Hôtel-Chambre:</strong> An <code>Hôtel</code> is composed of <code>2..*</code> (at least two) <code>Chambre</code>. The filled diamond signifies that a <code>Chambre</code>’s existence is dependent on the <code>Hôtel</code>. If the hotel is demolished, its rooms cease to exist.</li>
+<li><strong>Chambre-Pièce:</strong> Similarly, a <code>Chambre</code> is composed of <code>2..*</code> <code>Pièce</code> (parts). A <code>Pièce</code> (like a specific bedroom or bathroom) cannot exist independently of the room it belongs to. This creates a strong structural hierarchy.</li>
+</ol></li>
+<li><p><strong><code>Pièce</code> Hierarchy:</strong> The <code>Pièce</code> class itself is the root of another inheritance hierarchy. It’s an abstract superclass for more specific types like <code>SalleDeReunion</code>, <code>Salon</code>, <code>ChambreACoucher</code> and <code>SalleDEau</code>. <code>SalleDEau</code> is further specialized into <code>SalleDeBain</code> and <code>SalleDeDouche</code>. This demonstrates how inheritance can be used to classify and organize related concepts.</p></li>
+<li><p><strong>Client Associations:</strong> The <code>Client</code> class is central to two key relationships:</p>
+<ol type="1">
+<li>The <code>héberge</code> (hosts) association links <code>Hôtel</code> to <code>Client</code>. An hotel can host zero or more (<code>*</code>) clients, and a client is hosted by exactly one (<code>1</code>) hotel.</li>
+<li>The <code>occupe</code> (occupies) association links <code>Client</code> to <code>Chambre</code>. A client can occupy one or more (<code>1..*</code>) rooms, and a room can be occupied by zero or more (<code>*</code>) clients (e.g., a family in one room).</li>
+</ol></li>
+<li><p><strong>Associations with <code>Personnel</code>:</strong> The <code>Hôtel</code> class has multiple, distinct associations with the <code>Personnel</code> class, highlighting how different relationships can coexist:</p>
+<ul>
+<li><strong><code>emploie</code> (employs):</strong> A general association indicating that a hotel employs one or more (<code>1..*</code>) staff members.</li>
+<li><strong><code>dirige</code> (manages):</strong> A more specific association with a <code>directeur</code> role, indicating that the hotel is managed by exactly one (<code>1</code>) member of staff. This shows how roles can be used to add precision to a relationship.</li>
+</ul></li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Combining Relationship Types:</strong> This is the most important takeaway. A real-world model rarely uses just one type of relationship. This exercise skillfully combines <strong>Generalization</strong>, <strong>Composition</strong>, and <strong>Association</strong> to create a rich and accurate representation of the domain.</li>
+<li><strong>Multiple, Overlapping Hierarchies:</strong> This exercise perfectly illustrates how a system can feature different kinds of hierarchies simultaneously.
+<ul>
+<li>There is a clear <strong>“is-part-of” hierarchy</strong> established through <strong>Composition</strong>: An <code>Hôtel</code> is composed of <code>Chambre</code>s, which are in turn composed of <code>Pièce</code>s.</li>
+<li>Running in parallel, there are two distinct <strong>“is-a” hierarchies</strong> established through <strong>Inheritance</strong>:
+<ol type="1">
+<li>The first classifies people: <code>Client</code> and <code>Personnel</code> are specific types of <code>Personne</code>.</li>
+<li>The second classifies the parts of a room: <code>ChambreACoucher</code>, <code>SalleDEau</code>, <code>Salon</code>, and <code>SalleDeReunion</code> are all types of <code>Pièce</code>. This hierarchy goes even deeper, as <code>SalleDeBain</code> and <code>SalleDeDouche</code> are specific types of <code>SalleDEau</code>. Understanding how to model these different, coexisting structures is a key skill in object-oriented analysis.</li>
+</ol></li>
+</ul></li>
+<li><strong>The Power of Constraints:</strong> The specific multiplicities (<code>2..*</code>, <code>1</code>, etc.) are not arbitrary. They are a direct translation of the problem description’s rules (“at least two rooms”, “managed by a staff member”) into the formal language of UML, ensuring the model is precise.</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercise-6-petri-net" class="level3" data-number="4.0.6">
+<h3 data-number="4.0.6" class="anchored" data-anchor-id="exercise-6-petri-net"><span class="header-section-number">4.0.6</span> Exercise 6: Petri Net</h3>
+<p><strong>Problem:</strong> A Petri net is a directed graph composed of places, transitions, and arcs. An arc always connects two nodes of different types: either a place and a transition, or the reverse.</p>
+<p>Model a class diagram to represent Petri nets, both with and without tokens. What is the difference?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exo6-reseau-petri.png" class="img-fluid figure-img" alt="Class diagram for a Petri Net."></p>
+<figcaption>UML diagram for the Petri Net exercise.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<ul>
+<li><p><strong><code>PetriNet</code> Class:</strong> This class acts as the root of the model. It has a <strong>Composition</strong> relationship (filled diamond) with <code>Nœud</code> (Node) and <code>Arc</code>. This is a critical choice: it signifies that the nodes and arcs are integral parts of a specific Petri Net and cannot exist independently. If a <code>PetriNet</code> is deleted, all its constituent elements are deleted as well.</p></li>
+<li><p><strong><code>Nœud</code> (Node) Hierarchy and its Associations:</strong></p>
+<ul>
+<li><code>Nœud</code> is an <strong>abstract class</strong>, indicated by its italicized name. This is because a node in a Petri Net must be either a <code>Place</code> or a <code>Transition</code>; it cannot be just a generic “Node”.</li>
+<li><code>Place</code> and <code>Transition</code> are concrete classes that <strong>inherit</strong> from <code>Nœud</code>, correctly modelling the “is-a” relationship.</li>
+<li>The <code>Nœud</code> class is connected to the <code>Arc</code> class via two associations: <code>débute</code> (starts) and <code>finit</code> (ends). The multiplicities must be read in both directions:
+<ol type="1">
+<li>From the <code>Arc</code>’s perspective: An <code>Arc</code> must have <strong>exactly one</strong> source <code>Nœud</code> and <strong>exactly one</strong> destination <code>Nœud</code>. This is shown by the multiplicity of <code>1</code> at the <code>Nœud</code> end of both associations.</li>
+<li>From the <code>Nœud</code>’ perspective: A <code>Nœud</code> can be the source of <strong>zero or more</strong> (<code>*</code>) <code>Arc</code> and the destination of <strong>zero or more</strong> (<code>*</code>) <code>Arc</code>. This is shown by the <code>*</code> multiplicity at the <code>Arc</code> end of the associations.</li>
+</ol></li>
+</ul></li>
+<li><p><strong><code>Arc</code> Class and its Associations:</strong></p>
+<ul>
+<li>An <code>Arc</code> has two mandatory (<code>1</code>) associations with the <code>Nœud</code> class: one for its source (<code>débute</code>) and one for its destination (<code>finit</code>). This accurately models that every arc connects exactly two nodes.</li>
+<li>The problem states that an arc must connect a <code>Place</code> to a <code>Transition</code> or vice-versa. This is a complex constraint that is difficult to represent visually in a class diagram alone. It would typically be specified using a formal constraint language like <strong>OCL (Object Constraint Language)</strong>.</li>
+</ul></li>
+<li><p><strong><code>Token</code> Class:</strong></p>
+<ul>
+<li>The <code>Token</code> class represents the dynamic part of the model. Its association <code>se situe</code> (is located) connects it to the <strong><code>Nœud</code></strong> class.</li>
+<li><strong>Multiplicities:</strong> The cardinalities are critical. The <code>*</code> (many) on the <code>Token</code> side and <code>1</code> (exactly one) on the <code>Nœud</code> side mean that a <code>Nœud</code> can contain zero or more <code>Token</code>, but a <code>Token</code> must be located in <strong>exactly one</strong> <code>Nœud</code> at any given time.</li>
+</ul></li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>modelling a Meta-Structure (Metamodelling):</strong> This is the most advanced concept in these exercises. The class diagram is not modelling a typical business domain (like a hotel or a company). Instead, it is modelling the <strong>structure of another model</strong>, the Petri Net. This is a powerful technique used to define the “rules” of a language or a diagramming technique.</li>
+<li><strong>Static vs.&nbsp;Dynamic State:</strong> This exercise perfectly illustrates the difference between modelling structure and state.
+<ul>
+<li><strong>Without the <code>Token</code> class:</strong> The diagram would only describe the <strong>static structure</strong> of the Petri Net graph (which places and transitions exist and how they are connected by arcs).</li>
+<li><strong>With the <code>Token</code> class:</strong> The model can now represent the <strong>dynamic state</strong> of the network at any given moment (i.e., the “marking” of the net). The number and location of tokens are what determine which transitions can be fired, allowing the model to represent the system’s behaviour over time.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-class-diagrams.html" class="pagination-link" aria-label="Class and Object Diagrams">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-practical-exercises-object-diagrams.html" class="pagination-link" aria-label="Practical Exercises: Object Diagrams">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Practical Exercises: Object Diagrams</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
