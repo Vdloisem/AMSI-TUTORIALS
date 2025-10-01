@@ -28,5 +28,7 @@ format:
   pdf:
     documentclass: scrreprt
 
+output-dir: docs
+
 
 
