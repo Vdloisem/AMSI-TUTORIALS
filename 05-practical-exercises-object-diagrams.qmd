@@ -1,0 +1,68 @@
+---
+title: "Practical Exercises: Object Diagrams"
+---
+
+This chapter provides practical exercises to apply the concepts of UML Object Diagrams. The goal is to learn how to represent a specific, concrete situation (a "snapshot" of a system) using instances of classes from a given class diagram.
+
+---
+
+### Exercise 1: Petri Net
+
+**Problem:**
+Given the following class diagram for a Petri Net, model the specific state of the Petri Net shown in the image below as a UML Object Diagram.
+
+![Class diagram for a Petri Net.](images/exo6-reseau-petri.png){fig-alt="Class diagram for a Petri Net." width="80%"}
+
+![The specific state of a Petri Net to be modelled.](images/exo-petri-net-problem.png){fig-alt="A Petri Net with four places, two transitions, and tokens." width="50%"}
+
+::: {.callout-tip collapse="true" title="Click to see the solution"}
+
+![Object diagram solution for the Petri Net exercise.](images/exo-petri-net-solution.png){fig-alt="Object diagram of the Petri Net state."}
+
+**Correction Details:**
+
+* **Instances of `Place` and `Transition`:** The solution correctly creates four named instances of the `Place` class (`p1`, `p2`, `p3`, `p4`) and two named instances of the `Transition` class (`t1`, `t2`). Each instance is given a `label` corresponding to its name in the diagram (e.g., `"P1"`, `"T1"`).
+
+* **Instances of `Arc` (Links):** The seven arcs from the problem are modelled as seven distinct, named instances of the `Arc` class (`a1` to `a7`). The `source` and `destination` links for each arc instance are correctly connected to the appropriate `Place` and `Transition` objects, modelling the directed graph structure.
+
+* **Instances of `Token` (State):** The state of the Petri Net is represented by four instances of the `Token` class (`tk1` to `tk4`).
+    * `p1` and `p4` each contain one token.
+    * `p3` contains two tokens (`tk2` and `tk3`).
+    * Each `Token` object is linked to the `Place` object that contains it via an instance of the `se situe` association.
+
+* **Instance of `PetriNet`:** The entire system is contained within a single instance of `PetriNet`, named `mon_petri`. All `Place`, `Transition`, and `Arc` objects are linked to this main object, respecting the composition relationships defined in the class diagram.
+:::
+
+---
+
+### Exercise 2: Email Service
+
+**Problem:**
+Based on the class diagram modelling a university's email service, create the object diagram that represents the specific email situation shown in the image below.
+
+![Class diagram for a university email service.](images/exo-email-class-diagram.png){fig-alt="Class diagram for an email service." width="80%"}
+
+![A screenshot of an email sent by Tony Leclercq.](images/exo-email-problem.png){fig-alt="An email from Tony Leclercq with two attachments." width="50%"}
+
+::: {.callout-tip collapse="true" title="Click to see the solution"}
+
+![Object diagram solution for the Email exercise.](images/exo-email-solution.png){fig-alt="Object diagram of the email situation."}
+
+**Correction Details:**
+
+* **Instances of `m1: Mail`:** A single instance of the `Mail` class represents the email. Its slots are filled with the corresponding data: `sujet = "Email 1"` and `objet = "Hello World !"`.
+
+* **Instances of `pj1, pj2: PieceJointe`:** The two attachments, "AMSI.pdf" and "MAPLE2013.pdf", are modelled as two distinct instances of the `PieceJointe` class. Both are linked to the `m1` mail object via the `possède` (owns) composition link.
+
+* **Instances of `c1, c2, c3, c4: Compte`:** The four email addresses involved are represented by four instances of the `Compte` (Account) class, with their `adresseMail` slots correctly filled.
+
+    * `c3` and `c4` represent the accounts of Tony Leclercq.
+    * `c1` and `c2` represent the external recipients.
+
+* **Links for Senders/Recipients:** The links correctly model the email's flow:
+
+    * The `est envoyé par` (is sent by) link connects `m1` to `c4` (Tony's sending account).
+    * The `est destiné à` (is sent to) links connect `m1` to `c1`, `c2`, and `c3` (the three recipient accounts).
+
+* **Instances of `p1, p2: Personnel`:** Two instances of `Personnel` are used to model Tony Leclercq, who is both the sender and a recipient. This might seem redundant, but it correctly represents his dual role in this specific transaction. Both instances are linked to their respective `Compte` objects (`c3` and `c4`).
+:::

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; State Machine Diagrams – AMSI-TUTORIALS</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-practical-exercises-state-machine-diagrams.html" rel="next">
+<link href="./07-practical-exercises-ocl.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-state-machine-diagrams.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">State Machine Diagrams</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AMSI-TUTORIALS</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro-modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Modelling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-class-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-practical-exercises-class-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Exercises: Class Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-practical-exercises-object-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Practical Exercises: Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Object Constraint Language (OCL): An Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-practical-exercises-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Practical Exercises: OCL Constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-state-machine-diagrams.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">State Machine Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-practical-exercises-state-machine-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">09-practical-exercises-state-machine-diagrams.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-we-need-state-machines" id="toc-why-we-need-state-machines" class="nav-link active" data-scroll-target="#why-we-need-state-machines"><span class="header-section-number">8.1</span> Why We Need State Machines</a></li>
+  <li><a href="#core-concepts-of-state-machines" id="toc-core-concepts-of-state-machines" class="nav-link" data-scroll-target="#core-concepts-of-state-machines"><span class="header-section-number">8.2</span> Core Concepts of State Machines</a>
+  <ul class="collapse">
+  <li><a href="#anatomy-of-a-transition" id="toc-anatomy-of-a-transition" class="nav-link" data-scroll-target="#anatomy-of-a-transition"><span class="header-section-number">8.2.1</span> Anatomy of a Transition</a></li>
+  </ul></li>
+  <li><a href="#protocol-vs.-behavioural-state-machines" id="toc-protocol-vs.-behavioural-state-machines" class="nav-link" data-scroll-target="#protocol-vs.-behavioural-state-machines"><span class="header-section-number">8.3</span> Protocol vs.&nbsp;behavioural State Machines</a>
+  <ul class="collapse">
+  <li><a href="#protocol-state-machines" id="toc-protocol-state-machines" class="nav-link" data-scroll-target="#protocol-state-machines"><span class="header-section-number">8.3.1</span> Protocol State Machines</a></li>
+  <li><a href="#behavioural-state-machines" id="toc-behavioural-state-machines" class="nav-link" data-scroll-target="#behavioural-state-machines"><span class="header-section-number">8.3.2</span> behavioural State Machines</a></li>
+  </ul></li>
+  <li><a href="#advanced-concepts-structuring-complexity" id="toc-advanced-concepts-structuring-complexity" class="nav-link" data-scroll-target="#advanced-concepts-structuring-complexity"><span class="header-section-number">8.4</span> Advanced Concepts: Structuring Complexity</a>
+  <ul class="collapse">
+  <li><a href="#hierarchical-states-composite-states" id="toc-hierarchical-states-composite-states" class="nav-link" data-scroll-target="#hierarchical-states-composite-states"><span class="header-section-number">8.4.1</span> Hierarchical States (Composite States)</a></li>
+  <li><a href="#orthogonal-regions-concurrency" id="toc-orthogonal-regions-concurrency" class="nav-link" data-scroll-target="#orthogonal-regions-concurrency"><span class="header-section-number">8.4.2</span> Orthogonal Regions (Concurrency)</a></li>
+  <li><a href="#other-essential-pseudostates" id="toc-other-essential-pseudostates" class="nav-link" data-scroll-target="#other-essential-pseudostates"><span class="header-section-number">8.4.3</span> Other Essential Pseudostates</a></li>
+  </ul></li>
+  <li><a href="#state-machine-semantics-the-rules-of-execution" id="toc-state-machine-semantics-the-rules-of-execution" class="nav-link" data-scroll-target="#state-machine-semantics-the-rules-of-execution"><span class="header-section-number">8.5</span> State Machine Semantics: The Rules of Execution</a>
+  <ul class="collapse">
+  <li><a href="#configurations-and-conflicts" id="toc-configurations-and-conflicts" class="nav-link" data-scroll-target="#configurations-and-conflicts"><span class="header-section-number">8.5.1</span> Configurations and Conflicts</a></li>
+  <li><a href="#the-uml-priority-rule" id="toc-the-uml-priority-rule" class="nav-link" data-scroll-target="#the-uml-priority-rule"><span class="header-section-number">8.5.2</span> The UML Priority Rule</a></li>
+  <li><a href="#non-determinism-when-the-rules-arent-enough" id="toc-non-determinism-when-the-rules-arent-enough" class="nav-link" data-scroll-target="#non-determinism-when-the-rules-arent-enough"><span class="header-section-number">8.5.3</span> Non-Determinism: When the Rules Aren’t Enough</a></li>
+  <li><a href="#semantics-of-junctions-and-choices" id="toc-semantics-of-junctions-and-choices" class="nav-link" data-scroll-target="#semantics-of-junctions-and-choices"><span class="header-section-number">8.5.4</span> Semantics of Junctions and Choices</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">State Machine Diagrams</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter delves into one of UML’s core behavioural modelling tools: the <strong>State Machine Diagram</strong>. While Class Diagrams describe a system’s static structure, State Machine Diagrams model its dynamic behaviour. They focus on the lifecycle of a single object, detailing the sequence of states it passes through in response to events.</p>
+<section id="why-we-need-state-machines" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="why-we-need-state-machines"><span class="header-section-number">8.1</span> Why We Need State Machines</h2>
+<p>Class Diagrams are excellent for defining <em>what</em> an object is and <em>what</em> it can do (its attributes and operations), but they often fall short in specifying <em>when</em> those operations can be called. This temporal ordering, or <strong>protocol</strong>, is crucial for modelling an object’s lifecycle.</p>
+<p>Consider a simple <code>Door</code> object. Its usage is governed by rules:</p>
+<ul>
+<li>A door can only be opened if it is currently closed and unlocked.</li>
+<li>A door can only be closed if it is open and the doorway is clear.</li>
+<li>Turning the key locks an unlocked door and unlocks a locked one.</li>
+</ul>
+<p>While these rules can be described using OCL preconditions, this approach provides a fragmented view and doesn’t clearly show how the operations are linked together. State Machine Diagrams excel at visualizing this entire lifecycle in a single, coherent view.</p>
+</section>
+<section id="core-concepts-of-state-machines" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="core-concepts-of-state-machines"><span class="header-section-number">8.2</span> Core Concepts of State Machines</h2>
+<p>A State Machine Diagram visualizes an object’s behaviour as a journey through a finite number of <strong>states</strong>. It discretizes behaviour into a set of relevant, abstract states, ignoring irrelevant details. For a <code>Door</code>, the relevant states might be <code>Open</code>, <code>Closed</code>, and <code>Locked</code>; its color is an irrelevant detail.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/statemachine-door-protocol.png" class="img-fluid figure-img" style="width:80.0%" alt="A simple protocol state machine for a Door class showing states like Open, Closed, and Locked."></p>
+<figcaption>A simple protocol state machine diagram for a Door class.</figcaption>
+</figure>
+</div>
+<p>The diagram is composed of a few key elements:</p>
+<ul>
+<li><strong>State:</strong> A condition during the life of an object in which it satisfies some condition, performs some activity, or waits for an event. It’s shown as a rectangle with rounded corners.</li>
+<li><strong>Transition:</strong> A directed relationship between a source state and a target state. It specifies that an object in the source state will enter the target state when a specific event occurs and certain conditions are met. Transitions are considered instantaneous.</li>
+<li><strong>Initial State:</strong> A pseudostate indicating the default starting point. It is shown as a solid black circle.</li>
+<li><strong>Final State:</strong> A state indicating that the object has completed its lifecycle. It is shown as a circle surrounding a smaller solid circle (a bullseye).</li>
+</ul>
+<section id="anatomy-of-a-transition" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="anatomy-of-a-transition"><span class="header-section-number">8.2.1</span> Anatomy of a Transition</h3>
+<p>A transition moves an object from one state to another. Its full syntax is <code>trigger-event [guard] / effect</code>. Each part defines a specific aspect of the state change.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/transition-anatomy.png" class="img-fluid figure-img" style="width:15.0%" alt="Anatomy of a UML Transition."></p>
+<figcaption>A visual representation of a UML transition, labeling the trigger, guard, and effect components.</figcaption>
+</figure>
+</div>
+<ul>
+<li><p><strong>Trigger (or Event):</strong> The event that causes the transition to be considered. There are four main types of events:</p>
+<ul>
+<li><p><strong>Call Event:</strong> The most common type. It corresponds to the reception of a <strong>synchronous call</strong> to an operation of the object. The syntax is simply the operation’s name, for example, <code>open()</code> or <code>deposit(amount)</code>.</p></li>
+<li><p><strong>Signal Event:</strong> Corresponds to the reception of an <strong>asynchronous signal</strong> by an object. Unlike an operation call, the sender does not wait for a reply. The syntax is the signal’s name, for example, <code>onAlarmDetection</code>.</p></li>
+<li><p><strong>Change Event:</strong> This event occurs when a specific boolean expression becomes true. It is used to model reactions to changing conditions. The syntax uses the <code>when</code> keyword, for example, <code>when(sensor.isConnected)</code>.</p></li>
+<li><p><strong>Time Event:</strong> Occurs after a certain amount of time has passed or at a specific time. The syntax uses the <code>after</code> keyword (for a relative duration) or the <code>at</code> keyword (for an absolute time). For example, <code>after(5 seconds)</code> or <code>at(2025-12-25)</code>.</p></li>
+</ul></li>
+<li><p><strong>Guard:</strong> An optional boolean condition that must be true for the transition to fire. It is written in square brackets, e.g., <code>[doorway.empty]</code>.</p></li>
+<li><p><strong>Effect (or Action):</strong> An optional behaviour that is executed at the instant the transition fires.</p></li>
+</ul>
+</section>
+</section>
+<section id="protocol-vs.-behavioural-state-machines" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="protocol-vs.-behavioural-state-machines"><span class="header-section-number">8.3</span> Protocol vs.&nbsp;behavioural State Machines</h2>
+<p>UML distinguishes between two main types of state machines, which serve different purposes.</p>
+<section id="protocol-state-machines" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="protocol-state-machines"><span class="header-section-number">8.3.1</span> Protocol State Machines</h3>
+<p>A <strong>Protocol State Machine</strong> specifies the legal sequence of operations that can be called on an object. It acts as a “user manual” for a class, defining its lifecycle without specifying the implementation of its behaviour. Transitions in a protocol state machine have triggers and guards, but <strong>no effects</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Idea: Protocol State Machine">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Idea: Protocol State Machine
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A Protocol State Machine defines the valid order of operations. It answers the question: “What can happen next?” It is primarily used during analysis and interface specification.</p>
+</div>
+</div>
+<p>A key question for protocol state machines is what happens when an unexpected event occurs (e.g., a <code>slam()</code> event arrives at a <code>Door</code>). UML leaves this undefined, meaning it’s up to the modeller to specify whether such events are ignored, rejected, or cause an error.</p>
+</section>
+<section id="behavioural-state-machines" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="behavioural-state-machines"><span class="header-section-number">8.3.2</span> behavioural State Machines</h3>
+<p>A <strong>behavioural State Machine</strong> goes further by specifying the object’s reactions to events. It models the <strong>effects</strong> (actions or activities) that are executed when transitions occur or when the object is in a particular state.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Key Idea: behavioural State Machine">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Idea: behavioural State Machine
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A behavioural State Machine defines what an object <em>does</em> in response to events. It is a specification of implementation and is used during system design and construction.</p>
+</div>
+</div>
+<p>In addition to effects on transitions, states themselves can have associated behaviours:</p>
+<ul>
+<li><strong>Entry Action:</strong> Executed whenever the state is entered (<code>entry / action</code>).</li>
+<li><strong>Exit Action:</strong> Executed whenever the state is exited (<code>exit / action</code>).</li>
+<li><strong>Do Activity:</strong> An ongoing activity performed as long as the object remains in that state (<code>do / activity</code>). It can be interrupted by an outgoing transition.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/statemachine-working-entry-exit.png" class="img-fluid figure-img" style="width:50.0%" alt="A behavioural state machine with entry/exit actions."></p>
+<figcaption>A behavioural state machine showing entry and exit actions.</figcaption>
+</figure>
+</div>
+<p>In contrast to protocol state machines, behavioural state machines have a default behaviour for unexpected events: they are simply <strong>ignored</strong>.</p>
+</section>
+</section>
+<section id="advanced-concepts-structuring-complexity" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="advanced-concepts-structuring-complexity"><span class="header-section-number">8.4</span> Advanced Concepts: Structuring Complexity</h2>
+<p>Real-world objects can have complex behaviours that would lead to messy, unreadable “flat” state machines. UML provides powerful structuring mechanisms to manage this complexity.</p>
+<section id="hierarchical-states-composite-states" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="hierarchical-states-composite-states"><span class="header-section-number">8.4.1</span> Hierarchical States (Composite States)</h3>
+<p>A <strong>Composite State</strong> is a state that contains its own nested state machine. This allows for abstraction and top-down reasoning. A high-level state like <code>Working</code> can be expanded to reveal a detailed sub-machine that handles its internal logic. This is powerful because a single transition leaving the composite state (e.g., <code>shutdown()</code>) applies to all of its substates, dramatically reducing visual clutter.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/statemachine-composite-state-example.png" class="img-fluid figure-img" style="width:80.0%" alt="A composite state named Working which contains a nested state machine with states like Off, On, and Diagnosis."></p>
+<figcaption>A composite state ‘Working’ containing a full sub-machine.</figcaption>
+</figure>
+</div>
+</section>
+<section id="orthogonal-regions-concurrency" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="orthogonal-regions-concurrency"><span class="header-section-number">8.4.2</span> Orthogonal Regions (Concurrency)</h3>
+<p>An <strong>Orthogonal State</strong> is a composite state that is divided into two or more independent regions, each with its own sub-machine. When an object is in an orthogonal state, it is simultaneously in one substate from <em>each</em> region. This is UML’s way of modelling independent, concurrent behaviours within a single object, which avoids a “combinatorial explosion” of states.</p>
+<p>The primary mechanism for entering and exiting these concurrent regions is through <strong>Fork</strong> and <strong>Join</strong> pseudostates. A fork splits a single incoming transition into multiple concurrent transitions, one for each region. A join synchronizes multiple incoming transitions from different regions into a single outgoing transition.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fork-join.png" class="img-fluid figure-img" style="width:50.0%" alt="Diagram of a fork node splitting a transition into three parallel states, and a join node merging them back."></p>
+<figcaption>A Fork pseudostate splits one transition into three concurrent paths, which are later synchronized by a Join pseudostate.</figcaption>
+</figure>
+</div>
+</section>
+<section id="other-essential-pseudostates" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="other-essential-pseudostates"><span class="header-section-number">8.4.3</span> Other Essential Pseudostates</h3>
+<p>To create sophisticated flows, UML provides several other special states (pseudostates):</p>
+<ul>
+<li><p><strong>Choice vs.&nbsp;Junction</strong>: These both represent branches in a transition path, but their semantics are critically different. The key distinction is <em>when</em> the guards are evaluated relative to the transition’s actions.</p>
+<ul>
+<li>A <strong>Choice</strong> (diamond) models a <strong>dynamic branch</strong>. Its guards are evaluated <em>after</em> the actions on the incoming transition segment have been executed.</li>
+<li>A <strong>Junction</strong> (circle) models a <strong>static branch</strong>. Its guards are evaluated <em>before</em> any actions are executed.</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/choice-vs-junction.png" class="img-fluid figure-img" style="width:40.0%" alt="Side-by-side comparison of a junction and a choice pseudostate, showing different outcomes."></p>
+<figcaption>With a Junction, the path is chosen based on x’s initial value. With a Choice, the path is chosen after x has been set to 0.</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>History States</strong>: A History State (<code>H</code> or <code>H*</code>) is a pseudostate that remembers the last active substate of a composite state. This is invaluable for modelling interruptions.
+<ul>
+<li><strong>Shallow History (<code>H</code>)</strong>: Remembers only the immediate substate. If <code>Connected</code> is left while in the <code>Running</code> state, a transition to <code>H</code> will resume in <code>Running</code>.</li>
+<li><strong>Deep History (<code>H*</code>)</strong>: Remembers the full state configuration. If the machine was in the <code>Fast</code> sub-state of <code>Running</code>, a transition to <code>H*</code> would resume in <code>Fast</code>.</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/shallow-history.png" class="img-fluid figure-img" style="width:80.0%" alt="A state diagram showing a shallow history pseudostate (H)."></p>
+<figcaption>A Shallow History (H) connector inside a ‘Connected’ composite state.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/deep-history.png" class="img-fluid figure-img" style="width:80.0%" alt="A state diagram showing a deep history pseudostate (H*)."></p>
+<figcaption>A Deep History (H*) connector inside a composite state that has its own nested states.</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Entry and Exit Points</strong>: These provide fine-grained control for transitions that cross the boundary of a composite state, allowing them to bypass the default initial/final states.
+<ul>
+<li>An <strong>Entry Point</strong> allows a transition to target a specific internal state, useful for skipping initialization steps.</li>
+<li>An <strong>Exit Point</strong> allows an internal state to trigger a specific transition out of the composite state, useful for handling specific outcomes like errors.</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exit-point.png" class="img-fluid figure-img" style="width:70.0%" alt="Diagram showing an entry point and an exit point."></p>
+<figcaption>An Entry Point allows a higher-level state to transition to a specific substate, bypassing the default initial state.</figcaption>
+</figure>
+</div>
+<p>By using these advanced features, State Machine Diagrams can model even the most complex object lifecycles in a structured, understandable, and precise way.</p>
+</section>
+</section>
+<section id="state-machine-semantics-the-rules-of-execution" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="state-machine-semantics-the-rules-of-execution"><span class="header-section-number">8.5</span> State Machine Semantics: The Rules of Execution</h2>
+<p>While State Machine diagrams are visually intuitive, their execution follows a precise set of rules, or semantics. Understanding these rules is essential for correctly interpreting complex diagrams and predicting system behaviour, especially when ambiguities like conflicts or concurrency arise.</p>
+<section id="configurations-and-conflicts" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="configurations-and-conflicts"><span class="header-section-number">8.5.1</span> Configurations and Conflicts</h3>
+<p>At any moment, a system’s state is defined by its <strong>configuration</strong>: the set of all currently active states at every level of the hierarchy.</p>
+<p>A <strong>conflict</strong> occurs when a single event could trigger multiple different transitions from the current configuration. For two transitions to be in conflict, they must:</p>
+<ul>
+<li>Be triggered by the same event.</li>
+<li>Have guards that are both true.</li>
+<li>Originate from source states that overlap (e.g., a state and its substate).</li>
+</ul>
+</section>
+<section id="the-uml-priority-rule" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="the-uml-priority-rule"><span class="header-section-number">8.5.2</span> The UML Priority Rule</h3>
+<p>To resolve conflicts, UML defines a clear priority rule: <strong>the transition originating from the most deeply nested state has priority</strong>. This means an action defined on a substate will always be chosen over a conflicting action defined on one of its parent states. It’s important to note this is a specific convention of UML, other formalisms might use different rules.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/semantics-conflict-example.png" class="img-fluid figure-img" style="width:90.0%" alt="A hierarchical state machine showing multiple transitions labeled 'a' that could conflict."></p>
+<figcaption>A complex hierarchical state machine where the “deepest source state” rule is needed to resolve which transition fires when event ‘a’ occurs.</figcaption>
+</figure>
+</div>
+</section>
+<section id="non-determinism-when-the-rules-arent-enough" class="level3" data-number="8.5.3">
+<h3 data-number="8.5.3" class="anchored" data-anchor-id="non-determinism-when-the-rules-arent-enough"><span class="header-section-number">8.5.3</span> Non-Determinism: When the Rules Aren’t Enough</h3>
+<p>Sometimes, the priority rule is not sufficient to resolve all ambiguities. This leads to <strong>non-determinism</strong>, where the model allows for more than one possible correct behaviour.</p>
+<ol type="1">
+<li><strong>Unresolvable Conflicts</strong>: In an orthogonal state, if an event triggers a transition in one region and a conflicting transition in another, the priority rule does not apply because neither state is “deeper” than the other. The system will make a non-deterministic choice and fire only one of the enabled transitions.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/semantics-unresolvable.png" class="img-fluid figure-img" style="width:70.0%" alt="An orthogonal state machine where two concurrent transitions modify the same variable 'x'."></p>
+<figcaption>In this diagram, if event ‘a’ occurs, both transitions fire. The final value of ‘x’ is non-deterministic because the firing order is undefined.</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><strong>Simultaneous Transitions &amp; Undefined Order</strong>: If an event triggers one transition in each of several orthogonal regions, all transitions will fire. However, the <strong>order in which their actions are executed is undefined</strong>. If these actions modify a shared variable, the final value of that variable can be unpredictable, as it depends on which action runs last. More generally, if the actions are sequences like <code>a;b;c</code> and <code>e;f;g</code>, any interleaving of these sequences is considered a valid execution.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/semantics-non-determinism.png" class="img-fluid figure-img" style="width:70.0%" alt="An orthogonal state machine where two concurrent transitions modify the same variable 'x'."></p>
+<figcaption>In this diagram, if event ‘a’ occurs, both transitions fire. The final value of ‘x’ is non-deterministic because the firing order is undefined.</figcaption>
+</figure>
+</div>
+</section>
+<section id="semantics-of-junctions-and-choices" class="level3" data-number="8.5.4">
+<h3 data-number="8.5.4" class="anchored" data-anchor-id="semantics-of-junctions-and-choices"><span class="header-section-number">8.5.4</span> Semantics of Junctions and Choices</h3>
+<p>The distinction between Junction and Choice pseudostates is purely semantic and relates to when guards are evaluated within a single, run-to-completion step:</p>
+<ul>
+<li><strong>Junction (Static)</strong>: A junction is evaluated “beforehand.” The entire path from the source state to the final target state is determined before any actions on the transitions are executed.</li>
+<li><strong>Choice (Dynamic)</strong>: A choice is evaluated “after.” The system executes the action on the incoming transition segment first, and only then evaluates the guards on the outgoing paths to determine where to go next.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/choice-and-junction.png" class="img-fluid figure-img" style="width:80.0%" alt="Side-by-side comparison of a junction and a choice pseudostate."></p>
+<figcaption>With a Junction (left), the path is chosen based on x’s initial value. With a Choice (right), the path is chosen after x has been set to 0.</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-practical-exercises-ocl.html" class="pagination-link" aria-label="Practical Exercises: OCL Constraints">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Practical Exercises: OCL Constraints</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09-practical-exercises-state-machine-diagrams.html" class="pagination-link" aria-label="09-practical-exercises-state-machine-diagrams.html">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">09-practical-exercises-state-machine-diagrams.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

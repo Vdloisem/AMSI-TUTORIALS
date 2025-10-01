@@ -1,0 +1,41 @@
+{
+  "index.qmd": {
+    "index.html": "65da54bb"
+  },
+  "intro.qmd": {
+    "intro.html": "59b8ee11"
+  },
+  "summary.qmd": {
+    "summary.html": "b4735d07"
+  },
+  "references.qmd": {
+    "references.html": "fa20bc1d"
+  },
+  "01-intro-modelling.qmd": {
+    "01-intro-modelling.html": "84fc7c0c"
+  },
+  "02-intro-uml.qmd": {
+    "02-intro-uml.html": "3fe00f6a"
+  },
+  "03-class-diagrams.qmd": {
+    "03-class-diagrams.html": "a57c0b82"
+  },
+  "04-practical-exercises-class-diagrams.qmd": {
+    "04-practical-exercises-class-diagrams.html": "2a6d74f6"
+  },
+  "05-practical-exercises-object-diagrams.qmd": {
+    "05-practical-exercises-object-diagrams.html": "b9aeb386"
+  },
+  "06-ocl.qmd": {
+    "06-ocl.html": "ff1cf5a0"
+  },
+  "07-practical-exercises-ocl.qmd": {
+    "07-practical-exercises-ocl.html": "4efba03a"
+  },
+  "08-state-machine-diagrams.qmd": {
+    "08-state-machine-diagrams.html": "5b5d8792"
+  },
+  "09-practical-exercises-state-machine-diagrams.qmd": {
+    "09-practical-exercises-state-machine-diagrams.html": "fcdb8e52"
+  }
+}

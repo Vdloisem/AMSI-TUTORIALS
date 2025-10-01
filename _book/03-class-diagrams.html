@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Class and Object Diagrams – AMSI-TUTORIALS</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-practical-exercises-class-diagrams.html" rel="next">
+<link href="./02-intro-uml.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-class-diagrams.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AMSI-TUTORIALS</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro-modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Modelling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-class-diagrams.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-practical-exercises-class-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Exercises: Class Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-practical-exercises-object-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Practical Exercises: Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Object Constraint Language (OCL): An Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-practical-exercises-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Practical Exercises: OCL Constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-state-machine-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">State Machine Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-class-diagrams" id="toc-overview-of-class-diagrams" class="nav-link active" data-scroll-target="#overview-of-class-diagrams"><span class="header-section-number">3.1</span> Overview of Class Diagrams</a>
+  <ul class="collapse">
+  <li><a href="#multi-purpose-usage" id="toc-multi-purpose-usage" class="nav-link" data-scroll-target="#multi-purpose-usage"><span class="header-section-number">3.1.1</span> Multi-Purpose Usage</a></li>
+  </ul></li>
+  <li><a href="#core-concepts-the-blueprint-and-the-product" id="toc-core-concepts-the-blueprint-and-the-product" class="nav-link" data-scroll-target="#core-concepts-the-blueprint-and-the-product"><span class="header-section-number">3.2</span> Core Concepts: The Blueprint and the Product</a>
+  <ul class="collapse">
+  <li><a href="#the-class-a-blueprint-or-template" id="toc-the-class-a-blueprint-or-template" class="nav-link" data-scroll-target="#the-class-a-blueprint-or-template"><span class="header-section-number">3.2.1</span> The Class: A Blueprint or Template</a></li>
+  <li><a href="#the-object-a-concrete-instance" id="toc-the-object-a-concrete-instance" class="nav-link" data-scroll-target="#the-object-a-concrete-instance"><span class="header-section-number">3.2.2</span> The Object: A Concrete Instance</a></li>
+  </ul></li>
+  <li><a href="#anatomy-of-a-class-a-comparative-example" id="toc-anatomy-of-a-class-a-comparative-example" class="nav-link" data-scroll-target="#anatomy-of-a-class-a-comparative-example"><span class="header-section-number">3.3</span> Anatomy of a Class: A Comparative Example</a>
+  <ul class="collapse">
+  <li><a href="#attributes-state-vs.-constants" id="toc-attributes-state-vs.-constants" class="nav-link" data-scroll-target="#attributes-state-vs.-constants"><span class="header-section-number">3.3.1</span> Attributes: State vs.&nbsp;Constants</a></li>
+  <li><a href="#operations-static-functions-vs.-instance-methods" id="toc-operations-static-functions-vs.-instance-methods" class="nav-link" data-scroll-target="#operations-static-functions-vs.-instance-methods"><span class="header-section-number">3.3.2</span> Operations: Static Functions vs.&nbsp;Instance Methods</a></li>
+  <li><a href="#constructors-and-object-creation" id="toc-constructors-and-object-creation" class="nav-link" data-scroll-target="#constructors-and-object-creation"><span class="header-section-number">3.3.3</span> Constructors and Object Creation</a></li>
+  </ul></li>
+  <li><a href="#relationships-between-classes" id="toc-relationships-between-classes" class="nav-link" data-scroll-target="#relationships-between-classes"><span class="header-section-number">3.4</span> Relationships Between Classes</a>
+  <ul class="collapse">
+  <li><a href="#association" id="toc-association" class="nav-link" data-scroll-target="#association"><span class="header-section-number">3.4.1</span> Association</a></li>
+  <li><a href="#aggregation-the-has-a-relationship" id="toc-aggregation-the-has-a-relationship" class="nav-link" data-scroll-target="#aggregation-the-has-a-relationship"><span class="header-section-number">3.4.2</span> Aggregation: The “Has-A” Relationship</a></li>
+  <li><a href="#composition-the-owns-a-relationship" id="toc-composition-the-owns-a-relationship" class="nav-link" data-scroll-target="#composition-the-owns-a-relationship"><span class="header-section-number">3.4.3</span> Composition: The “Owns-A” Relationship</a></li>
+  <li><a href="#generalization-inheritance" id="toc-generalization-inheritance" class="nav-link" data-scroll-target="#generalization-inheritance"><span class="header-section-number">3.4.4</span> Generalization (Inheritance)</a></li>
+  </ul></li>
+  <li><a href="#object-diagrams-a-snapshot-of-reality" id="toc-object-diagrams-a-snapshot-of-reality" class="nav-link" data-scroll-target="#object-diagrams-a-snapshot-of-reality"><span class="header-section-number">3.5</span> Object Diagrams: A Snapshot of Reality</a>
+  <ul class="collapse">
+  <li><a href="#representing-instances" id="toc-representing-instances" class="nav-link" data-scroll-target="#representing-instances"><span class="header-section-number">3.5.1</span> Representing Instances</a></li>
+  <li><a href="#showing-an-objects-state-slots" id="toc-showing-an-objects-state-slots" class="nav-link" data-scroll-target="#showing-an-objects-state-slots"><span class="header-section-number">3.5.2</span> Showing an Object’s State (Slots)</a></li>
+  <li><a href="#putting-it-all-together-a-complex-example" id="toc-putting-it-all-together-a-complex-example" class="nav-link" data-scroll-target="#putting-it-all-together-a-complex-example"><span class="header-section-number">3.5.3</span> Putting It All Together: A Complex Example</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter focuses on the cornerstone of UML’s structural modelling: the <strong>Class Diagram</strong>. We will explore its fundamental components, the different types of relationships between classes, and its practical applications in both the analysis and design phases of software development. We will also briefly introduce the <strong>Object Diagram</strong>, which provides a snapshot of a class diagram’s instances at a specific moment in time.</p>
+<section id="overview-of-class-diagrams" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="overview-of-class-diagrams"><span class="header-section-number">3.1</span> Overview of Class Diagrams</h2>
+<p>A UML Class Diagram specifies the <strong>static structure</strong> of a system. It is the most common and essential diagram in object-oriented modelling, with its origins in earlier formalisms like Entity-Relationship-Attribute (ERA) models and the Object-modelling Technique (OMT).</p>
+<p>Its primary purpose is to show the system’s classes, interfaces, their attributes and operations, and the relationships between them.</p>
+<section id="multi-purpose-usage" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="multi-purpose-usage"><span class="header-section-number">3.1.1</span> Multi-Purpose Usage</h3>
+<p>Class diagrams are versatile and used throughout the software lifecycle. Their purpose often determines which constructs are used and how they are interpreted:</p>
+<ul>
+<li><strong>Analysis (Conceptual Modelling):</strong> In this phase, class diagrams are used to model the concepts of the application domain. These models, often called <strong>Domain Models</strong>, focus on real-world entities and their relationships, deliberately omitting software-specific details like operations or visibility. <img src="images/domain-model-example.png" class="img-fluid quarto-figure quarto-figure-center" style="width:80.0%" alt="A simple domain model showing classes like Book, Author, and Member and their relationships."></li>
+<li><strong>Design (Software Specification):</strong> During design, the focus shifts to the solution space. Class diagrams, now called <strong>Diagrams of Implementation Classes</strong>, specify the software classes, including their attributes, operations (methods), and visibility. They serve as a blueprint for implementation, and class skeletons can often be generated directly from them. <img src="images/design-model-example.png" class="img-fluid quarto-figure quarto-figure-center" style="width:80.0%" alt="A design-level class diagram showing classes with visibilities, typed attributes, and full operation signatures."></li>
+</ul>
+</section>
+</section>
+<section id="core-concepts-the-blueprint-and-the-product" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="core-concepts-the-blueprint-and-the-product"><span class="header-section-number">3.2</span> Core Concepts: The Blueprint and the Product</h2>
+<p>The object-oriented approach is built upon two fundamental concepts: the <strong>class</strong> and the <strong>object</strong>. The easiest way to understand their relationship is through an analogy: a class is like a <strong>cookie cutter</strong>, and an object is the <strong>cookie</strong> it creates.</p>
+<section id="the-class-a-blueprint-or-template" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="the-class-a-blueprint-or-template"><span class="header-section-number">3.2.1</span> The Class: A Blueprint or Template</h3>
+<p>A <strong>class</strong> is an abstraction that serves as a blueprint for creating objects. It defines a common structure and behaviour that all objects of that type will share. Just as a cookie cutter defines the shape and pattern for all cookies made from it, a class defines:</p>
+<ul>
+<li><strong>Properties (Attributes):</strong> The data or characteristics that each object will have (e.g., a <code>User</code> class defines that every user will have a <code>name</code> and an <code>email</code>).</li>
+<li><strong>behaviour (Operations):</strong> The actions or functions that each object can perform (e.g., a <code>User</code> class defines that every user can <code>login()</code> or <code>logout()</code>).</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Formal Definition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Formal Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>class</strong> is an abstraction that describes a group of objects with common properties (attributes), behaviour (operations), and relationships.</p>
+</div>
+</div>
+</section>
+<section id="the-object-a-concrete-instance" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="the-object-a-concrete-instance"><span class="header-section-number">3.2.2</span> The Object: A Concrete Instance</h3>
+<p>An <strong>object</strong> is a concrete instance of a class. It’s a specific “thing” that exists in the system, created from the blueprint defined by its class. Just as you can use one cookie cutter to make many individual cookies, you can use one class to create many objects.</p>
+<p>Every object has:</p>
+<ul>
+<li><strong>Identity:</strong> It is a unique entity, distinct from all other objects, even those of the same class (e.g., two different <code>User</code> objects, <code>user1</code> and <code>user2</code>).</li>
+<li><strong>State:</strong> It holds specific values for the attributes defined in its class (e.g., <code>user1</code>’s name is “Alice”, while <code>user2</code>’s name is “Bob”).</li>
+<li><strong>Lifespan:</strong> It exists in the system for a certain period, from its creation to its destruction.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Formal Definition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Formal Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <strong>object</strong> represents a specific “thing” in the modelled world that has a unique identity, a state, and a lifespan. Every object is an instance of a class.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="anatomy-of-a-class-a-comparative-example" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="anatomy-of-a-class-a-comparative-example"><span class="header-section-number">3.3</span> Anatomy of a Class: A Comparative Example</h2>
+<p>A class in UML is rendered as a rectangle with three compartments: Name, Attributes, and Operations. To understand how these components are used in practice, we will compare two common but fundamentally different design patterns: a <strong>stateless utility class</strong> (<code>Math</code>) and a <strong>stateful service class</strong> (<code>SearchService</code>).</p>
+<div class="grid">
+<div class="g-col-6">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/math-class-example.png" class="img-fluid figure-img" alt="Diagram of the Math utility class"></p>
+<figcaption>A UML diagram of the Math utility class.</figcaption>
+</figure>
+</div>
+<p>A utility class groups related functions but has no state. It is not meant to be instantiated.</p>
+</div>
+<div class="g-col-6">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/search-service-class.png" class="img-fluid figure-img" alt="Diagram of the SearchService class"></p>
+<figcaption>A UML diagram of the SearchService class.</figcaption>
+</figure>
+</div>
+<p>A service class encapsulates data (state) and provides operations that act on that data. It is designed to be instantiated.</p>
+</div>
+</div>
+<section id="attributes-state-vs.-constants" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="attributes-state-vs.-constants"><span class="header-section-number">3.3.1</span> Attributes: State vs.&nbsp;Constants</h3>
+<p>An attribute represents a property of a class. Our two examples illustrate the critical difference between class-level constants and instance-level state.</p>
+<ul>
+<li><p>In the <strong><code>Math</code> class</strong>, attributes like <code>+ PI: double = 3.14</code> are <strong>constants</strong>. They are public, read-only, and their values are shared across the entire system. In a strict UML diagram, they would be underlined to indicate they are <strong>static</strong>.</p></li>
+<li><p>In the <strong><code>SearchService</code> class</strong>, attributes like <code>- config: Configuration</code> and <code>- engine: SearchEngine</code> are <strong>instance attributes</strong>. This means every <code>SearchService</code> object has its <em>own</em> configuration and search engine. This is the internal <strong>state</strong> of the object, which is kept <code>private</code> (<code>-</code>) to ensure <strong>encapsulation</strong>.</p></li>
+</ul>
+</section>
+<section id="operations-static-functions-vs.-instance-methods" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="operations-static-functions-vs.-instance-methods"><span class="header-section-number">3.3.2</span> Operations: Static Functions vs.&nbsp;Instance Methods</h3>
+<p>An operation is a service that can be requested. This is where the difference between our two classes is most apparent.</p>
+<ul>
+<li><p>In the <strong><code>Math</code> class</strong>, all operations like <code>+ sin(double): double</code> are <strong>static</strong> (underlined). They are self-contained functions that don’t depend on any object’s state. They are called on the class itself (e.g., <code>Math.sin(x)</code>).</p></li>
+<li><p>In the <strong><code>SearchService</code> class</strong>, the main operation <code>+ search(...)</code> is an <strong>instance method</strong>. It relies on the internal state of the object (e.g., the <code>engine</code> attribute) to perform its function. You must create an instance of the class to call it (e.g., <code>mySearchService.search(...)</code>).</p></li>
+</ul>
+</section>
+<section id="constructors-and-object-creation" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="constructors-and-object-creation"><span class="header-section-number">3.3.3</span> Constructors and Object Creation</h3>
+<p>The constructor is a special operation that creates an object. Its visibility reveals the intended use of the class.</p>
+<ul>
+<li><p>The <strong><code>Math</code> class</strong> has a <strong>private constructor</strong> (<code>- Math()</code>). This is a deliberate design choice to <strong>prevent instantiation</strong>. You cannot create a <code>Math</code> object, reinforcing its role as a purely static utility class.</p></li>
+<li><p>The <strong><code>SearchService</code> class</strong> would have a <strong>public constructor</strong> (often implicit if not drawn). This allows users to create multiple instances of the service, each with its own state.</p></li>
+</ul>
+<p>By comparing these two examples, we can see how the same UML building blocks, classes, attributes, and operations, can be used to model fundamentally different design patterns, each suited for a different purpose.</p>
+</section>
+</section>
+<section id="relationships-between-classes" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="relationships-between-classes"><span class="header-section-number">3.4</span> Relationships Between Classes</h2>
+<p>Relationships describe the connections between classes.</p>
+<section id="association" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="association"><span class="header-section-number">3.4.1</span> Association</h3>
+<p>An association is a <strong>structural relationship</strong> that specifies that objects (instances) of one class are connected to objects of another. It is the most fundamental way to represent connections in a class diagram.</p>
+<p>An association is typically drawn as a <strong>solid line</strong> connecting two classes. Several adornments can be added to this line to specify the relationship with greater precision.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/association-example.png" class="img-fluid figure-img" style="width:50.0%" alt="A UML diagram showing a detailed association between Professor and Book."></p>
+<figcaption>A UML diagram showing a detailed association between Professor and Book.</figcaption>
+</figure>
+</div>
+<p>Let’s break down the components of an association using the example above:</p>
+<ul>
+<li><p><strong>Association Name:</strong> The name of the association is typically a verb that describes the relationship. It is placed near the middle of the association line. In our example, the name is <code>Wrote</code>. A small triangle can be added to indicate the reading direction (e.g., “Professor Wrote Book”).</p></li>
+<li><p><strong>Association Ends (Roles):</strong> Each end of the association connects to a class and represents a “role” that the class plays in the relationship. These ends can have several properties:</p>
+<ul>
+<li><p><strong>Role Name:</strong> An optional name describing the role played by the class at that end. For example, the <code>Professor</code> class plays the role of <code>author</code>, and the <code>Book</code> class plays the role of <code>textbook</code>.</p></li>
+<li><p><strong>Multiplicity:</strong> This is a mandatory constraint that specifies how many instances of the class can participate in one instance of the association. In the example, <code>1..*</code> on the <code>author</code> side means a <code>Book</code> must be written by at least one <code>Professor</code>. The <code>0..*</code> on the <code>textbook</code> side means a <code>Professor</code> can have written zero or many <code>Book</code>s.</p></li>
+<li><p><strong>Navigability:</strong> This specifies whether instances of one class can be efficiently accessed from an instance of the class at the other end of the association. It is a critical concept for bridging the gap between design models and implementation. The notation is as follows:</p>
+<ul>
+<li>An <strong>open arrowhead</strong> on an association end indicates that it is <strong>navigable</strong>.</li>
+<li>A small <strong>‘x’</strong> on an end indicates it is explicitly <strong>not navigable</strong>.</li>
+<li><strong>No adornment</strong> on an end means that navigability is <strong>unspecified</strong>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/navigability-unspecified.png" class="img-fluid figure-img" style="width:50.0%" alt="A1 and B1 are linked with a simple line, indicating unspecified navigability for both."></p>
+<figcaption>Both ends of the association have unspecified navigability.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/navigability-b2.png" class="img-fluid figure-img" style="width:50.0%" alt="An arrow points from A2 to B2, indicating B2 is navigable from A2."></p>
+<figcaption>A2 has unspecified navigability while B2 is navigable from A2.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/navigability-a3-non-navigable.png" class="img-fluid figure-img" style="width:50.0%" alt="A cross is on the end at A3, indicating it's not navigable from B3."></p>
+<figcaption>A3 is not navigable from B3 while B3 has unspecified navigability.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/navigability-a4-non-navigable.png" class="img-fluid figure-img" style="width:50.0%" alt="A cross is on the end at A4 and an arrow points to B4."></p>
+<figcaption>A4 is not navigable from B4 while B4 is navigable from A4.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/navigability-bidirectional.png" class="img-fluid figure-img" style="width:50.0%" alt="Arrows point to both A5 and B5, indicating bidirectional navigability."></p>
+<figcaption>A5 is navigable from B5 and B5 is navigable from A5.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/navigability-both-non-navigable.png" class="img-fluid figure-img" style="width:50.0%" alt="Crosses are on both ends of the association, indicating it is not navigable in either direction."></p>
+<figcaption>A6 is not navigable from B6 and B6 is not navigable from A6.</figcaption>
+</figure>
+</div>
+<p>It is important to understand the sometimes confusing semantics behind non-navigability in the UML specification. While one definition states that a non-navigable end means “access from the other ends may or may not be possible, and if it is, it might not be efficient,” this can be functionally ambiguous.</p>
+<p>A more formal, though sometimes contradictory, definition in UML links navigability to ownership: an end is considered navigable if it is owned by the opposite class. This highlights an advanced concept where a navigable role is often implemented as an attribute in the opposite class.</p></li>
+</ul></li>
+<li><p><strong>Ownership:</strong> An association end can be formally “owned” by either the class at the opposite end or by the association itself. This is an advanced concept that hints at the implementation. Ownership by the opposite class is indicated by a small <strong>filled circle (dot)</strong> at the end of the line. This notation implies that the role will be implemented as an attribute in the owning class.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ownership-example.png" class="img-fluid figure-img" style="width:50.0%" alt="An association where the 'query' end is owned by the QueryBuilder class, indicated by a dot."></p>
+<figcaption>An example of ownership in a UML association.</figcaption>
+</figure>
+</div>
+<p>In the example above, the dot on the <code>Query</code> end signifies that the <code>query</code> role is owned by the <code>Query Builder</code> class. This suggests that the <code>QueryBuilder</code> class will contain an attribute named <code>query</code> of type <code>Query</code>.</p></li>
+</ul>
+</section>
+<section id="aggregation-the-has-a-relationship" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="aggregation-the-has-a-relationship"><span class="header-section-number">3.4.2</span> Aggregation: The “Has-A” Relationship</h3>
+<p>Shared aggregation, commonly known as <strong>Aggregation</strong>, represents a “weak” whole-part relationship. It signifies that a composite object groups together a set of part instances, but these parts can exist independently of the whole.</p>
+<p>Aggregation has the following key characteristics:</p>
+<ul>
+<li>It is a <strong>binary</strong> and <strong>asymmetric</strong> relationship; only one end of the association (the “whole”) can be marked as an aggregate.</li>
+<li>The relationship is <strong>transitive</strong>, meaning aggregation links must form a directed, acyclic graph. An object cannot be a direct or indirect part of itself.</li>
+<li>The “part” can be included in <strong>several</strong> composites simultaneously, and if the composite “whole” is deleted, the part may still exist.</li>
+</ul>
+<p><strong>Notation:</strong> Aggregation is depicted as an association with a <strong>hollow diamond</strong> at the “whole” or aggregate end of the line.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/aggregation-triangle-example.png" class="img-fluid figure-img" style="width:50.0%" alt="A Triangle class connected by an aggregation to a Line Segment class."></p>
+<figcaption>A UML diagram showing that a Triangle is an aggregation of three Line Segments.</figcaption>
+</figure>
+</div>
+<p>In the example above, a <code>Triangle</code> is an aggregate of exactly three <code>Segment</code>. The <code>*</code> multiplicity at the <code>Triangle</code> end signifies that a <code>Segment</code> can be a part of multiple triangles or none at all. Deleting a <code>Triangle</code> object does not delete the <code>Segment</code> objects.</p>
+<section id="common-mistakes-with-aggregation" class="level4" data-number="3.4.2.1">
+<h4 data-number="3.4.2.1" class="anchored" data-anchor-id="common-mistakes-with-aggregation"><span class="header-section-number">3.4.2.1</span> Common Mistakes with Aggregation</h4>
+<p>{#sec-common-mistakes}</p>
+<p>It is crucial to use aggregation correctly to avoid creating logically inconsistent models. Here are two common mistakes to avoid:</p>
+<p><strong>Mistake 1: Marking both ends as an aggregate.</strong> Aggregation is an asymmetric relationship. The UML specification does not allow a diamond on both ends of an association line. This is an incorrect attempt to model a many-to-many relationship where, for example, a <code>Student</code> has a list of <code>Course</code> and a <code>Course</code> has a list of <code>Student</code>. The correct way to model this is with a simple association or an association class.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/aggregation-mistake-1.png" class="img-fluid figure-img" style="width:50.0%" alt="An incorrect UML diagram with aggregation diamonds on both ends."></p>
+<figcaption>An incorrect UML diagram with aggregation diamonds on both ends of an association.</figcaption>
+</figure>
+</div>
+<p><strong>Mistake 2: Creating cyclic relationships.</strong> Aggregation links must form a directed, acyclic graph. This means a composite object cannot be a direct or indirect part of itself. Creating a cycle where <code>Student</code> is part of <code>Course</code> and <code>Course</code> is part of <code>Student</code> is a logical error.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/aggregation-mistake-2.png" class="img-fluid figure-img" style="width:50.0%" alt="An incorrect UML diagram showing a cyclic aggregation."></p>
+<figcaption>An incorrect UML diagram showing a cyclic aggregation.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="composition-the-owns-a-relationship" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="composition-the-owns-a-relationship"><span class="header-section-number">3.4.3</span> Composition: The “Owns-A” Relationship</h3>
+<p><strong>Composition</strong> represents a “strong” form of aggregation with co-incident lifetime of the parts with the whole. It’s a whole/part relationship where a part can belong to <strong>at most one</strong> composite (whole) at a time.</p>
+<p><strong>Notation:</strong> Composition is depicted as an association with a <strong>filled black diamond</strong> at the aggregate (whole) end.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/composition-folder-example.png" class="img-fluid figure-img" style="width:50.0%" alt="A Folder class connected by a composition to a File class."></p>
+<figcaption>A UML diagram showing that a Folder is a composition of multiple Files.</figcaption>
+</figure>
+</div>
+<p>Composition has the following key characteristics:</p>
+<ul>
+<li><strong>Existential Dependency:</strong> If a composite (whole) is deleted, all of its composite parts are normally deleted with it. In the example above, if a <code>Folder</code> is deleted, all <code>File</code>s it contains are also deleted.</li>
+<li><strong>Exclusive Ownership:</strong> A part can only belong to one whole at a time. A <code>File</code> cannot be in two different <code>Folder</code> simultaneously.</li>
+<li><strong>Figurative Interpretation:</strong> In domain models, the concept of “deletion” should be interpreted figuratively. For example, if a <code>Hospital</code> is composed of <code>Department</code>, closing the hospital also implies closing all its departments, even if the objects are not physically destroy.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/composition-hospital-example.png" class="img-fluid figure-img" style="width:50.0%" alt="A Hospital class connected by a composition to a Department class."></p>
+<figcaption>A UML diagram showing that a Hospital is a composition of multiple Departments.</figcaption>
+</figure>
+</div>
+<p>It’s also important to note that the UML specification does not dictate <em>how</em> or <em>when</em> the parts of a composite are created. Furthermore, a part can sometimes be removed from a composite before the whole is deleted, allowing it to survive independently in specific cases.</p>
+<p>Interestingly, the multiplicity of the composite (whole) end can be <code>0..1</code>, which means that a part is allowed to exist as a “stand-alone” instance, not owned by any specific composite at a particular time. Because Composition is a strong form of aggregation, it is subject to the same structural rules, and the common mistakes, previously discussed, apply to it as well.</p>
+</section>
+<section id="generalization-inheritance" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="generalization-inheritance"><span class="header-section-number">3.4.4</span> Generalization (Inheritance)</h3>
+<p>Generalization is a directed, taxonomic relationship between a more general classifier (the <strong>superclass</strong>) and a more specific classifier (the <strong>subclass</strong>). Each instance of the subclass is also considered an instance of the superclass, which is why this is informally known as an <strong>“Is A”</strong> relationship (e.g., a <code>Patient</code> is a <code>Person</code>).</p>
+<p><strong>Notation:</strong> Generalization is shown as a solid line with a <strong>hollow triangle arrowhead</strong> pointing from the subclass to the superclass.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/generalization-account-example.png" class="img-fluid figure-img" style="width:50.0%" alt="A generalization diagram for different account types."></p>
+<figcaption>A UML diagram showing Checking, Savings, and Credit Account classes inheriting from a general Account class.</figcaption>
+</figure>
+</div>
+<section id="inheritance-mechanism" class="level4" data-number="3.4.4.1">
+<h4 data-number="3.4.4.1" class="anchored" data-anchor-id="inheritance-mechanism"><span class="header-section-number">3.4.4.1</span> Inheritance Mechanism</h4>
+<p>Generalization is the conceptual relationship, while <strong>inheritance</strong> is the mechanism that implements it. Through inheritance, a subclass incorporates the structure (attributes) and behaviour (operations) of its superclass. In UML, this means the subclass inherits the features of the more general classifier, and any constraints applying to the superclass also apply to the subclass.</p>
+<section id="multiple-inheritance" class="level5" data-number="3.4.4.1.1">
+<h5 data-number="3.4.4.1.1" class="anchored" data-anchor-id="multiple-inheritance"><span class="header-section-number">3.4.4.1.1</span> Multiple Inheritance</h5>
+<p>UML implicitly allows a class to have more than one superclass, a concept known as <strong>multiple inheritance</strong>. This is often used when combining orthogonal classification schemes (e.g., classifying an <code>Employee</code> by contract type and by role).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/multiple-inheritance.png" class="img-fluid figure-img" style="width:50.0%" alt="A diagram of multiple inheritance."></p>
+<figcaption>A diagram illustrating the multiple inheritance.</figcaption>
+</figure>
+</div>
+<p>However, multiple inheritance introduces complexities, most famously the <strong>“diamond problem.”</strong> If a class inherits from two superclasses that both provide an implementation for the same operation, it becomes ambiguous which implementation the subclass should use. UML does not define a standard resolution for this issue, leaving it to the implementation language (e.g., Java prohibits multiple inheritance of classes to avoid this).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/diamond-problem.png" class="img-fluid figure-img" style="width:50.0%" alt="A diagram of the diamond problem."></p>
+<figcaption>A diagram illustrating the diamond problem in multiple inheritance.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="generalization-sets" class="level4" data-number="3.4.4.2">
+<h4 data-number="3.4.4.2" class="anchored" data-anchor-id="generalization-sets"><span class="header-section-number">3.4.4.2</span> Generalization Sets</h4>
+<p>To add more precision to classification hierarchies, UML provides the <strong>Generalization Set</strong>. This is a way to group related generalization relationships and apply constraints to them. The two main constraints are:</p>
+<ul>
+<li><strong>{complete} vs.&nbsp;{incomplete}:</strong>
+<ul>
+<li><strong><code>{complete}</code>:</strong> Specifies that every instance of the superclass <strong>must</strong> also be an instance of at least one of the subclasses in the set. There are no “standalone” instances of the superclass.</li>
+<li><strong><code>{incomplete}</code>:</strong> Allows for instances of the superclass that do not belong to any of the specified subclasses. This is the default.</li>
+</ul></li>
+<li><strong>{disjoint} vs.&nbsp;{overlapping}:</strong>
+<ul>
+<li><strong><code>{disjoint}</code>:</strong> Specifies that an instance of the superclass can be an instance of <strong>at most one</strong> of the subclasses in the set.</li>
+<li><strong><code>{overlapping}</code>:</strong> Allows an instance of the superclass to be an instance of <strong>multiple</strong> subclasses in the set simultaneously.</li>
+</ul></li>
+</ul>
+<p>A generalization set that is <code>{disjoint, complete}</code> is known as a <strong>partition</strong>. This means every instance of the superclass is an instance of exactly one of the subclasses.</p>
+<p>These constraints are written near the generalization arrowhead, often next to a dashed line connecting the generalization arrows.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/generalization-set-example.png" class="img-fluid figure-img" style="width:80.0%" alt="A UML diagram showing generalization sets for a Health Insurance Policy."></p>
+<figcaption>An example of generalization sets for a Health Insurance Policy.</figcaption>
+</figure>
+</div>
+<p>In the example above, the <code>Health Insurance Policy</code> has two different generalization sets:</p>
+<ol type="1">
+<li>The set based on <code>CoverageType</code> is <strong><code>{complete, overlapping}</code></strong>. This means every policy must have at least one coverage type, and a single policy could potentially be both a <code>Job Based Insurance</code> and a <code>Self Insurance</code>.</li>
+<li>The set based on <code>InsurancePlan</code> is <strong><code>{incomplete, disjoint}</code></strong>. This means a policy can be at most one type of plan (e.g., either <code>HMO</code> or <code>PPO</code>, but not both), and there might be other types of plans not listed in the diagram.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="object-diagrams-a-snapshot-of-reality" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="object-diagrams-a-snapshot-of-reality"><span class="header-section-number">3.5</span> Object Diagrams: A Snapshot of Reality</h2>
+<p>While a class diagram models the abstract <em>types</em>, an <strong>Object Diagram</strong> shows a snapshot of the concrete <em>instances</em> in a system at a particular point in time. It provides a real-world example of the structures defined in a class diagram.</p>
+<p>An object diagram shows:</p>
+<ul>
+<li><strong>Objects:</strong> Instances of classes.</li>
+<li><strong>Slots:</strong> The current values for the attributes of each object.</li>
+<li><strong>Links:</strong> Instances of the associations between classes.</li>
+</ul>
+<p>Object diagrams are invaluable for illustrating complex class diagrams and validating that your abstract model can represent real-world scenarios correctly.</p>
+<section id="representing-instances" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="representing-instances"><span class="header-section-number">3.5.1</span> Representing Instances</h3>
+<p>In UML, objects are rendered as <strong>instance specifications</strong>. The notation is flexible, allowing you to show as much or as little detail as necessary.</p>
+<p>The most complete notation is <code>InstanceName : ClassName :: Namespace</code>, with all the name underlined.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/object-notation-examples.png" class="img-fluid figure-img" style="width:20.0%" alt="Various notations for UML object diagrams."></p>
+<figcaption>A UML diagram showing an object.</figcaption>
+</figure>
+</div>
+<p>Here are the common variations:</p>
+<ul>
+<li><strong>Named Instance:</strong> <code>order12 : Order</code> - An object named <code>order12</code> of the <code>Order</code> class.</li>
+<li><strong>Anonymous Instance:</strong> <code>:Order</code> - An anonymous (unnamed) object of the <code>Order</code> class.</li>
+<li><strong>Instance of Unknown Class:</strong> <code>newPatient :</code> - An object named <code>newPatient</code> whose class is either unknown or not specified.</li>
+<li><strong>Fully Specified Instance:</strong> <code>front-facing-cam : android.hardware :: Camera</code> - Shows the instance name, class, and the package it belongs to.</li>
+</ul>
+</section>
+<section id="showing-an-objects-state-slots" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="showing-an-objects-state-slots"><span class="header-section-number">3.5.2</span> Showing an Object’s State (Slots)</h3>
+<p>The primary purpose of an object diagram is to show the state of objects at a specific moment. This is done by listing <strong>slots</strong>, which are the attribute names followed by an <code>=</code> and their current value.</p>
+<p>The type of the attribute can also be specified.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/object-slots-example.png" class="img-fluid figure-img" style="width:20.0%" alt="An object diagram showing an instance with its attribute values (slots)."></p>
+<figcaption>An object named ‘newPatient’ of class ‘Patient’, showing the values for its id, name, and gender attributes.</figcaption>
+</figure>
+</div>
+<p>In the example above, the <code>newPatient</code> object shows the following slots:</p>
+<ul>
+<li>The attribute <code>id</code>, of type <code>String</code>, has the value <code>"38-545-137"</code>.</li>
+<li>The attribute <code>name</code> has the value <code>"John Doe"</code>.</li>
+<li>The attribute <code>gender</code>, of type <code>Gender</code>, has the value <code>"male"</code>.</li>
+</ul>
+<p>This notation provides a clear and concise snapshot of an object’s state at a point in time.</p>
+</section>
+<section id="putting-it-all-together-a-complex-example" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="putting-it-all-together-a-complex-example"><span class="header-section-number">3.5.3</span> Putting It All Together: A Complex Example</h3>
+<p>Object diagrams truly shine when they are used to visualize a snapshot of a complex, real-world system. They serve as a powerful tool to validate that the static model (the class diagram) can accurately represent the dynamic state of the application at runtime.</p>
+<p>The diagram below shows a snapshot of a user authentication module at a specific moment:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/object-diagram-login-example.png" class="img-fluid figure-img" style="width:100.0%" alt="A complex object diagram for a login system."></p>
+<figcaption>A complex object diagram showing various instances like LoginController, UserManager, and CookieManager, and the links between them.</figcaption>
+</figure>
+</div>
+<p>This single diagram illustrates several key concepts simultaneously:</p>
+<ul>
+<li><strong>Named and Anonymous Instances:</strong> We can see named instances like <code>loginCtrl</code> and anonymous instances like the <code>:UserManager</code> interface.</li>
+<li><strong>Slots with Values:</strong> Objects like <code>loginCtrl</code> and <code>:CookieManager</code> show their internal state with specific values assigned to their attributes (e.g., <code>attemptLimit = 5</code>).</li>
+<li><strong>Links:</strong> The lines connecting the objects are <strong>links</strong>, representing runtime instances of associations. They can show roles (<code>-cookieMgr</code>) and navigability.</li>
+<li><strong>Collections:</strong> The diagram even shows a collection of five anonymous instances, demonstrating how multiplicity is represented at the object level.</li>
+</ul>
+<p>By creating such diagrams, developers can reason about specific scenarios, debug potential issues, and communicate the runtime structure of the system to other team members with a high degree of precision.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-intro-uml.html" class="pagination-link" aria-label="Introduction to UML">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-practical-exercises-class-diagrams.html" class="pagination-link" aria-label="Practical Exercises: Class Diagrams">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Exercises: Class Diagrams</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
