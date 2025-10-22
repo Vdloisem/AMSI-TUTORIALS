@@ -184,6 +184,7 @@ A Petri net is a directed graph composed of places, transitions, and arcs. An ar
 
 Model a class diagram to represent Petri nets, both with and without tokens. What is the difference?
 
+![The specific state of a Petri Net to be modelled.](images/exo-petri-net-problem.png){fig-alt="A Petri Net with four places, two transitions, and tokens." width="50%"}
 
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 

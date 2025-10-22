@@ -11,6 +11,21 @@ This chapter provides a series of practical exercises to apply the concepts of U
 **Problem:**
 Consider the state machine diagram below. Starting from the initial configuration `{A}`, trace the system's configuration through the given sequence of events.
 
+![State Machine for Exercise 1.](images/tp-ex1-statemachine.png){fig-alt="A state machine with a composite state B containing two orthogonal regions."}
+
+| Step | Initial Config. | Event | Final Config. | Justification                                                                                                                                                             |
+|:-----|:----------------|:------|:--------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | `{A}`           | y     |               |    |
+| 2    |                 | u     |               |    |
+| 3    |                 | q     |               |    |
+| 4    |                 | t     |               |    |
+| 5    |                 | q     |               |    |
+| 6    |                 | s     |               |    |
+| 7    |                 | u     |               |    |
+| 8    |                 | s     |               |    |
+| 9    |                 | t     |               |    |
+| 10   |                 | v     |               |    |
+
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 
 ![State Machine for Exercise 1.](images/tp-ex1-statemachine.png){fig-alt="A state machine with a composite state B containing two orthogonal regions."}
@@ -44,6 +59,23 @@ Consider the state machine diagram below. Starting from the initial configuratio
 
 **Problem:**
 Consider the state machine `Z`, which uses the submachine `C`. Starting from the initial configuration `{Z, A, B}`, trace the system's configuration for the given event sequence.
+
+![State Machine and Submachine for Exercise 2.](images/tp-ex2-statemachine.png){fig-alt="A complex state machine Z with a reference to a submachine C."}
+
+| Step | Initial Config.     | Event | Final Config.     | Justification                                                                                                                                                                             |
+|:-----|:--------------------|:------|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | `{Z, A, B}`         | s     |                   |     |
+| 2    |                     | u     |                   |     |
+| 3    |                     | r     |                   |     |
+| 4    |                     | u     |                   |     |
+| 5    |                     | x     |                   |     |
+| 6    |                     | v     |                   |     |
+| 7    |                     | z     |                   |     |
+| 8    |                     | y     |                   |     |
+| 9    |                     | t     |                   |     |
+| 10   |                     | u     |                   |     |
+| 11   |                     | u     |                   |     |
+| 12   |                     | x     |                   |     |
 
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 
@@ -81,24 +113,40 @@ Consider the state machine `Z`, which uses the submachine `C`. Starting from the
 **Problem:**
 For the highly complex state machine below, trace the configuration starting from `{A, B, F, H}`. This exercise will test your understanding of conflict resolution.
 
+![State Machine for Exercise 3.](images/tp-ex3-statemachine.png){fig-alt="A very complex hierarchical and orthogonal state machine."}
+
+| Step | Initial Config. | Event     | Final Config. | Justification                                                                                                                                                                                                                                                                             |
+|:----|:----------------|:----------|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1   | `{A, B, F, H}`  | m1        |               |          |
+| 2   |                 | m2 / m3   |               |          |
+| 3   |                 | m4        |               |          |
+| 4   |                 | m4        |               |          |
+| 5   |                 | m3        |               |          |
+| 6   |                 | m1        |               |          |
+| 7   |                 | m1        |               |          |
+| 8   |                 | m8        |               |          |
+| 9   |                 | m3 / m8   |               |          |
+| 10  |                 | m1        |               |          |
+
+
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 
 ![State Machine for Exercise 3.](images/tp-ex3-statemachine.png){fig-alt="A very complex hierarchical and orthogonal state machine."}
 
 **Correction Details:**
 
-| No. | Initial Config. | Event     | Final Config. | Justification                                                                                                                                                                                                                                                                             |
+| Step | Initial Config. | Event     | Final Config. | Justification                                                                                                                                                                                                                                                                             |
 |:----|:----------------|:----------|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1   | `{A, B, F, H}`  | m1        | `{A, B, F, H}`| The system leaves `A` and re-enters it. `B` is the initial state, `F` is restored due to History, and `H` is the initial state.                                                                                                                                                              |
-| 2   | `{A, B, F, H}`  | `m2/m3`   | `{A, B, G, H}`| `m2` is the event, `m3` is the reaction. The `F -> G` transition fires, launching `m3`. A conflict arises between the high-level `B -> C` transition and the nested `H -> H` self-transition. The `H -> H` transition has priority because it is more deeply nested. `m3` is consumed, and the final stable state is `{A, B, G, H}`. |
+| 2   | `{A, B, F, H}`  | m2 / m3   | `{A, B, G, H}`| `m2` is the event, `m3` is the reaction. The `F -> G` transition fires, launching `m3`. A conflict arises between the high-level `B -> C` transition and the nested `H -> H` self-transition. The `H -> H` transition has priority because it is more deeply nested. `m3` is consumed, and the final stable state is `{A, B, G, H}`. |
 | 3   | `{A, B, G, H}`  | m4        | `{A, D}`      | The `B -> D` transition occurs.                                                                                                                                                                                                                                                           |
 | 4   | `{A, D}`        | m4        | `{A, B, G, H}`| The `D -> B` transition occurs. `G` is restored due to history, and `H` is activated as the initial state.                                                                                                                                                                                  |
 | 5   | `{A, B, G, H}`  | m3        | `{A, B, G, H}`| The system leaves `H` and re-enters it; the `H -> H` transition is the most deeply nested and thus has priority.                                                                                                                                                                         |
 | 6   | `{A, B, G, H}`  | m1        | `{A, B, F, H}`| The `G -> F` transition is the most deeply nested.                                                                                                                                                                                                                                        |
 | 7   | `{A, B, F, H}`  | m1        | `{A, B, F, H}`| The system leaves `A` and re-enters it. `B` is the initial state, `F` is restored due to History, and `H` is the initial state.                                                                                                                                                              |
 | 8   | `{A, B, F, H}`  | m8        | `{A, B, F, H}`| Nothing happens.                                                                                                                                                                                                                                                                          |
-| 9   | `{A, B, F, H}`  | `m3/m8`   | `{A, B, F, H}`| The system leaves `H` and re-enters it. The `H -> H` transition is the most deeply nested (the reaction `m8` is not considered here).                                                                                                                                                     |
-| 10  | `{A, B, F, H}`  | m1        | `{A, B, F, H}`| Same as step 7.                                                                                                                                                                                                                                                                           |`. The top-right region has no history and resets to its initial state `H`.
+| 9   | `{A, B, F, H}`  | m3 / m8   | `{A, B, F, H}`| The system leaves `H` and re-enters it. The `H -> H` transition is the most deeply nested (the reaction `m8` is not considered here).                                                                                                                                                     |
+| 10  | `{A, B, F, H}`  | m1        | `{A, B, F, H}`| Same as step 7 |
 
 **Key Concepts Illustrated:**
 

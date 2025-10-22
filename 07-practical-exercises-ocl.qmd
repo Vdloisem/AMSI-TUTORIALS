@@ -8,7 +8,7 @@ This chapter provides a series of practical exercises to apply the concepts of t
 ### Exercise 1: Uniqueness of an Identifier
 
 **Problem:**
-Using the diagram for people and cars, write an OCL constraint to guarantee that each person has a unique identification number (`num`) across all instances of the `Personne` class[cite: 24].
+Using the diagram for people and cars, write an OCL constraint to guarantee that each person has a unique identification number (`num`) across all instances of the `Personne` class.
 
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 
@@ -16,18 +16,18 @@ Using the diagram for people and cars, write an OCL constraint to guarantee that
 
 **Correction Details:**
 
-The goal is to ensure that the `num` attribute is unique for every person in the system[cite: 28]. In OCL, this can be expressed in two equivalent ways[cite: 29].
+The goal is to ensure that the `num` attribute is unique for every person in the system. In OCL, this can be expressed in two equivalent ways.
 
-* **Formulation 1: Using `isUnique()`** [cite: 30]
+* **Formulation 1: Using `isUnique()`** 
     This is the most direct and readable way to express the constraint. The `isUnique()` operation checks if a given property is unique for all elements in a collection.
 
     ```ocl
     context Personne inv pKeyPersonne:
       Personne.allInstances()->isUnique(num)
     ```
-    * **Explanation:** This invariant states that for the entire collection of `Personne.allInstances()`, the value of the `num` attribute must be unique for each instance[cite: 32].
+    * **Explanation:** This invariant states that for the entire collection of `Personne.allInstances()`, the value of the `num` attribute must be unique for each instance.
 
-* **Formulation 2: Using `forAll()`** [cite: 34]
+* **Formulation 2: Using `forAll()`** 
     This formulation uses the universal quantifier `forAll()` to express the same logic by comparing every pair of `Personne` instances.
 
     ```ocl
@@ -36,21 +36,21 @@ The goal is to ensure that the `num` attribute is unique for every person in the
         p1 <> p2 implies p1.num <> p2.num
       )
     ```
-    * **Explanation:** This invariant iterates over all possible pairs of `Personne` instances (`p1` and `p2`)[cite: 37]. It states that **for all** pairs, **if** `p1` and `p2` are different objects, **then** their `num` attributes must also be different[cite: 37].
+    * **Explanation:** This invariant iterates over all possible pairs of `Personne` instances (`p1` and `p2`). It states that **for all** pairs, **if** `p1` and `p2` are different objects, **then** their `num` attributes must also be different.
 
 **Key Concepts Illustrated:**
 
-* **Context:** The `context Personne` declaration specifies that the constraint applies to the `Personne` class[cite: 31].
-* **Invariant (`inv`):** An invariant is a rule that must always be true for all instances of a class throughout their lifetime[cite: 25].
-* **`allInstances()`:** A class-level operation that returns a collection of all instances of that class in the system[cite: 31, 36].
-* **Collection Operations:** This exercise showcases two fundamental collection operations: `isUnique()` for a direct check [cite: 31] and `forAll()` for expressing complex logical conditions on all elements[cite: 36].
+* **Context:** The `context Personne` declaration specifies that the constraint applies to the `Personne` class.
+* **Invariant (`inv`):** An invariant is a rule that must always be true for all instances of a class throughout their lifetime.
+* **`allInstances()`:** A class-level operation that returns a collection of all instances of that class in the system.
+* **Collection Operations:** This exercise showcases two fundamental collection operations: `isUnique()` for a direct check and `forAll()` for expressing complex logical conditions on all elements.
 
 :::
 
 ### Exercise 2: Uniqueness Within a Group
 
 **Problem:**
-For the company organization model, an employee's ID number (`matricule`) must be unique within their department, but not necessarily across the entire company[cite: 59]. Write an OCL constraint to enforce this rule.
+For the company organization model, an employee's ID number (`matricule`) must be unique within their department, but not necessarily across the entire company. Write an OCL constraint to enforce this rule.
 
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 
@@ -58,26 +58,27 @@ For the company organization model, an employee's ID number (`matricule`) must b
 
 **Correction Details:**
 
-The key to this problem is choosing the correct context. The constraint is about the uniqueness of employees *within a department*, so the most logical context is `Departement`[cite: 72].
+The key to this problem is choosing the correct context. The constraint is about the uniqueness of employees *within a department*, so the most logical context is `Departement`.
 
-* **Correct Solution: Context `Departement`** [cite: 68]
-    This approach is simple and directly models the requirement[cite: 70]. It evaluates the constraint for each department individually[cite: 72]. An idiomatic way to write this is using `isUnique()`:
+* **Correct Solution: Context `Departement`** 
+    This approach is simple and directly models the requirement. It evaluates the constraint for each department individually. An idiomatic way to write this is using `isUnique()`:
 
     ```ocl
     context Departement inv pKeyEmploye:
       self.employe->isUnique(matricule)
     ```
-    The provided source also shows an equivalent formulation using `forAll`[cite: 70]:
+    The provided source also shows an equivalent formulation using `forAll`:
+    
     ```ocl
     context Departement inv pKeyEmploye:
       self.employe->forAll(e1, e2 | e1 <> e2 implies e1.matricule <> e2.matricule)
     ```
-    * **Explanation:** For each instance of `Departement` (`self`), we navigate the `employe` association to get the collection of employees in that department. We then ensure that all `matricule` attributes within that collection are unique[cite: 71].
+    * **Explanation:** For each instance of `Departement` (`self`), we navigate the `employe` association to get the collection of employees in that department. We then ensure that all `matricule` attributes within that collection are unique.
 
 **Key Concepts Illustrated:**
 
-* **Choosing the Right Context:** This is the most important lesson. Placing the invariant in the `Departement` context radically simplifies the expression and makes the intent clear[cite: 72].
-* **Navigation:** The expression `self.employe` demonstrates navigation across an association from an instance of one class to a collection of related instances[cite: 70].
+* **Choosing the Right Context:** This is the most important lesson. Placing the invariant in the `Departement` context radically simplifies the expression and makes the intent clear.
+* **Navigation:** The expression `self.employe` demonstrates navigation across an association from an instance of one class to a collection of related instances.
 * **Scoped Uniqueness:** This exercise contrasts with the first one by showing how to enforce uniqueness within a specific scope (a department) rather than globally.
 
 :::
@@ -85,7 +86,7 @@ The key to this problem is choosing the correct context. The constraint is about
 ### Exercise 3: Preventing Circular Composition
 
 **Problem:**
-In the geometric figures model, a composite figure (`FigureComposee`) is made up of other figures. It is crucial to prevent circular compositions, where a figure could contain itself, either directly or indirectly[cite: 91]. Write an OCL constraint to forbid this.
+In the geometric figures model, a composite figure (`FigureComposee`) is made up of other figures. It is crucial to prevent circular compositions, where a figure could contain itself, either directly or indirectly. Write an OCL constraint to forbid this.
 
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 
@@ -96,16 +97,16 @@ In the geometric figures model, a composite figure (`FigureComposee`) is made up
 This problem requires two levels of solution: one for direct cycles and a more advanced one for indirect cycles.
 
 * **Solution 1: Preventing Direct Cycles**
-    This constraint prevents a `FigureComposee` from including itself in its immediate list of sub-figures[cite: 98, 101].
+    This constraint prevents a `FigureComposee` from including itself in its immediate list of sub-figures.
 
     ```ocl
     context FigureComposee inv circularComposition:
       not self.figure->includes(self)
     ```
-    * **Explanation:** For any instance of `FigureComposee` (`self`), this invariant checks the collection of its direct sub-figures (`self.figure`) and asserts that the collection does not include the instance itself[cite: 99].
+    * **Explanation:** For any instance of `FigureComposee` (`self`), this invariant checks the collection of its direct sub-figures (`self.figure`) and asserts that the collection does not include the instance itself.
 
 * **Solution 2: Preventing Indirect Cycles (Advanced)**
-    The first solution is insufficient because it doesn't prevent A from containing B, which in turn contains A[cite: 102]. To solve this, we need a recursive query to find *all* sub-figures at any level of nesting (the transitive closure)[cite: 103, 114].
+    The first solution is insufficient because it doesn't prevent A from containing B, which in turn contains A. To solve this, we need a recursive query to find *all* sub-figures at any level of nesting (the transitive closure).
 
     ```ocl
     context FigureComposee
@@ -121,20 +122,20 @@ This problem requires two levels of solution: one for direct cycles and a more a
     inv noCircularComposition:
       not self.allSubFigures()->includes(self)
     ```
-    * **Explanation:** We first define a helper operation `allSubFigures()` that recursively collects all direct figures and all sub-figures of any composite children[cite: 114]. The invariant `noCircularComposition` then uses this function to check that `self` is not present in the complete set of its descendants, thus preventing all direct and indirect cycles[cite: 113, 114].
+    * **Explanation:** We first define a helper operation `allSubFigures()` that recursively collects all direct figures and all sub-figures of any composite children. The invariant `noCircularComposition` then uses this function to check that `self` is not present in the complete set of its descendants, thus preventing all direct and indirect cycles.
 
 **Key Concepts Illustrated:**
 
 * **`includes()`:** A collection operation that checks for the presence of an element.
-* **Helper Operations (`def`)**: OCL allows the definition of custom, reusable queries, which is essential for complex logic like recursion[cite: 103].
-* **Recursion and Transitive Closure:** The `allSubFigures()` operation is a classic example of using recursion to navigate a hierarchical structure to find all connected nodes[cite: 114].
+* **Helper Operations (`def`)**: OCL allows the definition of custom, reusable queries, which is essential for complex logic like recursion.
+* **Recursion and Transitive Closure:** The `allSubFigures()` operation is a classic example of using recursion to navigate a hierarchical structure to find all connected nodes.
 
 :::
 
 ### Exercise 4: Constraining Family Relationships
 
 **Problem:**
-Using the family links diagram, impose a constraint to forbid a person from being both a parent and a spouse to the same other person[cite: 125].
+Using the family links diagram, impose a constraint to forbid a person from being both a parent and a spouse to the same other person.
 
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
 
@@ -142,7 +143,7 @@ Using the family links diagram, impose a constraint to forbid a person from bein
 
 **Correction Details:**
 
-The constraint needs to ensure that the set of a person's children and the set of a person's spouses are disjoint (have no common elements)[cite: 126].
+The constraint needs to ensure that the set of a person's children and the set of a person's spouses are disjoint (have no common elements).
 
 ```ocl
 context Personne inv notChildParentsMarriage:
