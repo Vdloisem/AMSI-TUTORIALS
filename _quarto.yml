@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "AMSI-TUTORIALS"
@@ -14,7 +15,6 @@ book:
     - 05-practical-exercises-object-diagrams.qmd
     - 06-ocl.qmd
     - 07-practical-exercises-ocl.qmd
-    - 07b-practical-exercices-recap-class-object-ocl.qmd
     - 08-state-machine-diagrams.qmd
     - 09-practical-exercises-state-machine-diagrams.qmd
 
@@ -28,8 +28,6 @@ format:
       - brand
   pdf:
     documentclass: scrreprt
-
-output-dir: docs
 
 
 
