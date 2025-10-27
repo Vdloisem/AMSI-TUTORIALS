@@ -1,5 +1,11 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+Welcome to this guide dedicated to the practical exercises for the Analyse et Modélisation des Systèmes d'Information (AMSI) course. As the author, I've compiled these exercises to support your learning and help you master the modeling techniques presented in the course taught by Tony Leclercq, substitute for Professor Patrick Heymans.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This book aims to be a practical companion to the lectures. You will find here a series of exercises covering essential UML diagrams, as well as the Object Constraint Language (OCL). Each chapter typically presents a modeling problem, followed by a detailed solution and explanations designed to clarify the key concepts.
+
+My goal is to help you bridge the gap between theory and practice. By working through these examples, I hope you'll gain confidence in applying analysis and modeling methods to concrete situations, reinforcing the skills developed during the AMSI course.
+
+Consider this book a supplementary resource to assist you in successfully completing the practical work associated with the course. I wish you productive practice sessions!
+
+Mikel Vandeloise [Personal Website](https://vdloisem.github.io/MikelVandeloise.github.io/)

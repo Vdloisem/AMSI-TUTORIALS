@@ -4,7 +4,6 @@ title: "Practical Exercises: State Machines"
 
 This chapter provides a series of practical exercises to apply the concepts of UML State Machines discussed previously. Each exercise challenges you to trace the execution of a complex state machine by applying semantic rules to determine the stable configuration after each event.
 
----
 
 ### Exercise 1: Orthogonal Regions and History
 
@@ -53,7 +52,6 @@ Consider the state machine diagram below. Starting from the initial configuratio
 
 :::
 
----
 
 ### Exercise 2: Submachines and Deep History
 
@@ -106,7 +104,6 @@ Consider the state machine `Z`, which uses the submachine `C`. Starting from the
 
 :::
 
----
 
 ### Exercise 3: Advanced Semantics and Priority Rules
 

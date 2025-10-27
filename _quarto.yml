@@ -17,7 +17,9 @@ book:
     - 07-practical-exercises-ocl.qmd
     - 08-state-machine-diagrams.qmd
     - 09-practical-exercises-state-machine-diagrams.qmd
-
+    - 10-practical-exercices-state-machine-modelisation.qmd
+    - 11-ActivityDiagram.qmd
+    - 12-practical-exercices-activity-diagrams.qmd
 
 bibliography: references.bib
 

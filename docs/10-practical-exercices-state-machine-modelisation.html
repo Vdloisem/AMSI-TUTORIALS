@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Introduction to UML – AMSI-TUTORIALS</title>
+<title>10&nbsp; Practical Exercises: State Machine Diagrams – AMSI-TUTORIALS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03-class-diagrams.html" rel="next">
-<link href="./01-intro-modelling.html" rel="prev">
+<link href="./11-ActivityDiagram.html" rel="next">
+<link href="./09-practical-exercises-state-machine-diagrams.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-intro-uml.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-practical-exercices-state-machine-modelisation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machine Diagrams</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -121,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link active">
+  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></span></a>
   </div>
 </li>
@@ -169,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-practical-exercices-state-machine-modelisation.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-practical-exercices-state-machine-modelisation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machine Diagrams</span></span></a>
   </div>
 </li>
@@ -195,13 +195,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#uml-in-a-nutshell" id="toc-uml-in-a-nutshell" class="nav-link active" data-scroll-target="#uml-in-a-nutshell"><span class="header-section-number">2.1</span> UML in a Nutshell</a></li>
-  <li><a href="#history-and-philosophy" id="toc-history-and-philosophy" class="nav-link" data-scroll-target="#history-and-philosophy"><span class="header-section-number">2.2</span> History and Philosophy</a></li>
-  <li><a href="#uml-diagrams-an-overview" id="toc-uml-diagrams-an-overview" class="nav-link" data-scroll-target="#uml-diagrams-an-overview"><span class="header-section-number">2.3</span> UML Diagrams: An Overview</a>
-  <ul class="collapse">
-  <li><a href="#structure-diagrams-static-view" id="toc-structure-diagrams-static-view" class="nav-link" data-scroll-target="#structure-diagrams-static-view"><span class="header-section-number">2.3.1</span> Structure Diagrams (Static View)</a></li>
-  <li><a href="#behaviour-diagrams-dynamic-view" id="toc-behaviour-diagrams-dynamic-view" class="nav-link" data-scroll-target="#behaviour-diagrams-dynamic-view"><span class="header-section-number">2.3.2</span> Behaviour Diagrams (Dynamic View)</a></li>
-  </ul></li>
+  <li><a href="#exercise-1-traffic-light-system" id="toc-exercise-1-traffic-light-system" class="nav-link active" data-scroll-target="#exercise-1-traffic-light-system"><span class="header-section-number">10.0.1</span> Exercise 1: Traffic Light System</a></li>
+  <li><a href="#exercise-2-vcr-magnetoscope" id="toc-exercise-2-vcr-magnetoscope" class="nav-link" data-scroll-target="#exercise-2-vcr-magnetoscope"><span class="header-section-number">10.0.2</span> Exercise 2: VCR (Magnetoscope)</a></li>
   </ul>
 </nav>
     </div>
@@ -210,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machine Diagrams</span></h1>
 </div>
 
 
@@ -227,65 +222,199 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter provides an overview of the Unified Modelling Language (UML), the industry-standard language for specifying, visualizing, constructing, and documenting the artifacts of software systems.</p>
-<section id="uml-in-a-nutshell" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="uml-in-a-nutshell"><span class="header-section-number">2.1</span> UML in a Nutshell</h2>
-<p>UML is a <strong>general-purpose visual Modelling language</strong> designed to provide a standard way to visualize the design of a system. It is crucial to understand what UML is and what it is not:</p>
+<p>This chapter provides practical exercises to apply the concepts of UML State Machine Diagrams. Each exercise presents a problem description and a context (like a class diagram), followed by the task of modeling the dynamic behavior using a state machine.</p>
+<section id="exercise-1-traffic-light-system" class="level3" data-number="10.0.1">
+<h3 data-number="10.0.1" class="anchored" data-anchor-id="exercise-1-traffic-light-system"><span class="header-section-number">10.0.1</span> Exercise 1: Traffic Light System</h3>
+<p><strong>Problem:</strong> Model the behavior of a traffic light system located at the intersection of two major roads. The system controls three bulbs (red, orange, green), includes an internal clock, and a sensor to detect if at least 5 cars are waiting. The system operates in three modes: <strong>Initialization</strong>, <strong>Day Mode</strong>, and <strong>Night Mode</strong>.</p>
 <ul>
-<li><strong>Unified:</strong> It is an industry standard managed by the Object Management Group (OMG), an international consortium of major software companies like IBM and Microsoft. Its goal is to be the <em>lingua franca</em> for business analysts, software architects, and developers.</li>
-<li><strong>Modelling:</strong> It is primarily a graphical language used to create models of both application domains (the problem) and software systems (the solution).</li>
-<li><strong>Language:</strong> It provides a set of notations (diagrams) but is <strong>not a method or a process</strong>. A process provides guidance on the order of activities and the artifacts to be developed, whereas UML is intentionally process-independent.</li>
+<li><strong>Initialization:</strong> Triggered on power-up. Checks sensors and bulbs. If okay, transitions to Day or Night mode based on the current time.</li>
+<li><strong>Day Mode:</strong> Active from 05:00:00 to 22:59:59. Starts with Red for 30s. Red and Green lights normally last 30s each. However, if the sensor detects &gt;= 5 cars just before switching to Green, the Green light lasts 60s instead. The transition from Green to Red includes a 2s Orange light.</li>
+<li><strong>Night Mode:</strong> Active from 23:00:00 to 04:59:59. Triggered only when the Day mode is in the Red state at 23:00:00. The Orange light flashes (1s on, 1s off).</li>
+<li><strong>Transitions between Day/Night:</strong> Switches to Night mode at 23:00:00 (if Red). Switches back to Day mode at 05:00:00.</li>
 </ul>
-<p>Despite some criticisms, UML remains the undisputed leader in software Modelling, supported by a vast number of tools and methods.</p>
-</section>
-<section id="history-and-philosophy" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="history-and-philosophy"><span class="header-section-number">2.2</span> History and Philosophy</h2>
-<p>UML was created in the mid-1990s from the unification of several popular object-oriented modelling methods, most notably those of Booch, Rumbaugh (OMT), and Jacobson (OOSE), often called the “three amigos”. It was standardized by the OMG in November 1997 (UML 1.1) and has evolved significantly since then, with the current version being UML 2.5.</p>
-<p>The philosophy behind UML is one of <strong>unification by union, rather than intersection</strong>. This means it aims to be highly versatile and capable of representing entire systems across various domains like real-time systems, banking, and scientific applications.</p>
-<p>This versatility, however, comes with a trade-off:</p>
-<ul>
-<li><strong>Pros:</strong> UML is a well-accepted standard, versatile, and supported by many tools.</li>
-<li><strong>Cons:</strong> It can be overly complex, with “too many constructs for some concerns and missing ones for others”. It also has a relative lack of formality and coordination between its various notations, which can lead to ambiguity.</li>
-</ul>
-</section>
-<section id="uml-diagrams-an-overview" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="uml-diagrams-an-overview"><span class="header-section-number">2.3</span> UML Diagrams: An Overview</h2>
-<p>UML provides a wide range of diagrams to model different aspects of a system. These are broadly categorized into two main types: <strong>Structure Diagrams</strong> and <strong>Behaviour Diagrams</strong>.</p>
+<p><strong>Context:</strong> A simplified class diagram shows the <code>FEU TRICOLORE</code> (Traffic Light) interacting with <code>COMPTEUR VOITURES</code> (Car Counter) and <code>HORLOGE</code> (Clock).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/uml-diagram-hierarchy.png" class="img-fluid figure-img" style="width:80.0%" alt="Hierarchy of UML Diagrams"></p>
-<figcaption>A diagram showing the hierarchy of UML diagrams, separating Structure and Behaviour diagrams.</figcaption>
+<p><img src="images/tp5-feu-tricolore-cd.png" class="img-fluid figure-img" style="width:70.0%" alt="Class diagram showing Feu Tricolore, Compteur Voitures, and Horloge."></p>
+<figcaption>Simplified Class Diagram for the Traffic Light System.</figcaption>
 </figure>
 </div>
-<section id="structure-diagrams-static-view" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="structure-diagrams-static-view"><span class="header-section-number">2.3.1</span> Structure Diagrams (Static View)</h3>
-<p>These diagrams depict the static structure of the system, its components, and the relationships between them at different levels of abstraction. They represent the elements that must be present in the system being modelled.</p>
+<p><strong>Task:</strong></p>
+<ol type="1">
+<li>Model the traffic light’s behavior using a UML State Machine Diagram.</li>
+<li>Modify the diagram to handle synchronization with an identical traffic light on the intersecting road: when one light goes from Green to Orange, the other goes from Red to Green. Document any assumptions made.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tp5-feu-tricolore-sm-solution.png" class="img-fluid figure-img" alt="State machine diagram showing Initialization, Day, and Night composite states with substates for Red, Green, Orange, and flashing."></p>
+<figcaption>State Machine Diagram for the Traffic Light System.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details :</strong></p>
 <ul>
-<li><strong>Class Diagram:</strong> The cornerstone of object-oriented modelling. It describes the structure of a system by showing its classes, attributes, operations, and the relationships among them.</li>
-<li><strong>Component Diagram:</strong> Depicts how a software system is split into modular components and shows the dependencies and interfaces among these components.</li>
-<li><strong>Deployment Diagram:</strong> Models the physical deployment of artifacts on nodes. It shows the hardware of your system and the software deployed on that hardware.</li>
-<li><strong>Object Diagram:</strong> Shows a snapshot of the instances in a system, the objects and their relationships, at a particular point in time. It is often considered a special case of a class diagram.</li>
-<li><strong>Package Diagram:</strong> Organizes elements of a system into groups (packages) to manage complexity. It shows the dependencies between these packages.</li>
-<li><strong>Composite Structure Diagram:</strong> Shows the internal structure of a class and the collaborations that this structure makes possible.</li>
-<li><strong>Profile Diagram:</strong> A specialized diagram used for extending the UML metamodel for specific platforms or domains.</li>
+<li><strong>Top-Level States:</strong> The machine starts in the <code>Initialisation</code> state. A transition with a guard <code>check_sensors()</code> leads to a choice point. Based on the time from <code>timer.get_time()</code>, it enters either the <code>Jour</code> (Day) or <code>Nuit</code> (Night) composite state.</li>
+<li><strong>Day Mode (<code>Jour</code>):</strong> This is a composite state with substates <code>Rouge</code>, <code>Vert30</code>, <code>Vert60</code>, and <code>Orange</code>.
+<ul>
+<li>The initial state within <code>Jour</code> is <code>Rouge</code>. Entry action: <code>rouge_actif(true)</code>, turn off others.</li>
+<li>Transition <code>Rouge</code> -&gt; Choice Point: Triggered <code>after(30 sec)</code>.</li>
+<li>Choice Point -&gt; <code>Vert60</code>: Guard <code>[capteur.get_nb_voitures() &gt; 4]</code>. Entry action: <code>vert_actif(true)</code>, turn off others.</li>
+<li>Choice Point -&gt; <code>Vert30</code>: Guard <code>[ELSE]</code>. Entry action: <code>vert_actif(true)</code>, turn off others.</li>
+<li>Transition <code>Vert60</code> -&gt; <code>Orange</code>: Triggered <code>after(60 sec)</code>. Entry action: <code>orange_actif(true)</code>, turn off others.</li>
+<li>Transition <code>Vert30</code> -&gt; <code>Orange</code>: Triggered <code>after(30 sec)</code>. Entry action: <code>orange_actif(true)</code>, turn off others.</li>
+<li>Transition <code>Orange</code> -&gt; <code>Rouge</code>: Triggered <code>after(2 sec)</code>. Entry action: <code>rouge_actif(true)</code>, turn off others.</li>
+</ul></li>
+<li><strong>Night Mode (<code>Nuit</code>):</strong> This is a composite state modeling the flashing orange light.
+<ul>
+<li>It has two substates: <code>ORANGE</code> (light on) and <code>OFF</code> (light off).</li>
+<li>Entry action for <code>Nuit</code>: turn off red and green.</li>
+<li>Entry action for <code>ORANGE</code>: <code>orange_actif(true)</code>.</li>
+<li>Entry action for <code>OFF</code>: <code>orange_actif(false)</code>.</li>
+<li>Transitions between <code>ORANGE</code> and <code>OFF</code> are triggered <code>after(1 sec)</code> each.</li>
+</ul></li>
+<li><strong>Transitions Between Day/Night:</strong>
+<ul>
+<li><code>Jour</code> -&gt; <code>Nuit</code>: Trigger <code>at(23:00:00)</code>. This transition should ideally originate from the <code>Rouge</code> state within <code>Jour</code> as specified.</li>
+<li><code>Nuit</code> -&gt; <code>Jour</code>: Trigger <code>at(05:00:00)</code>.</li>
+</ul></li>
 </ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Composite States:</strong> <code>Jour</code> and <code>Nuit</code> encapsulate specific modes of operation.</li>
+<li><strong>Substates:</strong> Modeling the different light phases (Red, Green, Orange) within <code>Jour</code> and flashing within <code>Nuit</code>.</li>
+<li><strong>Transitions:</strong> Showing changes between states based on time or conditions.</li>
+<li><strong>Triggers:</strong> Using <code>after()</code> and <code>at()</code> for Time Events, <code>when()</code> for Change Events, and operation calls.</li>
+<li><strong>Guards:</strong> Using conditions like time ranges or car count (<code>&gt; 4</code>) to direct flow.</li>
+<li><strong>Entry Actions:</strong> Defining behavior executed upon entering a state (e.g., activating a light bulb).</li>
+<li><strong>Choice Pseudostate:</strong> Modeling conditional paths based on sensor reading.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="behaviour-diagrams-dynamic-view" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="behaviour-diagrams-dynamic-view"><span class="header-section-number">2.3.2</span> Behaviour Diagrams (Dynamic View)</h3>
-<p>These diagrams illustrate the dynamic behaviour of the system, focusing on how its components interact and change over time. They represent what happens in the system being modelled.</p>
+<section id="exercise-2-vcr-magnetoscope" class="level3" data-number="10.0.2">
+<h3 data-number="10.0.2" class="anchored" data-anchor-id="exercise-2-vcr-magnetoscope"><span class="header-section-number">10.0.2</span> Exercise 2: VCR (Magnetoscope)</h3>
+<p><strong>Problem:</strong> Model the behavior of a simplified VCR (Magnetoscope) using a State Machine Diagram. The VCR interacts with a <code>Drawer</code> (which holds the cassette) and has signals corresponding to button presses (<code>power</code>, <code>play</code>, <code>stop</code>, <code>record</code>, <code>FF</code>, <code>eject</code>).</p>
 <ul>
-<li><strong>Use Case Diagram:</strong> Describes the high-level functions of a system from an external point of view, showing how users (actors) interact with it to achieve specific goals.</li>
-<li><strong>Activity Diagram:</strong> Shows the flow of control or data through a system, useful for Modelling business processes, complex operational workflows, or algorithms.</li>
-<li><strong>State Machine Diagram:</strong> Models the behaviour of a single object, specifying the sequence of states it goes through during its lifetime in response to events.</li>
-<li><strong>Sequence Diagram:</strong> An interaction diagram that emphasizes the time-ordering of messages between objects or components. It is particularly useful for understanding the chronology of method calls.</li>
-<li><strong>Communication Diagram:</strong> (Formerly Collaboration Diagram) Another type of interaction diagram that emphasizes the structural organization of the objects that send and receive messages, rather than the time-ordering.</li>
-<li><strong>Interaction Overview Diagram:</strong> A hybrid of an Activity Diagram and Sequence Diagrams. It provides a high-level view of the control flow of an interaction, where individual steps can be represented as more detailed sequence diagrams.</li>
-<li><strong>Timing Diagram:</strong> An interaction diagram that focuses on the timing constraints of messages, showing how the state of an object changes over a specific timeline.</li>
+<li><strong>Power:</strong> <code>power</code> toggles the VCR between <code>IDLED</code> (standby, <code>isOn=false</code>) and <code>ON</code> (<code>isOn=true</code>).</li>
+<li><strong>Loading:</strong> The <code>Drawer</code> class handles <code>load()</code>/<code>unload()</code> operations, reflected by its <code>loaded: Boolean</code> attribute.</li>
+<li><strong>ON State:</strong> When ON, the VCR starts in an <code>INACTIVE</code> substate (cassette loaded, doing nothing).
+<ul>
+<li>From <code>INACTIVE</code>, <code>play</code> (if <code>loaded</code>) transitions to <code>PLAYING</code> state.</li>
+<li>From <code>INACTIVE</code>, <code>record</code> (if <code>loaded</code>) transitions to <code>RECORDING</code> state.</li>
+<li><code>play</code> or <code>record</code> when not <code>loaded</code> have no effect.</li>
+</ul></li>
+<li><strong>PLAYING State:</strong> This is a composite state.
+<ul>
+<li>Starts in <code>PLAY</code> substate (normal speed).</li>
+<li><code>play</code> toggles between <code>PLAY</code> and <code>PAUSED</code>.</li>
+<li><code>FF</code> (Fast Forward) from <code>PLAY</code> goes to <code>FASTFORWARD</code> state (speed <code>FAST</code>).</li>
+<li><code>FF</code> or <code>play</code> from <code>FASTFORWARD</code> returns to <code>PLAY</code> (speed <code>NORMAL</code>).</li>
+</ul></li>
+<li><strong>RECORDING State:</strong> This is a composite state.
+<ul>
+<li>Starts in <code>RECORD</code> substate.</li>
+<li><code>play</code> toggles between <code>RECORD</code> and <code>PAUSED</code>.</li>
+<li><code>FF</code> is not available/ignored in <code>RECORDING</code>.</li>
+</ul></li>
+<li><strong>Stopping/Ejecting:</strong>
+<ul>
+<li><code>stop</code> from <code>PLAYING</code> or <code>RECORDING</code> transitions back to <code>INACTIVE</code> (cassette remains loaded, speed <code>STOPPED</code>).</li>
+<li><code>eject</code> from <code>PLAYING</code> or <code>RECORDING</code> transitions back to <code>INACTIVE</code>, unloads the cassette (<code>loaded=false</code>, speed <code>STOPPED</code>).</li>
+<li><code>endOfTape</code> (internal signal) during <code>PLAYING</code> or <code>RECORDING</code> automatically ejects the tape and returns to <code>INACTIVE</code>.</li>
+</ul></li>
 </ul>
-<p>While this course will not cover every diagram in detail, this complete overview provides the necessary context for understanding the full scope and power of UML. Our focus will remain on a core subset most critical for the analysis and design phases.</p>
+<p><strong>Context:</strong> A class diagram shows <code>Magneto</code> (VCR), <code>Drawer</code>, and an enumeration <code>Speed</code>. <code>Magneto</code> has an <code>isOn</code> attribute and lists signals like <code>power</code>, <code>play</code>, etc. <code>Drawer</code> has <code>loaded</code> and <code>speed</code> attributes and <code>load()</code>/<code>unload()</code> operations.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tp5-magneto-cd.png" class="img-fluid figure-img" alt="Class diagram showing Magneto, Drawer, and Speed enumeration."></p>
+<figcaption>Class Diagram for the VCR (Magnetoscope).</figcaption>
+</figure>
+</div>
+<p><strong>Task:</strong> 1. Complete the provided partial State Machine Diagram for the <code>Magneto</code> class. 2. Describe the changes needed (in the class diagram and state machine) to add a <code>bkwd</code> (Backward/Rewind) button allowing reverse playback at normal and fast speeds.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution (Part 1 - VCR Behavior)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution (Part 1 - VCR Behavior)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tp5-magneto-sm-solution.png" class="img-fluid figure-img" alt="State machine diagram for the VCR showing IDLED, ON (with INACTIVE, PLAYING, RECORDING substates)."></p>
+<figcaption>Completed State Machine Diagram for the VCR (Magnetoscope).</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details (Part 1):</strong></p>
+<ul>
+<li><strong>Top-Level States:</strong> <code>IDLED</code> (initial) and <code>ON</code>. Transitions between them are triggered by <code>power</code>, setting <code>isOn</code> accordingly.</li>
+<li><strong>ON State (Composite):</strong> Contains <code>INACTIVE</code>, <code>PLAYING</code>, and <code>RECORDING</code> substates. The initial state within <code>ON</code> is <code>INACTIVE</code>. Entry action for <code>INACTIVE</code> sets <code>drawer-&gt;speed := STOPPED</code>.</li>
+<li><strong>Transitions from INACTIVE:</strong>
+<ul>
+<li><code>play [loaded] /</code> leads to <code>PLAYING</code>’s initial state (<code>PLAY</code>).</li>
+<li><code>record [loaded] /</code> leads to <code>RECORDING</code>’s initial state (<code>RECORD</code>).</li>
+</ul></li>
+<li><strong>PLAYING State (Composite):</strong> Contains <code>PLAY</code>, <code>PAUSED</code>, and <code>FASTFORWARD</code> substates.
+<ul>
+<li>Initial state is <code>PLAY</code>. Entry action: <code>drawer-&gt;speed := NORMAL</code>.</li>
+<li><code>PLAY</code> -&gt; <code>PAUSED</code>: Trigger <code>play /</code>. Entry action: <code>drawer-&gt;speed := STOPPED</code>.</li>
+<li><code>PAUSED</code> -&gt; <code>PLAY</code>: Trigger <code>play /</code>. Entry action: <code>drawer-&gt;speed := NORMAL</code>.</li>
+<li><code>PLAY</code> -&gt; <code>FASTFORWARD</code>: Trigger <code>FF /</code>. Entry action: <code>drawer-&gt;speed := FAST</code>.</li>
+<li><code>FASTFORWARD</code> -&gt; <code>PLAY</code>: Trigger <code>FF /</code> or <code>play /</code>. Entry action: <code>drawer-&gt;speed := NORMAL</code>.</li>
+</ul></li>
+<li><strong>RECORDING State (Composite):</strong> Contains <code>RECORD</code> and <code>PAUSED</code> substates.
+<ul>
+<li>Initial state is <code>RECORD</code>.</li>
+<li><code>RECORD</code> -&gt; <code>PAUSED</code>: Trigger <code>play /</code>.</li>
+<li><code>PAUSED</code> -&gt; <code>RECORD</code>: Trigger <code>play /</code>.</li>
+</ul></li>
+<li><strong>Stop/Eject Transitions:</strong>
+<ul>
+<li>From <code>PLAYING</code> (any substate) -&gt; <code>INACTIVE</code>: Trigger <code>stop / drawer-&gt;speed := STOPPED</code>.</li>
+<li>From <code>RECORDING</code> (any substate) -&gt; <code>INACTIVE</code>: Trigger <code>stop / drawer-&gt;speed := STOPPED</code>.</li>
+<li>From <code>PLAYING</code> (any substate) -&gt; <code>INACTIVE</code>: Trigger <code>eject / drawer-&gt;loaded := false; drawer-&gt;speed := STOPPED</code>.</li>
+<li>From <code>RECORDING</code> (any substate) -&gt; <code>INACTIVE</code>: Trigger <code>eject / drawer-&gt;loaded := false; drawer-&gt;speed := STOPPED</code>.</li>
+</ul></li>
+<li><strong>End of Tape:</strong>
+<ul>
+<li>From <code>PLAYING</code> -&gt; <code>INACTIVE</code>: Trigger <code>endOfTape / drawer-&gt;loaded := false; drawer-&gt;speed := STOPPED</code>.</li>
+<li>From <code>RECORDING</code> -&gt; <code>INACTIVE</code>: Trigger <code>endOfTape / drawer-&gt;loaded := false; drawer-&gt;speed := STOPPED</code>.</li>
+</ul></li>
+</ul>
+<p><strong>(Solution for Part 2 - Adding Rewind):</strong></p>
+<ul>
+<li><strong>Class Diagram Changes:</strong> Add <code>REWIND_NORMAL</code> and <code>REWIND_FAST</code> literals to the <code>Speed</code> enumeration. Add a <code>bkwd</code> signal to the <code>Magneto</code> class.</li>
+<li><strong>State Machine Changes:</strong> Add a <code>REWINDING</code> composite state parallel to <code>PLAYING</code> and <code>RECORDING</code> within <code>ON</code>. Add transitions from <code>INACTIVE</code> to <code>REWINDING</code> triggered by <code>bkwd [loaded]</code>. Inside <code>REWINDING</code>, add substates like <code>REWIND</code> (normal reverse) and <code>FASTREWIND</code>. Add transitions toggling between them triggered by <code>bkwd</code>. Add <code>stop</code> and <code>eject</code> transitions exiting <code>REWINDING</code> back to <code>INACTIVE</code>. Add an <code>endOfTape</code> transition from <code>REWINDING</code> as well.</li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Nested Composite States:</strong> Modeling different modes of operation (<code>ON</code>, <code>PLAYING</code>, <code>RECORDING</code>) with their own internal behaviors.</li>
+<li><strong>Event Handling:</strong> Transitions triggered by button presses (signals) like <code>play</code>, <code>record</code>, <code>stop</code>, <code>FF</code>, <code>eject</code>, <code>power</code>.</li>
+<li><strong>Guards:</strong> Using conditions like <code>[loaded]</code> to enable/disable transitions.</li>
+<li><strong>Entry Actions:</strong> Setting attributes (<code>isOn</code>, <code>drawer-&gt;speed</code>, <code>drawer-&gt;loaded</code>) upon entering states or as effects of transitions.</li>
+<li><strong>Modeling Complex Lifecycles:</strong> Capturing the intricate behavior of the VCR through states and transitions.</li>
+</ul>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -690,13 +819,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-intro-modelling.html" class="pagination-link" aria-label="Introduction to Modelling">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Modelling</span></span>
+      <a href="./09-practical-exercises-state-machine-diagrams.html" class="pagination-link" aria-label="Practical Exercises: State Machines">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machines</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-class-diagrams.html" class="pagination-link" aria-label="Class and Object Diagrams">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11-ActivityDiagram.html" class="pagination-link" aria-label="Activity Diagrams">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

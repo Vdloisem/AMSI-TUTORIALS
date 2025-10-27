@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Introduction to UML – AMSI-TUTORIALS</title>
+<title>12&nbsp; Practical Exercises: Activity Diagrams – AMSI-TUTORIALS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03-class-diagrams.html" rel="next">
-<link href="./01-intro-modelling.html" rel="prev">
+<link href="./11-ActivityDiagram.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-intro-uml.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-practical-exercices-activity-diagrams.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -121,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link active">
+  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></span></a>
   </div>
 </li>
@@ -181,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-practical-exercices-activity-diagrams.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-practical-exercices-activity-diagrams.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span></a>
   </div>
 </li>
@@ -195,13 +194,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#uml-in-a-nutshell" id="toc-uml-in-a-nutshell" class="nav-link active" data-scroll-target="#uml-in-a-nutshell"><span class="header-section-number">2.1</span> UML in a Nutshell</a></li>
-  <li><a href="#history-and-philosophy" id="toc-history-and-philosophy" class="nav-link" data-scroll-target="#history-and-philosophy"><span class="header-section-number">2.2</span> History and Philosophy</a></li>
-  <li><a href="#uml-diagrams-an-overview" id="toc-uml-diagrams-an-overview" class="nav-link" data-scroll-target="#uml-diagrams-an-overview"><span class="header-section-number">2.3</span> UML Diagrams: An Overview</a>
-  <ul class="collapse">
-  <li><a href="#structure-diagrams-static-view" id="toc-structure-diagrams-static-view" class="nav-link" data-scroll-target="#structure-diagrams-static-view"><span class="header-section-number">2.3.1</span> Structure Diagrams (Static View)</a></li>
-  <li><a href="#behaviour-diagrams-dynamic-view" id="toc-behaviour-diagrams-dynamic-view" class="nav-link" data-scroll-target="#behaviour-diagrams-dynamic-view"><span class="header-section-number">2.3.2</span> Behaviour Diagrams (Dynamic View)</a></li>
-  </ul></li>
+  <li><a href="#exercise-1-id-card-renewal-process" id="toc-exercise-1-id-card-renewal-process" class="nav-link active" data-scroll-target="#exercise-1-id-card-renewal-process"><span class="header-section-number">12.0.1</span> Exercise 1: ID Card Renewal Process</a></li>
+  <li><a href="#exercise-2-insurance-claim-management" id="toc-exercise-2-insurance-claim-management" class="nav-link" data-scroll-target="#exercise-2-insurance-claim-management"><span class="header-section-number">12.0.2</span> Exercise 2: Insurance Claim Management</a></li>
   </ul>
 </nav>
     </div>
@@ -210,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></h1>
 </div>
 
 
@@ -227,65 +221,174 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter provides an overview of the Unified Modelling Language (UML), the industry-standard language for specifying, visualizing, constructing, and documenting the artifacts of software systems.</p>
-<section id="uml-in-a-nutshell" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="uml-in-a-nutshell"><span class="header-section-number">2.1</span> UML in a Nutshell</h2>
-<p>UML is a <strong>general-purpose visual Modelling language</strong> designed to provide a standard way to visualize the design of a system. It is crucial to understand what UML is and what it is not:</p>
+<p>This chapter presents practical exercises focused on UML Activity Diagrams. The goal is to apply the concepts learned to model real-world processes and workflows, paying attention to actions, control flow, object flow, and responsibilities.</p>
+<section id="exercise-1-id-card-renewal-process" class="level3" data-number="12.0.1">
+<h3 data-number="12.0.1" class="anchored" data-anchor-id="exercise-1-id-card-renewal-process"><span class="header-section-number">12.0.1</span> Exercise 1: ID Card Renewal Process</h3>
+<p><strong>Problem:</strong> Model the process for renewing a Belgian ID card, based on the following description:</p>
+<p>Belgian citizens receive an ID card at age 12 and must carry it from age 15. One month before the card expires (or one month before turning 12), a convocation letter is sent to the person’s home. The back of the letter allows indicating errors or requesting special status mentions.</p>
+<p>From the date on the letter, the person must go to the population service of their municipality with:</p>
 <ul>
-<li><strong>Unified:</strong> It is an industry standard managed by the Object Management Group (OMG), an international consortium of major software companies like IBM and Microsoft. Its goal is to be the <em>lingua franca</em> for business analysts, software architects, and developers.</li>
-<li><strong>Modelling:</strong> It is primarily a graphical language used to create models of both application domains (the problem) and software systems (the solution).</li>
-<li><strong>Language:</strong> It provides a set of notations (diagrams) but is <strong>not a method or a process</strong>. A process provides guidance on the order of activities and the artifacts to be developed, whereas UML is intentionally process-independent.</li>
+<li>The convocation letter.</li>
+<li>A recent ID photo meeting specific criteria.</li>
+<li>Their current ID card (or a police report if lost/stolen/damaged).</li>
 </ul>
-<p>Despite some criticisms, UML remains the undisputed leader in software Modelling, supported by a vast number of tools and methods.</p>
-</section>
-<section id="history-and-philosophy" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="history-and-philosophy"><span class="header-section-number">2.2</span> History and Philosophy</h2>
-<p>UML was created in the mid-1990s from the unification of several popular object-oriented modelling methods, most notably those of Booch, Rumbaugh (OMT), and Jacobson (OOSE), often called the “three amigos”. It was standardized by the OMG in November 1997 (UML 1.1) and has evolved significantly since then, with the current version being UML 2.5.</p>
-<p>The philosophy behind UML is one of <strong>unification by union, rather than intersection</strong>. This means it aims to be highly versatile and capable of representing entire systems across various domains like real-time systems, banking, and scientific applications.</p>
-<p>This versatility, however, comes with a trade-off:</p>
-<ul>
-<li><strong>Pros:</strong> UML is a well-accepted standard, versatile, and supported by many tools.</li>
-<li><strong>Cons:</strong> It can be overly complex, with “too many constructs for some concerns and missing ones for others”. It also has a relative lack of formality and coordination between its various notations, which can lead to ambiguity.</li>
-</ul>
-</section>
-<section id="uml-diagrams-an-overview" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="uml-diagrams-an-overview"><span class="header-section-number">2.3</span> UML Diagrams: An Overview</h2>
-<p>UML provides a wide range of diagrams to model different aspects of a system. These are broadly categorized into two main types: <strong>Structure Diagrams</strong> and <strong>Behaviour Diagrams</strong>.</p>
+<p>A municipal officer checks the convocation data and affixes the photo. If the back was filled out, the officer makes the necessary modifications. Both the applicant and the officer sign the document. The officer requests payment (X euros, cash or card). After payment, the left part of the convocation is stamped “paid” and returned to the applicant. The officer then processes the ID card request.</p>
+<p>Two to three weeks later, a letter is sent informing the person that the new ID card is ready. To collect the new card, the person must return their old ID card (or the police replacement certificate). The officer then gives them the new ID card.</p>
+<p><strong>Task:</strong> Construct the Activity Diagram for the ID card renewal process described above.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/uml-diagram-hierarchy.png" class="img-fluid figure-img" style="width:80.0%" alt="Hierarchy of UML Diagrams"></p>
-<figcaption>A diagram showing the hierarchy of UML diagrams, separating Structure and Behaviour diagrams.</figcaption>
+<p><img src="images/tp6-id-card-renewal-ad.png" class="img-fluid figure-img" alt="Activity diagram showing swimlanes for Citizen, Population Service, and Information System, detailing the ID card renewal steps."></p>
+<figcaption>Activity Diagram for the ID Card Renewal Process.</figcaption>
 </figure>
 </div>
-<section id="structure-diagrams-static-view" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="structure-diagrams-static-view"><span class="header-section-number">2.3.1</span> Structure Diagrams (Static View)</h3>
-<p>These diagrams depict the static structure of the system, its components, and the relationships between them at different levels of abstraction. They represent the elements that must be present in the system being modelled.</p>
+<p><strong>Correction Details:</strong></p>
+<p>The diagram models the workflow using three swimlanes: <strong>Citoyen</strong> (Citizen), <strong>Service Population</strong> (Population Service), and <strong>SI</strong> (Information System).</p>
 <ul>
-<li><strong>Class Diagram:</strong> The cornerstone of object-oriented modelling. It describes the structure of a system by showing its classes, attributes, operations, and the relationships among them.</li>
-<li><strong>Component Diagram:</strong> Depicts how a software system is split into modular components and shows the dependencies and interfaces among these components.</li>
-<li><strong>Deployment Diagram:</strong> Models the physical deployment of artifacts on nodes. It shows the hardware of your system and the software deployed on that hardware.</li>
-<li><strong>Object Diagram:</strong> Shows a snapshot of the instances in a system, the objects and their relationships, at a particular point in time. It is often considered a special case of a class diagram.</li>
-<li><strong>Package Diagram:</strong> Organizes elements of a system into groups (packages) to manage complexity. It shows the dependencies between these packages.</li>
-<li><strong>Composite Structure Diagram:</strong> Shows the internal structure of a class and the collaborations that this structure makes possible.</li>
-<li><strong>Profile Diagram:</strong> A specialized diagram used for extending the UML metamodel for specific platforms or domains.</li>
+<li><strong>Initiation (SI):</strong> The process starts in the SI lane with an action <code>Envoyer convocation</code> (Send Convocation), triggered implicitly (e.g., 1 month before expiration or age 12). An initial node leads to this action.</li>
+<li><strong>Citizen Preparation:</strong> The Citizen receives the <code>Convocation</code> (Object Node). They then gather the required items (<code>Photo</code>, <code>Carte ID</code> or <code>Déclaration</code> [Police Report]). A Fork node shows these items are needed concurrently before proceeding.</li>
+<li><strong>At the Population Service:</strong>
+<ul>
+<li>The Citizen presents the documents (Fork synchronizes inputs).</li>
+<li><code>Vérifier convocation</code> (Verify Convocation): The officer checks the documents.</li>
+<li>Decision Node: Based on verification (<code>[OK]</code> or <code>[KO]</code>). The <code>[KO]</code> path leads to a Flow Final node (process stops for this flow).</li>
+<li><code>Apposer photo</code> (Affix Photo): If OK, the photo is added. Output: <code>Convocation [Avec Photo]</code>.</li>
+<li><code>Vérifier si verso rempli</code> (Check if back is filled): Another decision.</li>
+<li><code>Enregistrer modifications</code> (Register Modifications): If <code>[Oui]</code> (Yes), changes are recorded.</li>
+<li>Merge Node: Flows merge after the modification check.</li>
+<li><code>Signer la convocation</code> (Sign the Convocation): Action performed by the officer. Output: <code>Convocation [Signée par l'agent]</code>.</li>
+<li><code>Signer la convocation</code> (Sign the Convocation): Action performed by the Citizen. Input: <code>Convocation [Signée par l'agent]</code>. Output: <code>Convocation [Signée]</code>.</li>
+<li><code>Demander de paiement</code> (Request Payment): Officer asks for payment (Send Signal Action <code>&lt;&lt;signal sending&gt;&gt;</code>).</li>
+<li><code>Effectuer paiement</code> (Make Payment): Citizen pays (Receive Signal Action <code>&lt;&lt;signal receipt&gt;&gt;</code>).</li>
+<li><code>Estampiller la convocation et donner au citoyen</code> (Stamp convocation and give to citizen): Officer returns the paid part. Output: <code>Convocation [Estampillée]</code>.</li>
+<li><code>Réceptionner demande carte ID</code> (Receive ID Card Request): Officer formally processes the application in the system.</li>
+</ul></li>
+<li><strong>Card Production (SI):</strong> An Accept Time Event node (<code>Quand carte ID prête (2 à 3 semaines après)</code>) triggers the <code>Envoyer lettre carte ID prête</code> (Send ID ready letter) action.</li>
+<li><strong>Card Collection:</strong>
+<ul>
+<li>The Citizen receives the <code>Lettre</code> (Letter). They bring their <code>Carte ID</code> or <code>Déclaration</code>.</li>
+<li>Fork node synchronizes the old card/declaration input.</li>
+<li><code>Donner nouvelle carte ID</code> (Give New ID Card): The officer exchanges the old card/doc for the <code>Nouvelle carte ID</code> (New ID Card - Object Node).</li>
+<li>The process ends with an Activity Final Node after the Citizen receives the new card.</li>
+</ul></li>
 </ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Swimlanes:</strong> Clearly delineating responsibilities between the Citizen, Population Service, and Information System.</li>
+<li><strong>Actions:</strong> Modeling individual steps like verifying documents, signing, paying, sending letters.</li>
+<li><strong>Object Nodes:</strong> Representing documents and data flowing through the process (Convocation, Photo, Card, Letter) and showing their states (e.g., <code>[Signée]</code>, <code>[Estampillée]</code>).</li>
+<li><strong>Control Nodes:</strong> Using Initial/Final nodes, Forks (for gathering documents/returning old card), Decisions (verification, modifications), Merges.</li>
+<li><strong>Signals:</strong> Modeling the payment interaction (<code>&lt;&lt;signal sending&gt;&gt;</code>, <code>&lt;&lt;signal receipt&gt;&gt;</code>).</li>
+<li><strong>Time Events:</strong> Representing the delay before the card is ready.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="behaviour-diagrams-dynamic-view" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="behaviour-diagrams-dynamic-view"><span class="header-section-number">2.3.2</span> Behaviour Diagrams (Dynamic View)</h3>
-<p>These diagrams illustrate the dynamic behaviour of the system, focusing on how its components interact and change over time. They represent what happens in the system being modelled.</p>
+<section id="exercise-2-insurance-claim-management" class="level3" data-number="12.0.2">
+<h3 data-number="12.0.2" class="anchored" data-anchor-id="exercise-2-insurance-claim-management"><span class="header-section-number">12.0.2</span> Exercise 2: Insurance Claim Management</h3>
+<p><strong>Problem:</strong> Model the claim management process of an insurance company based on the following description:</p>
+<p>Claim declarations can come directly from the insured person (Client) or through a brokerage office (Broker).</p>
 <ul>
-<li><strong>Use Case Diagram:</strong> Describes the high-level functions of a system from an external point of view, showing how users (actors) interact with it to achieve specific goals.</li>
-<li><strong>Activity Diagram:</strong> Shows the flow of control or data through a system, useful for Modelling business processes, complex operational workflows, or algorithms.</li>
-<li><strong>State Machine Diagram:</strong> Models the behaviour of a single object, specifying the sequence of states it goes through during its lifetime in response to events.</li>
-<li><strong>Sequence Diagram:</strong> An interaction diagram that emphasizes the time-ordering of messages between objects or components. It is particularly useful for understanding the chronology of method calls.</li>
-<li><strong>Communication Diagram:</strong> (Formerly Collaboration Diagram) Another type of interaction diagram that emphasizes the structural organization of the objects that send and receive messages, rather than the time-ordering.</li>
-<li><strong>Interaction Overview Diagram:</strong> A hybrid of an Activity Diagram and Sequence Diagrams. It provides a high-level view of the control flow of an interaction, where individual steps can be represented as more detailed sequence diagrams.</li>
-<li><strong>Timing Diagram:</strong> An interaction diagram that focuses on the timing constraints of messages, showing how the state of an object changes over a specific timeline.</li>
+<li><strong>Client Claim:</strong> Handled by a loss management department employee.
+<ul>
+<li>The employee checks coverage using the Information System (SI).</li>
+<li>If not covered, the declaration is returned to the client with an explanation letter.</li>
+<li>If covered, the employee registers the claim in the SI.</li>
+</ul></li>
+<li><strong>Broker Claim:</strong> Assumed to be verified by the broker; registered directly in the SI by the employee.</li>
+<li><strong>Assistant Director’s Role:</strong> Registered claims are processed by an assistant director at specific times (10h, 12h, 15h, 16h30).
+<ul>
+<li>The assistant analyzes the claim and decides whether to indemnify the client directly or involve the expert service.</li>
+<li><strong>Indemnification:</strong> Sends a proposal letter to the client.
+<ul>
+<li>If the client accepts (favorable response), sends an indemnification request to the financial service and archives the claim declaration + client response via the classification department at the end of the day.</li>
+<li>If the client rejects (unfavorable response), creates a file (declaration + client letter) and sends it to the expert service.</li>
+</ul></li>
+<li><strong>Expert Service:</strong> Makes 3 copies of the declaration: one for the assistant, one original for the director, two for the expert service.</li>
+</ul></li>
+<li><strong>Financial Service’s Role:</strong> An employee processes indemnification requests.
+<ul>
+<li>Updates the SI with the paid amount. This also updates a file of indemnifications to be made.</li>
+<li>An automated process runs at 12h and 16h, OR after 10 indemnification operations are registered. This process generates a listing of amounts due per client and archives the file content.</li>
+<li>Based on the listing, a finance employee writes corresponding checks.</li>
+<li>Checks are sent to the assistant director for signature.</li>
+<li>Signed checks are sent to the clients.</li>
+</ul></li>
 </ul>
-<p>While this course will not cover every diagram in detail, this complete overview provides the necessary context for understanding the full scope and power of UML. Our focus will remain on a core subset most critical for the analysis and design phases.</p>
+<p><strong>Task:</strong> Construct the Activity Diagram for the insurance company’s claim management process.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tp6-insurance-claim-ad.png" class="img-fluid figure-img" alt="Activity diagram with multiple swimlanes detailing the insurance claim process from reception to payment or expert involvement."></p>
+<figcaption>Activity Diagram for the Insurance Claim Management Process.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<p>The diagram uses multiple swimlanes representing the different actors and departments involved: <strong>Client</strong>, <strong>Brokerage office</strong>, <strong>Loss management department employee</strong>, <strong>Information System</strong>, <strong>Assistant director</strong>, <strong>Financial service employee</strong>, <strong>Expert service</strong>, <strong>Classification department</strong>, <strong>Director</strong>.</p>
+<p><em>(Note: The diagram provided in the PDF is complex and serves as a detailed example. A full textual description would be very long. Key flows are highlighted below.)</em></p>
+<ul>
+<li><strong>Claim Reception:</strong> Starts with two potential paths (Client or Broker). A Merge node combines these paths before <code>Check coverage</code> <em>if</em> the claim is from the Client. Broker claims bypass the check.</li>
+<li><strong>Coverage Check:</strong> Decision node after <code>Check coverage</code>. <code>[loss not covered]</code> leads to <code>Notify the refusal</code> and ends the flow for the client. <code>[loss covered]</code> leads to <code>Register digital claim</code>.</li>
+<li><strong>Registration:</strong> Broker claims lead directly to <code>Register digital claim</code> in the SI lane. Output: <code>Claim [Registered]</code>.</li>
+<li><strong>Assistant Director Processing:</strong> An Accept Time Event (<code>At 10h, 12h, 15h, 16h30</code>) triggers the <code>Evaluate responsibilities</code> action using the <code>Claim [Registered]</code> object.
+<ul>
+<li>Decision: Indemnify or Expertise required.</li>
+</ul></li>
+<li><strong>Indemnification Path:</strong>
+<ul>
+<li><code>Send Proposal</code> to Client.</li>
+<li>Wait for <code>Response</code> (Accept Event Action).</li>
+<li>Decision based on <code>Response</code>. <code>[positive answer]</code> leads to <code>Send Indemnification Request</code> (to Finance) and <code>Archive claim</code> (via Classification). <code>[negative answer]</code> leads to the Expertise path.</li>
+</ul></li>
+<li><strong>Expertise Path:</strong> Involves actions like <code>Compile file</code>, <code>Send for classification</code> (potentially incorrect term, likely means send copies), distributing copies to Director, Expert Service.</li>
+<li><strong>Financial Service Path:</strong>
+<ul>
+<li>Receives <code>Indemnification request [To handle]</code>.</li>
+<li><code>Update</code> SI.</li>
+<li>Automated processing triggered by time or count (<code>At 12h, 16h or count=10</code>).</li>
+<li><code>Produce listing</code>.</li>
+<li><code>Write cheque</code>.</li>
+<li><code>Sign &amp; Send</code> (by Assistant Director).</li>
+<li>Final output <code>Cheque [Signed]</code> sent to Client.</li>
+</ul></li>
+</ul>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Extensive Use of Swimlanes:</strong> Essential for clarifying responsibilities in a complex multi-department process.</li>
+<li><strong>Detailed Workflow:</strong> Modeling sequences, decisions, and parallel paths (implied by distribution of copies).</li>
+<li><strong>Object States:</strong> Using states like <code>[Registered]</code>, <code>[To handle]</code>, <code>[Signed]</code> to track the status of key objects (Claim, Request, Cheque).</li>
+<li><strong>Time and Event Triggers:</strong> Using specific times and event counts (<code>10 operations</code>) to trigger parts of the process.</li>
+<li><strong>Data Stores:</strong> Implicitly represented by archiving actions (<code>Archive claim</code>, potentially <code>Claim file</code> although notation differs).</li>
+<li><strong>Complexity Management:</strong> Demonstrates how Activity Diagrams can visualize intricate business processes involving many actors and conditions.</li>
+</ul>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -690,14 +793,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-intro-modelling.html" class="pagination-link" aria-label="Introduction to Modelling">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Modelling</span></span>
+      <a href="./11-ActivityDiagram.html" class="pagination-link" aria-label="Activity Diagrams">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-class-diagrams.html" class="pagination-link" aria-label="Class and Object Diagrams">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
