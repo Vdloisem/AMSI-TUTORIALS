@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Activity Diagrams – AMSI-TUTORIALS</title>
+<title>15&nbsp; Use Case Diagrams – AMSI-TUTORIALS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./12-practical-exercices-activity-diagrams.html" rel="next">
-<link href="./10-practical-exercices-state-machine-modelisation.html" rel="prev">
+<link href="./16-practical-exercises-use-case-diagrams.html" rel="next">
+<link href="./14-practical-exercises-interaction-diagrams.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11-ActivityDiagram.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-use-case-diagrams.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Use Case Diagrams</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,26 +169,44 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-practical-exercices-state-machine-modelisation.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-practical-exercises-state-machine-modelisation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-ActivityDiagram.html" class="sidebar-item-text sidebar-link active">
+  <a href="./11-ActivityDiagram.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-practical-exercices-activity-diagrams.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-practical-exercises-activity-diagrams.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13-InteractionDiagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">13-InteractionDiagram.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Interaction Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-practical-exercises-interaction-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Practical Exercises: Interaction Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-use-case-diagrams.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Use Case Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-practical-exercises-use-case-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">16-practical-exercises-use-case-diagrams.html</span></span></a>
   </div>
 </li>
     </ul>
@@ -201,15 +219,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-an-activity-diagram" id="toc-what-is-an-activity-diagram" class="nav-link active" data-scroll-target="#what-is-an-activity-diagram"><span class="header-section-number">11.1</span> What is an Activity Diagram?</a></li>
-  <li><a href="#core-concepts-nodes-edges-and-partitions" id="toc-core-concepts-nodes-edges-and-partitions" class="nav-link" data-scroll-target="#core-concepts-nodes-edges-and-partitions"><span class="header-section-number">11.2</span> Core Concepts: Nodes, Edges, and Partitions</a></li>
-  <li><a href="#action-nodes" id="toc-action-nodes" class="nav-link" data-scroll-target="#action-nodes"><span class="header-section-number">11.3</span> Action Nodes</a></li>
-  <li><a href="#control-nodes" id="toc-control-nodes" class="nav-link" data-scroll-target="#control-nodes"><span class="header-section-number">11.4</span> Control Nodes</a></li>
-  <li><a href="#object-nodes-and-object-flows" id="toc-object-nodes-and-object-flows" class="nav-link" data-scroll-target="#object-nodes-and-object-flows"><span class="header-section-number">11.5</span> Object Nodes and Object Flows</a></li>
-  <li><a href="#activity-partitions-swimlanes" id="toc-activity-partitions-swimlanes" class="nav-link" data-scroll-target="#activity-partitions-swimlanes"><span class="header-section-number">11.6</span> Activity Partitions (Swimlanes)</a></li>
-  <li><a href="#semantics-token-flow" id="toc-semantics-token-flow" class="nav-link" data-scroll-target="#semantics-token-flow"><span class="header-section-number">11.7</span> Semantics: Token Flow</a></li>
-  <li><a href="#advanced-constructs" id="toc-advanced-constructs" class="nav-link" data-scroll-target="#advanced-constructs"><span class="header-section-number">11.8</span> Advanced Constructs</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11.9</span> Conclusion</a></li>
+  <li><a href="#overview-of-use-case-diagrams" id="toc-overview-of-use-case-diagrams" class="nav-link active" data-scroll-target="#overview-of-use-case-diagrams"><span class="header-section-number">15.1</span> Overview of Use Case Diagrams</a></li>
+  <li><a href="#core-concepts-actors-and-goals" id="toc-core-concepts-actors-and-goals" class="nav-link" data-scroll-target="#core-concepts-actors-and-goals"><span class="header-section-number">15.2</span> Core Concepts: Actors and Goals</a>
+  <ul class="collapse">
+  <li><a href="#the-actor-an-external-role" id="toc-the-actor-an-external-role" class="nav-link" data-scroll-target="#the-actor-an-external-role"><span class="header-section-number">15.2.1</span> The Actor: An External Role</a></li>
+  <li><a href="#the-use-case-a-stakeholders-goal" id="toc-the-use-case-a-stakeholders-goal" class="nav-link" data-scroll-target="#the-use-case-a-stakeholders-goal"><span class="header-section-number">15.2.2</span> The Use Case: A Stakeholder’s Goal</a></li>
+  <li><a href="#the-scenario-a-single-story" id="toc-the-scenario-a-single-story" class="nav-link" data-scroll-target="#the-scenario-a-single-story"><span class="header-section-number">15.2.3</span> The Scenario: A Single Story</a></li>
+  </ul></li>
+  <li><a href="#anatomy-of-a-use-case-diagram" id="toc-anatomy-of-a-use-case-diagram" class="nav-link" data-scroll-target="#anatomy-of-a-use-case-diagram"><span class="header-section-number">15.3</span> Anatomy of a Use Case Diagram</a></li>
+  <li><a href="#relationships-in-use-case-diagrams" id="toc-relationships-in-use-case-diagrams" class="nav-link" data-scroll-target="#relationships-in-use-case-diagrams"><span class="header-section-number">15.4</span> Relationships in Use Case Diagrams</a>
+  <ul class="collapse">
+  <li><a href="#association" id="toc-association" class="nav-link" data-scroll-target="#association"><span class="header-section-number">15.4.1</span> Association</a></li>
+  <li><a href="#generalization" id="toc-generalization" class="nav-link" data-scroll-target="#generalization"><span class="header-section-number">15.4.2</span> Generalization</a></li>
+  <li><a href="#include" id="toc-include" class="nav-link" data-scroll-target="#include"><span class="header-section-number">15.4.3</span> <code>&lt;&lt;include&gt;&gt;</code></a></li>
+  <li><a href="#extend" id="toc-extend" class="nav-link" data-scroll-target="#extend"><span class="header-section-number">15.4.4</span> <code>&lt;&lt;extend&gt;&gt;</code></a></li>
+  </ul></li>
+  <li><a href="#writing-use-cases-the-textual-content" id="toc-writing-use-cases-the-textual-content" class="nav-link" data-scroll-target="#writing-use-cases-the-textual-content"><span class="header-section-number">15.5</span> Writing Use Cases: The Textual Content</a>
+  <ul class="collapse">
+  <li><a href="#a-common-use-case-template" id="toc-a-common-use-case-template" class="nav-link" data-scroll-target="#a-common-use-case-template"><span class="header-section-number">15.5.1</span> A Common Use Case Template</a></li>
+  </ul></li>
+  <li><a href="#conclusion-pros-and-cons" id="toc-conclusion-pros-and-cons" class="nav-link" data-scroll-target="#conclusion-pros-and-cons"><span class="header-section-number">15.6</span> Conclusion: Pros and Cons</a></li>
   </ul>
 </nav>
     </div>
@@ -218,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Use Case Diagrams</span></h1>
 </div>
 
 
@@ -235,155 +264,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter explores another crucial behavioral diagram in UML: the <strong>Activity Diagram</strong>. While State Machine diagrams focus on the lifecycle of a single object, Activity Diagrams excel at modeling workflows, processes, and algorithms, showing the flow of control and data between various steps.</p>
-<section id="what-is-an-activity-diagram" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="what-is-an-activity-diagram"><span class="header-section-number">11.1</span> What is an Activity Diagram?</h2>
-<p>An Activity Diagram models the <strong>dynamics</strong> of a system by representing the flow of activities. It can depict high-level business processes (workflows involving multiple actors or departments) or detailed low-level logic (like the steps within a complex algorithm).</p>
-<p>Its main purpose is to show:</p>
-<ul>
-<li>The sequence of <strong>steps</strong> (actions) involved in a process.</li>
-<li><strong>Precedence</strong> (sequencing) and <strong>concurrence</strong> (parallelism) between these steps.</li>
-<li>Optionally, <strong>who</strong> or <strong>what part</strong> of the system is responsible for performing each step.</li>
-<li>Optionally, the <strong>data or objects</strong> that are created, used, or modified during the activity.</li>
-</ul>
-<p>Activity diagrams are versatile and can be used for:</p>
-<ul>
-<li>Modeling and analyzing business processes (understanding workflows, identifying bottlenecks, re-engineering).</li>
-<li>Detailing complex use case scenarios.</li>
-<li>Modeling the logic of an operation or algorithm.</li>
-</ul>
+<p>This chapter introduces the primary UML diagram for capturing <strong>functional requirements</strong>: the <strong>Use Case Diagram</strong>. We will explore its purpose, its core components (actors and use cases), the relationships that connect them, and how the diagram serves as a “map” for detailed textual descriptions.</p>
+<section id="overview-of-use-case-diagrams" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="overview-of-use-case-diagrams"><span class="header-section-number">15.1</span> Overview of Use Case Diagrams</h2>
+<p>A Use Case Diagram is a behavioral diagram that provides a high-level, external view of a system. Its main purpose is to capture a system’s functional requirements by showing how “actors” (external entities) interact with the system to achieve specific “use cases” (goals).</p>
+<p>It’s crucial to understand that a Use Case modeling effort has two distinct parts:</p>
+<ol type="1">
+<li><strong>The Use Case Diagram:</strong> This is the graphical “map” or table of contents. It shows all the system’s functionalities (use cases), who uses them (actors), and how they relate to each other.</li>
+<li><strong>The Use Case Description:</strong> This is the detailed “content.” For each use case oval on the diagram, a corresponding textual description (often using a structured template) explains the step-by-step interaction, including the main success scenario and all alternative paths or errors.</li>
+</ol>
+<p>UML formally standardizes only the diagram, but the textual description is arguably the most valuable part of the requirements-gathering process.</p>
 </section>
-<section id="core-concepts-nodes-edges-and-partitions" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="core-concepts-nodes-edges-and-partitions"><span class="header-section-number">11.2</span> Core Concepts: Nodes, Edges, and Partitions</h2>
-<p>Activity Diagrams are essentially flowcharts built from specific UML elements.</p>
+<section id="core-concepts-actors-and-goals" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="core-concepts-actors-and-goals"><span class="header-section-number">15.2</span> Core Concepts: Actors and Goals</h2>
+<p>The Use Case approach is built on two fundamental concepts: the <strong>Actor</strong> and the <strong>Use Case</strong>.</p>
+<section id="the-actor-an-external-role" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="the-actor-an-external-role"><span class="header-section-number">15.2.1</span> The Actor: An External Role</h3>
+<p>An <strong>Actor</strong> represents a <em>role</em> played by an entity that interacts with the system. It is something <em>outside</em> the system boundary.</p>
+<ul>
+<li>An actor is not necessarily a human. It can be another computer system, a hardware device, or a time-based event.</li>
+<li>One person might play multiple roles (e.g., a “Librarian” actor and a “Borrower” actor, even if the same person does both).</li>
+<li><strong>Primary Actor:</strong> The actor who initiates the use case to achieve a goal (e.g., the <code>Customer</code> in <code>Withdraw cash</code>).</li>
+<li><strong>Secondary Actor:</strong> An actor who assists the system in completing the use case (e.g., the <code>SNCB Booking System</code> which is queried by the <code>Buy a ticket</code> use case).</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Formal Definition: Actor">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Formal Definition: Actor
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <strong>Actor</strong> specifies a role played by an external entity that interacts with the system. It is drawn as a stick figure.</p>
+</div>
+</div>
+</section>
+<section id="the-use-case-a-stakeholders-goal" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="the-use-case-a-stakeholders-goal"><span class="header-section-number">15.2.2</span> The Use Case: A Stakeholder’s Goal</h3>
+<p>A <strong>Use Case</strong> represents a specific goal that an actor wants to achieve with the system. It describes a complete interaction from the actor’s perspective.</p>
+<ul>
+<li>It is named with a verb phrase (e.g., <code>Get balance</code>, <code>Perform maintenance</code>).</li>
+<li>It must provide an observable, value-added result to the actor. “Log in” is generally a poor use case, as no one logs in just to log in; they log in to <em>do something else</em> (like “Buy a ticket”).</li>
+<li>A use case is a <em>set of scenarios</em>. It contains the “happy path” (Main Success Scenario) and all alternative or error paths (Extensions).</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Formal Definition: Use Case">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Formal Definition: Use Case
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>Use Case</strong> represents a system behavior that accomplishes a stakeholder’s goal. It is drawn as an ellipse (oval).</p>
+</div>
+</div>
+</section>
+<section id="the-scenario-a-single-story" class="level3" data-number="15.2.3">
+<h3 data-number="15.2.3" class="anchored" data-anchor-id="the-scenario-a-single-story"><span class="header-section-number">15.2.3</span> The Scenario: A Single Story</h3>
+<p>A <strong>Scenario</strong> is a single, concrete path through a use case. For the <code>Withdraw cash</code> use case, there are many scenarios: * Scenario 1: The withdrawal is successful. * Scenario 2: The user enters the wrong PIN. * Scenario 3: The user has insufficient funds.</p>
+<p>The Use Case textual description gathers all these scenarios related to the same goal.</p>
+</section>
+</section>
+<section id="anatomy-of-a-use-case-diagram" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="anatomy-of-a-use-case-diagram"><span class="header-section-number">15.3</span> Anatomy of a Use Case Diagram</h2>
+<p>The diagram itself is a simple visual “map” combining four main elements.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/activity-overview.png" class="img-fluid figure-img" style="width:100.0%" alt="Overview of an Activity Diagram illustrating its main components."></p>
-<figcaption>An overview of an Activity Diagram showing key components like Actions, Control Nodes, Object Nodes, and Swimlanes.</figcaption>
+<p><img src="images/use-case-diagram-atm-example.png" class="img-fluid figure-img" style="width:80.0%" alt="A UML Use Case Diagram for an ATM."></p>
+<figcaption>An example of a UML Use Case Diagram for an ATM.</figcaption>
 </figure>
 </div>
-<p>The main building blocks are:</p>
+<ol type="1">
+<li><strong>Actors:</strong> The stick figures outside the box (e.g., <code>Customer</code>, <code>Technician</code>).</li>
+<li><strong>Use Cases:</strong> The ovals inside the box (e.g., <code>Withdraw cash</code>, <code>Get balance</code>).</li>
+<li><strong>System Boundary:</strong> The large rectangle that separates the system (what we are building) from the external world (the actors).</li>
+<li><strong>Relationships:</strong> The lines connecting the elements, which are explained in the next section.</li>
+</ol>
+</section>
+<section id="relationships-in-use-case-diagrams" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="relationships-in-use-case-diagrams"><span class="header-section-number">15.4</span> Relationships in Use Case Diagrams</h2>
+<p>There are four primary types of relationships used in these diagrams.</p>
+<section id="association" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="association"><span class="header-section-number">15.4.1</span> Association</h3>
+<p>This is a solid line connecting an <strong>Actor</strong> to a <strong>Use Case</strong>. It simply indicates that the actor <em>participates</em> in that use case. This is the most common relationship.</p>
+</section>
+<section id="generalization" class="level3" data-number="15.4.2">
+<h3 data-number="15.4.2" class="anchored" data-anchor-id="generalization"><span class="header-section-number">15.4.2</span> Generalization</h3>
+<p>A solid line with a <strong>hollow triangle arrowhead</strong>, this represents an “is a” relationship. It can be used in two ways:</p>
 <ul>
-<li><p><strong>Nodes:</strong> Represent steps or control points in the flow. There are three main types:</p>
+<li><strong>Actor Generalization:</strong> Shows that one actor is a more specialized version of another. For example, a <code>Frequent traveller</code> actor “is a” <code>Passenger</code>. The specialized actor inherits the ability to participate in all use cases of the general actor (plus their own specific ones).</li>
+<li><strong>Use Case Generalization:</strong> (Less common) Shows that one use case is a more specific way of achieving the goal of another.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/use-case-actor-generalization.png" class="img-fluid figure-img" style="width:80.0%" alt="A diagram showing 'Premium traveller' inheriting from 'Frequent traveller'."></p>
+<figcaption>An example of Actor Generalization.</figcaption>
+</figure>
+</div>
+</section>
+<section id="include" class="level3" data-number="15.4.3">
+<h3 data-number="15.4.3" class="anchored" data-anchor-id="include"><span class="header-section-number">15.4.3</span> <code>&lt;&lt;include&gt;&gt;</code></h3>
+<p>An <code>&lt;&lt;include&gt;&gt;</code> relationship is a dashed arrow pointing from a base use case to an <em>included</em> use case.</p>
 <ul>
-<li><strong>Action Nodes:</strong> Represent the execution of a specific task or step.</li>
-<li><strong>Control Nodes:</strong> Direct the flow (start, end, decisions, merges, parallel forks, joins).</li>
-<li><strong>Object Nodes:</strong> Represent data or objects flowing through the activity.</li>
+<li><strong>Purpose:</strong> To factor out common behavior that is <strong>required</strong> by multiple use cases.</li>
+<li><strong>Logic:</strong> The base use case <em>must</em> execute the included use case at some point. It is <strong>unconditional</strong>.</li>
+<li><strong>Example:</strong> Both <code>Withdraw cash</code> and <code>Get balance</code> might <code>&lt;&lt;include&gt;&gt;</code> an <code>Enter PIN</code> use case. You cannot do either without first entering the PIN.</li>
+</ul>
+</section>
+<section id="extend" class="level3" data-number="15.4.4">
+<h3 data-number="15.4.4" class="anchored" data-anchor-id="extend"><span class="header-section-number">15.4.4</span> <code>&lt;&lt;extend&gt;&gt;</code></h3>
+<p>An <code>&lt;&lt;extend&gt;&gt;</code> relationship is a dashed arrow pointing from an <em>extending</em> use case back to a base use case.</p>
+<ul>
+<li><strong>Purpose:</strong> To model <strong>optional</strong> or exceptional behavior that only happens under certain conditions.</li>
+<li><strong>Logic:</strong> The base use case can run perfectly fine on its own. The extending use case <em>optionally</em> “jumps in” and adds extra steps if its condition is met.</li>
+<li><strong>Example:</strong> An <code>Additional operations</code> use case might <code>&lt;&lt;extend&gt;&gt;</code> the <code>Get miles</code> use case. Most of the time, the user just gets their miles and leaves, but <em>optionally</em>, they might choose to perform additional operations.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="`<<include>>` vs. `<<extend>>`">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>&lt;&lt;include&gt;&gt;</code> vs.&nbsp;<code>&lt;&lt;extend&gt;&gt;</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a common point of confusion. Remember:</p>
+<ul>
+<li><strong><code>&lt;&lt;include&gt;&gt;</code> (“Always”):</strong> The base UC <em>needs</em> the included one. The base UC’s flow is <em>incomplete</em> without it. (Arrow points <strong>to</strong> the required part).</li>
+<li><strong><code>&lt;&lt;extend&gt;&gt;</code> (“Maybe”):</strong> The base UC <em>doesn’t need</em> the extending one. The base UC is <em>complete</em> on its own. The extension adds optional functionality. (Arrow points <strong>to</strong> the base case being extended).</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="writing-use-cases-the-textual-content" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="writing-use-cases-the-textual-content"><span class="header-section-number">15.5</span> Writing Use Cases: The Textual Content</h2>
+<p>The diagram is just the map. The real requirements are in the textual descriptions. While UML doesn’t standardize the format, a good template is essential.</p>
+<p>A typical process involves:</p>
+<ol type="1">
+<li>Identify Primary Actors.</li>
+<li>Identify their main goals (the Use Cases).</li>
+<li>For each Use Case, write the <strong>Main Success Scenario</strong> (the “happy path” where everything works perfectly).</li>
+<li>Identify all <strong>Extensions</strong> (alternative paths, error conditions, failures) and add them to the description.</li>
+</ol>
+<section id="a-common-use-case-template" class="level3" data-number="15.5.1">
+<h3 data-number="15.5.1" class="anchored" data-anchor-id="a-common-use-case-template"><span class="header-section-number">15.5.1</span> A Common Use Case Template</h3>
+<p>A detailed use case description often includes fields like:</p>
+<ul>
+<li><strong>Name:</strong> A short, goal-oriented verb phrase (e.g., “Get miles”).</li>
+<li><strong>Actors:</strong> The primary actor (initiator) and any secondary actors.</li>
+<li><strong>Pre-conditions:</strong> Assertions about the state of the system that <em>must</em> be true <em>before</em> the use case can start (e.g., “The machine is running and ready”). This is <strong>not</strong> the event that starts the use case.</li>
+<li><strong>Post-conditions:</strong> A guarantee of what will be true <em>after</em> the use case finishes (e.g., “Passenger’s miles have been credited” on success, or “Miles have not been credited” on failure).</li>
+<li><strong>Main Success Scenario:</strong> A numbered list of simple actor-system interactions (e.g., 1. Actor inserts card. 2. System checks card…).</li>
+<li><strong>Extensions:</strong> A list of alternative paths, often branching from specific steps in the main scenario (e.g., “2a. Card is invalid: System signals error…”).</li>
+</ul>
+</section>
+</section>
+<section id="conclusion-pros-and-cons" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="conclusion-pros-and-cons"><span class="header-section-number">15.6</span> Conclusion: Pros and Cons</h2>
+<p>Use Cases are a powerful but informal tool for requirements analysis.</p>
+<ul>
+<li><strong>Pros:</strong>
+<ul>
+<li><strong>Understandable:</strong> They are written in natural language, making them easy for both technical teams and non-technical stakeholders (users, clients) to read and validate.</li>
+<li><strong>User-Centric:</strong> They force analysis to be from the user’s (actor’s) perspective, focusing on <em>what</em> the system must do (the “what/why”), not <em>how</em> it does it.</li>
+<li><strong>Black-Box View:</strong> They treat the system as a “black box,” avoiding implementation or GUI details too early in the process.</li>
 </ul></li>
-<li><p><strong>Edges:</strong> Connect the nodes, showing the path of control or data. There are two main types:</p>
+<li><strong>Cons:</strong>
 <ul>
-<li><strong>Control Flow Edges:</strong> Show the sequence between actions.</li>
-<li><strong>Object Flow Edges:</strong> Show the flow of objects/data between actions.</li>
+<li><strong>Informal:</strong> Natural language can be ambiguous. What does “check ticket validity” <em>really</em> mean? This requires a separate vocabulary or domain model to clarify.</li>
+<li><strong>Combinatorial Explosion:</strong> For complex systems, the number of extensions can become massive, making the use case descriptions hard to manage.</li>
+<li><strong>Not Executable:</strong> Being informal, they cannot be directly executed or rigorously checked for completeness or consistency in the same way as a formal model.</li>
 </ul></li>
-<li><p><strong>Activity Partitions (Swimlanes):</strong> Optional mechanism to group actions based on responsibility (e.g., by actor, department, system component).</p></li>
 </ul>
-<p>Let’s look at each component in more detail.</p>
-</section>
-<section id="action-nodes" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="action-nodes"><span class="header-section-number">11.3</span> Action Nodes</h2>
-<p>An <strong>Action</strong> is the fundamental unit of behaviour in an activity diagram. It represents a single step or task that needs to be performed. Actions are typically atomic, meaning they are considered indivisible units of work within the context of the diagram’s abstraction level.</p>
-<p><strong>Notation:</strong> Actions are represented by rectangles with rounded corners, containing the name or description of the action.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/action-node.png" class="img-fluid figure-img" style="width:40.0%" alt="A round-cornered rectangle representing a UML Action Node."></p>
-<figcaption>A simple Action Node notation.</figcaption>
-</figure>
-</div>
-<p>Actions can model a wide variety of tasks:</p>
-<ul>
-<li>Manual or automated steps in a process (e.g., <code>Check coverage</code>, <code>Register digital claim</code>).</li>
-<li>Creating, reading, updating, or deleting data/objects (CRUD operations).</li>
-<li>Invoking operations on objects.</li>
-<li>Calling other behaviors (like sub-activities or state machines).</li>
-<li>Sending or receiving signals/messages.</li>
-<li>Performing calculations.</li>
-</ul>
-</section>
-<section id="control-nodes" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="control-nodes"><span class="header-section-number">11.4</span> Control Nodes</h2>
-<p>Control nodes manage the flow of execution within the activity. They don’t represent tasks themselves but direct the sequence and concurrency of actions.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/control-nodes.png" class="img-fluid figure-img" style="width:80.0%" alt="Symbols for Initial, Final, Decision, Merge, Fork, and Join nodes."></p>
-<figcaption>Various UML Control Nodes: Initial, Final (Activity/Flow), Decision/Merge, Fork/Join.</figcaption>
-</figure>
-</div>
-<ul>
-<li><strong>Initial Node:</strong> (Solid circle) Marks the starting point of the activity. An activity typically has only one initial node.</li>
-<li><strong>Final Nodes:</strong> Indicate the termination of a flow.
-<ul>
-<li><strong>Activity Final Node:</strong> (Circled solid circle / bullseye) Terminates the <em>entire</em> activity, stopping all concurrent flows within it.</li>
-<li><strong>Flow Final Node:</strong> (Circled X) Terminates only the <em>specific flow</em> reaching it; other concurrent flows may continue.</li>
-</ul></li>
-<li><strong>Decision Node:</strong> (Diamond) Represents a conditional branch point (like an <code>if</code> statement). It has one incoming edge and multiple outgoing edges, each labeled with a <strong>guard condition</strong> (e.g., <code>[loss covered]</code>). Only one outgoing path is taken based on which guard evaluates to true.</li>
-<li><strong>Merge Node:</strong> (Diamond) Merges multiple alternative flows back into one. It has multiple incoming edges and one outgoing edge. It passes through any token arriving on any incoming edge (no synchronization). It’s the counterpart to a Decision Node.</li>
-<li><strong>Fork Node:</strong> (Thick bar) Splits a single flow into multiple concurrent (parallel) flows. It has one incoming edge and multiple outgoing edges. A token arriving at a fork is duplicated across all outgoing edges, initiating parallel execution.</li>
-<li><strong>Join Node:</strong> (Thick bar) Synchronizes multiple concurrent flows. It has multiple incoming edges and one outgoing edge. It waits for tokens to arrive on <em>all</em> incoming edges before allowing a single token to proceed on the outgoing edge. It’s the counterpart to a Fork Node.</li>
-</ul>
-</section>
-<section id="object-nodes-and-object-flows" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="object-nodes-and-object-flows"><span class="header-section-number">11.5</span> Object Nodes and Object Flows</h2>
-<p>While Control Nodes and Control Flows manage the sequence of actions, <strong>Object Nodes</strong> and <strong>Object Flows</strong> manage the data and objects that are used or produced by actions.</p>
-<p><strong>Notation:</strong> Object Nodes are represented by rectangles. They can show the object’s name, its class, and optionally its state in square brackets (e.g., <code>Claim [Registered]</code>).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/object-node-notations.png" class="img-fluid figure-img" style="width:90.0%" alt="Various ways to depict Object Nodes in UML Activity Diagrams."></p>
-<figcaption>Different notations for Object Nodes, including standalone, pins, and on edges.</figcaption>
-</figure>
-</div>
-<ul>
-<li><strong>Object Node:</strong> Represents an object or a set of objects that are involved in the activity flow. They often act as buffers holding the output of one action until it’s consumed by the next.</li>
-<li><strong>Pins:</strong> Object Nodes can also appear as small squares attached to an Action Node, called <strong>Input Pins</strong> (receiving data) and <strong>Output Pins</strong> (producing data). This notation visually links the data directly to the action that uses or creates it.</li>
-<li><strong>Object Flow Edge:</strong> (Solid arrow) Connects an output pin/object node to an input pin/object node, indicating that the object/data produced by the source is available to the target.</li>
-</ul>
-<p>Object Flows allow modeling data dependencies: an action requiring an object as input cannot start until that object is available via an incoming Object Flow edge.</p>
-</section>
-<section id="activity-partitions-swimlanes" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="activity-partitions-swimlanes"><span class="header-section-number">11.6</span> Activity Partitions (Swimlanes)</h2>
-<p>Activity Partitions, often called <strong>Swimlanes</strong>, are used to organize the actions within an activity diagram based on who or what is responsible for performing them. Partitions can represent: * Actors (e.g., <code>Client</code>, <code>Assistant director</code>) * Organizational units (e.g., <code>Brokerage office</code>, <code>Loss management department</code>) * System components (e.g., <code>Information System</code>)</p>
-<p><strong>Notation:</strong> Swimlanes are shown as visual regions (columns or rows) separated by solid lines. Each partition is labeled with the name of the responsible party. Actions are placed within the lane corresponding to their performer.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/swimlanes-example.png" class="img-fluid figure-img" style="width:100.0%" alt="Activity Diagram organized with vertical swimlanes."></p>
-<figcaption>An Activity Diagram with vertical swimlanes assigning actions to different roles like Client, Employee, and System.</figcaption>
-</figure>
-</div>
-<p>Swimlanes improve readability by clearly showing the distribution of tasks. They can also be nested hierarchically (e.g., a <code>Sales Department</code> lane containing sub-lanes for <code>Pre-Sales</code> and <code>Post-Sales</code>).</p>
-</section>
-<section id="semantics-token-flow" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="semantics-token-flow"><span class="header-section-number">11.7</span> Semantics: Token Flow</h2>
-<p>The execution semantics of an Activity Diagram are often explained using the concept of <strong>tokens</strong>.</p>
-<ul>
-<li>A <strong>token</strong> represents a thread of control (for Control Flows) or a piece of data/object (for Object Flows).</li>
-<li>Execution starts when a token is placed on the <strong>Initial Node</strong>.</li>
-<li>Tokens flow along edges from node to node.</li>
-<li>An <strong>Action</strong> can start only when tokens are available on <em>all</em> its incoming edges (implicit join). When an action finishes, it places tokens on <em>all</em> its outgoing edges (implicit fork).</li>
-<li><strong>Control Nodes</strong> manipulate tokens according to their rules (e.g., a Decision Node passes the token to only one outgoing edge based on guards; a Fork Node duplicates the token onto all outgoing edges).</li>
-<li>The activity finishes when all tokens are consumed by Final Nodes or destroyed (e.g., by reaching a Flow Final Node).</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/token-flow-example.png" class="img-fluid figure-img" style="width:100.0%" alt="Diagrams showing tokens moving through actions, forks, joins, and decisions."></p>
-<figcaption>Sequence of diagrams illustrating token flow through an activity diagram.</figcaption>
-</figure>
-</div>
-<p>Understanding token flow helps visualize how sequences, choices, and parallelism work within the diagram.</p>
-</section>
-<section id="advanced-constructs" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="advanced-constructs"><span class="header-section-number">11.8</span> Advanced Constructs</h2>
-<p>Activity Diagrams offer several advanced features for modeling more complex scenarios:</p>
-<ul>
-<li><strong>Pre/Post-conditions:</strong> Can be specified for the entire activity or locally for specific actions.</li>
-<li><strong>Sub-activity Invocation (Call Behavior Action):</strong> An action that invokes another, separate Activity Diagram, allowing for modularity and reuse. Represented by an action node with a rake symbol (Ψ).</li>
-<li><strong>Send Signal / Accept Event Actions:</strong> Actions used for explicit communication between activities or with objects outside the activity (asynchronous messaging).</li>
-<li><strong>Interruptible Activity Regions:</strong> A region within the diagram where all executing flows can be abruptly terminated if a specific event occurs (e.g., a <code>Cancel request</code>).</li>
-<li><strong>Expansion Regions:</strong> A structured region representing a loop that executes its internal logic once for each item in an input collection (like a <code>for-each</code> loop).</li>
-<li><strong>Connectors:</strong> Named circles used to break long edge paths and improve diagram layout, connecting two parts of the diagram without drawing a long line.</li>
-</ul>
-</section>
-<section id="conclusion" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11.9</span> Conclusion</h2>
-<p>Activity Diagrams are a powerful tool for modeling processes and workflows. They clearly depict the sequence of actions, conditional logic, parallelism, responsibilities (via swimlanes), and data flow. While their semantics can sometimes be complex, especially with advanced features, they provide a valuable visual language for analyzing, designing, and communicating system behaviour. They share similarities with BPMN (Business Process Model and Notation) but are integrated within the broader UML ecosystem, making them particularly useful for software engineers modeling system logic or detailed use case flows.</p>
 
 
 </section>
@@ -790,13 +848,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-practical-exercices-state-machine-modelisation.html" class="pagination-link" aria-label="Practical Exercises: Building State Machine">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></span>
+      <a href="./14-practical-exercises-interaction-diagrams.html" class="pagination-link" aria-label="Practical Exercises: Interaction Diagrams">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Practical Exercises: Interaction Diagrams</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./12-practical-exercices-activity-diagrams.html" class="pagination-link" aria-label="Practical Exercises: Activity Diagrams">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./16-practical-exercises-use-case-diagrams.html" class="pagination-link" aria-label="16-practical-exercises-use-case-diagrams.html">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">16-practical-exercises-use-case-diagrams.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

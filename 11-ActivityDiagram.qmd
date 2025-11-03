@@ -45,7 +45,7 @@ Let's look at each component in more detail.
 
 ## Action Nodes
 
-An **Action** is the fundamental unit of behavior in an activity diagram. It represents a single step or task that needs to be performed. Actions are typically atomic, meaning they are considered indivisible units of work within the context of the diagram's abstraction level.
+An **Action** is the fundamental unit of behaviour in an activity diagram. It represents a single step or task that needs to be performed. Actions are typically atomic, meaning they are considered indivisible units of work within the context of the diagram's abstraction level.
 
 **Notation:** Actions are represented by rectangles with rounded corners, containing the name or description of the action.
 
@@ -136,4 +136,4 @@ Activity Diagrams offer several advanced features for modeling more complex scen
 
 ## Conclusion
 
-Activity Diagrams are a powerful tool for modeling processes and workflows. They clearly depict the sequence of actions, conditional logic, parallelism, responsibilities (via swimlanes), and data flow. While their semantics can sometimes be complex, especially with advanced features, they provide a valuable visual language for analyzing, designing, and communicating system behavior. They share similarities with BPMN (Business Process Model and Notation) but are integrated within the broader UML ecosystem, making them particularly useful for software engineers modeling system logic or detailed use case flows.
+Activity Diagrams are a powerful tool for modeling processes and workflows. They clearly depict the sequence of actions, conditional logic, parallelism, responsibilities (via swimlanes), and data flow. While their semantics can sometimes be complex, especially with advanced features, they provide a valuable visual language for analyzing, designing, and communicating system behaviour. They share similarities with BPMN (Business Process Model and Notation) but are integrated within the broader UML ecosystem, making them particularly useful for software engineers modeling system logic or detailed use case flows.

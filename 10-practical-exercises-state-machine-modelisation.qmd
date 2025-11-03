@@ -1,14 +1,14 @@
 ---
-title: "Practical Exercises: State Machine Diagrams"
+title: "Practical Exercises: Building State Machine"
 format: html
 ---
 
-This chapter provides practical exercises to apply the concepts of UML State Machine Diagrams. Each exercise presents a problem description and a context (like a class diagram), followed by the task of modeling the dynamic behavior using a state machine.
+This chapter provides practical exercises to apply the concepts of UML State Machine Diagrams. Each exercise presents a problem description and a context (like a class diagram), followed by the task of modeling the dynamic behaviour using a state machine.
 
 ### Exercise 1: Traffic Light System
 
 **Problem:**
-Model the behavior of a traffic light system located at the intersection of two major roads. The system controls three bulbs (red, orange, green), includes an internal clock, and a sensor to detect if at least 5 cars are waiting. The system operates in three modes: **Initialization**, **Day Mode**, and **Night Mode**.
+Model the behaviour of a traffic light system located at the intersection of two major roads. The system controls three bulbs (red, orange, green), includes an internal clock, and a sensor to detect if at least 5 cars are waiting. The system operates in three modes: **Initialization**, **Day Mode**, and **Night Mode**.
 
 * **Initialization:** Triggered on power-up. Checks sensors and bulbs. If okay, transitions to Day or Night mode based on the current time.
 * **Day Mode:** Active from 05:00:00 to 22:59:59. Starts with Red for 30s. Red and Green lights normally last 30s each. However, if the sensor detects >= 5 cars just before switching to Green, the Green light lasts 60s instead. The transition from Green to Red includes a 2s Orange light.
@@ -21,7 +21,7 @@ Model the behavior of a traffic light system located at the intersection of two 
 
 **Task:**
 
-1.  Model the traffic light's behavior using a UML State Machine Diagram.
+1.  Model the traffic light's behaviour using a UML State Machine Diagram.
 2.  Modify the diagram to handle synchronization with an identical traffic light on the intersecting road: when one light goes from Green to Orange, the other goes from Red to Green. Document any assumptions made.
 
 ::: {.callout-tip collapse="true" title="Click to see the solution"}
@@ -56,7 +56,7 @@ Model the behavior of a traffic light system located at the intersection of two 
 * **Transitions:** Showing changes between states based on time or conditions.
 * **Triggers:** Using `after()` and `at()` for Time Events, `when()` for Change Events, and operation calls.
 * **Guards:** Using conditions like time ranges or car count (`> 4`) to direct flow.
-* **Entry Actions:** Defining behavior executed upon entering a state (e.g., activating a light bulb).
+* **Entry Actions:** Defining behaviour executed upon entering a state (e.g., activating a light bulb).
 * **Choice Pseudostate:** Modeling conditional paths based on sensor reading.
 
 :::
@@ -65,7 +65,7 @@ Model the behavior of a traffic light system located at the intersection of two 
 ### Exercise 2: VCR (Magnetoscope)
 
 **Problem:**
-Model the behavior of a simplified VCR (Magnetoscope) using a State Machine Diagram. The VCR interacts with a `Drawer` (which holds the cassette) and has signals corresponding to button presses (`power`, `play`, `stop`, `record`, `FF`, `eject`).
+Model the behaviour of a simplified VCR (Magnetoscope) using a State Machine Diagram. The VCR interacts with a `Drawer` (which holds the cassette) and has signals corresponding to button presses (`power`, `play`, `stop`, `record`, `FF`, `eject`).
 
 * **Power:** `power` toggles the VCR between `IDLED` (standby, `isOn=false`) and `ON` (`isOn=true`).
 * **Loading:** The `Drawer` class handles `load()`/`unload()` operations, reflected by its `loaded: Boolean` attribute.
@@ -136,6 +136,6 @@ Model the behavior of a simplified VCR (Magnetoscope) using a State Machine Diag
 * **Event Handling:** Transitions triggered by button presses (signals) like `play`, `record`, `stop`, `FF`, `eject`, `power`.
 * **Guards:** Using conditions like `[loaded]` to enable/disable transitions.
 * **Entry Actions:** Setting attributes (`isOn`, `drawer->speed`, `drawer->loaded`) upon entering states or as effects of transitions.
-* **Modeling Complex Lifecycles:** Capturing the intricate behavior of the VCR through states and transitions.
+* **Modeling Complex Lifecycles:** Capturing the intricate behaviour of the VCR through states and transitions.
 
 :::

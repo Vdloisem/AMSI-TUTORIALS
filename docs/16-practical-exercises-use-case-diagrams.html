@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Activity Diagrams – AMSI-TUTORIALS</title>
+<title>16&nbsp; Practical Exercises: Use Case Diagrams – AMSI-TUTORIALS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./12-practical-exercices-activity-diagrams.html" rel="next">
-<link href="./10-practical-exercices-state-machine-modelisation.html" rel="prev">
+<link href="./15-use-case-diagrams.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11-ActivityDiagram.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./16-practical-exercises-use-case-diagrams.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Practical Exercises: Use Case Diagrams</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,26 +168,44 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-practical-exercices-state-machine-modelisation.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-practical-exercises-state-machine-modelisation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-ActivityDiagram.html" class="sidebar-item-text sidebar-link active">
+  <a href="./11-ActivityDiagram.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-practical-exercices-activity-diagrams.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-practical-exercises-activity-diagrams.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13-InteractionDiagram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">13-InteractionDiagram.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Interaction Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-practical-exercises-interaction-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Practical Exercises: Interaction Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-use-case-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Use Case Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-practical-exercises-use-case-diagrams.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Practical Exercises: Use Case Diagrams</span></span></a>
   </div>
 </li>
     </ul>
@@ -201,15 +218,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-an-activity-diagram" id="toc-what-is-an-activity-diagram" class="nav-link active" data-scroll-target="#what-is-an-activity-diagram"><span class="header-section-number">11.1</span> What is an Activity Diagram?</a></li>
-  <li><a href="#core-concepts-nodes-edges-and-partitions" id="toc-core-concepts-nodes-edges-and-partitions" class="nav-link" data-scroll-target="#core-concepts-nodes-edges-and-partitions"><span class="header-section-number">11.2</span> Core Concepts: Nodes, Edges, and Partitions</a></li>
-  <li><a href="#action-nodes" id="toc-action-nodes" class="nav-link" data-scroll-target="#action-nodes"><span class="header-section-number">11.3</span> Action Nodes</a></li>
-  <li><a href="#control-nodes" id="toc-control-nodes" class="nav-link" data-scroll-target="#control-nodes"><span class="header-section-number">11.4</span> Control Nodes</a></li>
-  <li><a href="#object-nodes-and-object-flows" id="toc-object-nodes-and-object-flows" class="nav-link" data-scroll-target="#object-nodes-and-object-flows"><span class="header-section-number">11.5</span> Object Nodes and Object Flows</a></li>
-  <li><a href="#activity-partitions-swimlanes" id="toc-activity-partitions-swimlanes" class="nav-link" data-scroll-target="#activity-partitions-swimlanes"><span class="header-section-number">11.6</span> Activity Partitions (Swimlanes)</a></li>
-  <li><a href="#semantics-token-flow" id="toc-semantics-token-flow" class="nav-link" data-scroll-target="#semantics-token-flow"><span class="header-section-number">11.7</span> Semantics: Token Flow</a></li>
-  <li><a href="#advanced-constructs" id="toc-advanced-constructs" class="nav-link" data-scroll-target="#advanced-constructs"><span class="header-section-number">11.8</span> Advanced Constructs</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11.9</span> Conclusion</a></li>
+  <li><a href="#exercise-1-whats-wrong-doctor" id="toc-exercise-1-whats-wrong-doctor" class="nav-link active" data-scroll-target="#exercise-1-whats-wrong-doctor"><span class="header-section-number">16.0.1</span> Exercise 1: What’s wrong, Doctor?</a></li>
+  <li><a href="#exercise-2-yellowstone" id="toc-exercise-2-yellowstone" class="nav-link" data-scroll-target="#exercise-2-yellowstone"><span class="header-section-number">16.0.2</span> Exercise 2: YellowStone</a></li>
   </ul>
 </nav>
     </div>
@@ -218,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Practical Exercises: Use Case Diagrams</span></h1>
 </div>
 
 
@@ -235,155 +245,120 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter explores another crucial behavioral diagram in UML: the <strong>Activity Diagram</strong>. While State Machine diagrams focus on the lifecycle of a single object, Activity Diagrams excel at modeling workflows, processes, and algorithms, showing the flow of control and data between various steps.</p>
-<section id="what-is-an-activity-diagram" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="what-is-an-activity-diagram"><span class="header-section-number">11.1</span> What is an Activity Diagram?</h2>
-<p>An Activity Diagram models the <strong>dynamics</strong> of a system by representing the flow of activities. It can depict high-level business processes (workflows involving multiple actors or departments) or detailed low-level logic (like the steps within a complex algorithm).</p>
-<p>Its main purpose is to show:</p>
-<ul>
-<li>The sequence of <strong>steps</strong> (actions) involved in a process.</li>
-<li><strong>Precedence</strong> (sequencing) and <strong>concurrence</strong> (parallelism) between these steps.</li>
-<li>Optionally, <strong>who</strong> or <strong>what part</strong> of the system is responsible for performing each step.</li>
-<li>Optionally, the <strong>data or objects</strong> that are created, used, or modified during the activity.</li>
-</ul>
-<p>Activity diagrams are versatile and can be used for:</p>
-<ul>
-<li>Modeling and analyzing business processes (understanding workflows, identifying bottlenecks, re-engineering).</li>
-<li>Detailing complex use case scenarios.</li>
-<li>Modeling the logic of an operation or algorithm.</li>
-</ul>
-</section>
-<section id="core-concepts-nodes-edges-and-partitions" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="core-concepts-nodes-edges-and-partitions"><span class="header-section-number">11.2</span> Core Concepts: Nodes, Edges, and Partitions</h2>
-<p>Activity Diagrams are essentially flowcharts built from specific UML elements.</p>
+<p>This chapter provides practical exercises for applying the concepts of UML Use Case Diagrams. The exercises focus on identifying modeling errors and on creating a new diagram from a textual description, paying close attention to actors, goals, and relationships.</p>
+<section id="exercise-1-whats-wrong-doctor" class="level3" data-number="16.0.1">
+<h3 data-number="16.0.1" class="anchored" data-anchor-id="exercise-1-whats-wrong-doctor"><span class="header-section-number">16.0.1</span> Exercise 1: What’s wrong, Doctor?</h3>
+<p><strong>Problem:</strong> Based on the concepts covered in the theory lectures, you are asked to identify the errors appearing in the Use Case Diagram below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/activity-overview.png" class="img-fluid figure-img" style="width:100.0%" alt="Overview of an Activity Diagram illustrating its main components."></p>
-<figcaption>An overview of an Activity Diagram showing key components like Actions, Control Nodes, Object Nodes, and Swimlanes.</figcaption>
+<p><img src="images/tp8-use-case-errors-problem.png" class="img-fluid figure-img" alt="An incorrect Use Case Diagram to be analyzed."></p>
+<figcaption>An incorrect Use Case Diagram for a cash register system.</figcaption>
 </figure>
 </div>
-<p>The main building blocks are:</p>
+<p><strong>Task:</strong> Identify all the modeling errors in this diagram.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Correction Details:</strong></p>
+<p>Here is a list of the errors and modeling issues found in the diagram:</p>
+<ol type="1">
+<li><strong>Actors Inside Boundary:</strong> The <code>Système existant</code> (Existing System) and <code>Réseau...</code> (Network…) actors are placed <em>inside</em> the system boundary box. All actors must be external to the system.</li>
+<li><strong>Reversed Generalization:</strong> The specialization arrow between <code>Caissière chef</code> (Head Cashier) and <code>Caissière</code> (Cashier) is reversed. The arrow should point from the specialized actor (<code>Caissière</code>) to the general actor (<code>Caissière chef</code>).</li>
+<li><strong>Unclear Main Scenarios:</strong> The diagram does not clearly represent the primary, high-level goals of the actors.</li>
+<li><strong>Poor Use Case Naming (No Goal/Value):</strong> Several use cases represent single steps or UI interactions, not user goals. For example, <code>Taper au clavier numérique</code> (“Type on numeric keypad”) is a step, not a goal that provides value to the actor.</li>
+<li><strong>Unconnected Actor:</strong> The <code>Système existant</code> actor is not connected to any use case, so its purpose in the diagram is unknown.</li>
+<li><strong>Unclear System Boundary:</strong> The boundary box is labeled “Caisse” (Checkout), which is ambiguous. It’s not clear if this is the name of the system being built or a department.</li>
+<li><strong>Incorrect Use of Associations:</strong> The alternative case <code>Réessayer</code> (“Try again”) should likely be an <code>&lt;&lt;extend&gt;&gt;</code> relationship modifying a main use case, not a standalone use case initiated by the actor.</li>
+<li><strong>Confusing Relationships:</strong> The <code>Liquide</code> (Cash) use case has multiple <code>&lt;&lt;extends&gt;&gt;</code> relationships and an <code>&lt;&lt;include&gt;&gt;</code> relationship, creating a confusing and likely incorrect structure.</li>
+<li><strong>Misuse of <code>&lt;&lt;include&gt;&gt;</code>:</strong> The <code>Encoder montant reçu</code> (“Enter amount received”) use case is included by only one other use case. The <code>&lt;&lt;include&gt;&gt;</code> relationship is intended to factor out behavior <em>common</em> to <em>multiple</em> use cases.</li>
+<li><strong>Invalid Notation:</strong> The label <code>[si marche pas]</code> (“if it doesn’t work”) is not a valid UML Use Case construct. This logic should be represented by extension points and <code>&lt;&lt;extend&gt;&gt;</code> relationships.</li>
+<li><strong>Poor Naming:</strong> The naming for exception cases (like <code>Réessayer</code>) is not descriptive of a user goal.</li>
+</ol>
+<p><strong>Key Concepts Illustrated:</strong></p>
 <ul>
-<li><p><strong>Nodes:</strong> Represent steps or control points in the flow. There are three main types:</p>
+<li>Actors must be <strong>external</strong> to the system.</li>
+<li>Generalization (specialization) arrows point from the <strong>subclass (specific)</strong> to the <strong>superclass (general)</strong>.</li>
+<li>A use case must represent a <strong>complete user goal</strong> that provides <strong>added value</strong>, not a single, trivial step.</li>
+<li><code>&lt;&lt;include&gt;&gt;</code> is for <strong>mandatory, common</strong> behavior.</li>
+<li><code>&lt;&lt;extend&gt;&gt;</code> is for <strong>optional, alternative</strong> behavior.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-yellowstone" class="level3" data-number="16.0.2">
+<h3 data-number="16.0.2" class="anchored" data-anchor-id="exercise-2-yellowstone"><span class="header-section-number">16.0.2</span> Exercise 2: YellowStone</h3>
+<p><strong>Problem:</strong> You are asked to model the use cases of the Yellow Stone management system for its end-users, in the form of a Use Case Diagram. Be sure to clearly distinguish the different roles.</p>
+<p><strong>Note:</strong> At this stage, do not write textual descriptions or invent exceptional/exotic cases not mentioned in the text.</p>
+<p><strong>Context:</strong> The Yellow Stone station is investing in new software. The system must be able to manage all of the station’s services.</p>
 <ul>
-<li><strong>Action Nodes:</strong> Represent the execution of a specific task or step.</li>
-<li><strong>Control Nodes:</strong> Direct the flow (start, end, decisions, merges, parallel forks, joins).</li>
-<li><strong>Object Nodes:</strong> Represent data or objects flowing through the activity.</li>
+<li><strong>Primary Service:</strong> Fueling (<code>Prise de carburant</code>).</li>
+<li><strong>Other Services:</strong> In-station purchases (<code>achats au sein de la station</code>), and in the future, car wash (<code>lavage</code>) and maintenance (<code>entretien</code>).</li>
+<li><strong>Payment:</strong> “Each payment for a service (fuel, purchases, wash, maintenance) results in a timestamped customer transaction.” This implies payment is a required part of all services.</li>
+<li><strong>Fueling Process:</strong>
+<ul>
+<li>The fueling process requires explicit authorization.</li>
+<li>Authorization can come from the <strong>attendant’s terminal</strong> (<code>terminal du pompiste</code>) or the <strong>automated payment terminal</strong> (<code>terminal de paiement automatisé</code>).</li>
+<li>A <strong>tank level sensor</strong> (<code>capteur de niveau dans les cuves</code>) is checked. If the level is too low (&lt; 3%), arming is prevented, and the <strong>attendant</strong> (<code>pompiste</code>) is notified of the need to order a refill.</li>
 </ul></li>
-<li><p><strong>Edges:</strong> Connect the nodes, showing the path of control or data. There are two main types:</p>
+</ul>
+<p><strong>Task:</strong> Create the Use Case Diagram for the Yellow Stone system based on the description.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Click to see the solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tp8-yellowstone-uc-solution.png" class="img-fluid figure-img" alt="The Use Case Diagram for the YellowStone system."></p>
+<figcaption>Solution diagram for the YellowStone Use Case.</figcaption>
+</figure>
+</div>
+<p><strong>Correction Details:</strong></p>
+<p>The solution diagram correctly identifies the actors and their goals:</p>
 <ul>
-<li><strong>Control Flow Edges:</strong> Show the sequence between actions.</li>
-<li><strong>Object Flow Edges:</strong> Show the flow of objects/data between actions.</li>
+<li><strong>Actors:</strong>
+<ul>
+<li><code>Client</code>: The primary actor who initiates all services.</li>
+<li><code>Pompiste</code> (Attendant): A secondary actor who participates in the <code>Faire le plein</code> (Refuel) use case (by providing authorization) and is also notified by the <code>CapteurCuve</code>.</li>
+<li><code>Terminal</code>: A secondary actor, also participating in <code>Faire le plein</code> (by providing authorization). The diagram shows it as a <em>specialization</em> of <code>Pompiste</code> (an automated attendant).</li>
+<li><code>CapteurCuve</code> (Tank Sensor): A secondary actor (a device) that interacts with <code>Faire le plein</code> (to provide the level) and the <code>Pompiste</code> (to send a low-level alert).</li>
 </ul></li>
-<li><p><strong>Activity Partitions (Swimlanes):</strong> Optional mechanism to group actions based on responsibility (e.g., by actor, department, system component).</p></li>
+<li><strong>Use Cases:</strong> The diagram identifies four main, high-level goals for the <code>Client</code>:
+<ol type="1">
+<li><code>Faire le plein</code> (Refuel)</li>
+<li><code>Faire des courses</code> (Go shopping)</li>
+<li><code>Faire un entretien</code> (Do maintenance)</li>
+<li><code>Laver la voiture</code> (Wash car)</li>
+</ol></li>
+<li><strong><code>&lt;&lt;include&gt;&gt;</code> Relationship:</strong> Based on the text “Each payment for a service…”, the diagram correctly identifies <code>5. Payer</code> (Pay) as a separate, included use case. All four main services have an <code>&lt;&lt;include&gt;&gt;</code> relationship pointing to <code>Payer</code>, indicating that payment is a mandatory, common part of completing any of those services.</li>
 </ul>
-<p>Let’s look at each component in more detail.</p>
-</section>
-<section id="action-nodes" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="action-nodes"><span class="header-section-number">11.3</span> Action Nodes</h2>
-<p>An <strong>Action</strong> is the fundamental unit of behaviour in an activity diagram. It represents a single step or task that needs to be performed. Actions are typically atomic, meaning they are considered indivisible units of work within the context of the diagram’s abstraction level.</p>
-<p><strong>Notation:</strong> Actions are represented by rectangles with rounded corners, containing the name or description of the action.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/action-node.png" class="img-fluid figure-img" style="width:40.0%" alt="A round-cornered rectangle representing a UML Action Node."></p>
-<figcaption>A simple Action Node notation.</figcaption>
-</figure>
+<p><strong>Key Concepts Illustrated:</strong></p>
+<ul>
+<li><strong>Identifying Actors:</strong> Correctly distinguishing between the primary user (<code>Client</code>) and the various secondary actors (human <code>Pompiste</code>, hardware <code>CapteurCuve</code>, and system <code>Terminal</code>).</li>
+<li><strong>Actor Generalization:</strong> Using generalization to show that the <code>Terminal</code> plays a similar (but more specialized) role to the <code>Pompiste</code>.</li>
+<li><strong>Identifying Goals:</strong> Defining clear, high-level goals for the user (<code>Faire le plein</code>, <code>Faire des courses</code>, etc.) rather than low-level steps.</li>
+<li><strong>Using <code>&lt;&lt;include&gt;&gt;</code>:</strong> Correctly factoring out the <code>Payer</code> functionality, which is mandatory and common to all other main use cases.</li>
+</ul>
 </div>
-<p>Actions can model a wide variety of tasks:</p>
-<ul>
-<li>Manual or automated steps in a process (e.g., <code>Check coverage</code>, <code>Register digital claim</code>).</li>
-<li>Creating, reading, updating, or deleting data/objects (CRUD operations).</li>
-<li>Invoking operations on objects.</li>
-<li>Calling other behaviors (like sub-activities or state machines).</li>
-<li>Sending or receiving signals/messages.</li>
-<li>Performing calculations.</li>
-</ul>
-</section>
-<section id="control-nodes" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="control-nodes"><span class="header-section-number">11.4</span> Control Nodes</h2>
-<p>Control nodes manage the flow of execution within the activity. They don’t represent tasks themselves but direct the sequence and concurrency of actions.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/control-nodes.png" class="img-fluid figure-img" style="width:80.0%" alt="Symbols for Initial, Final, Decision, Merge, Fork, and Join nodes."></p>
-<figcaption>Various UML Control Nodes: Initial, Final (Activity/Flow), Decision/Merge, Fork/Join.</figcaption>
-</figure>
 </div>
-<ul>
-<li><strong>Initial Node:</strong> (Solid circle) Marks the starting point of the activity. An activity typically has only one initial node.</li>
-<li><strong>Final Nodes:</strong> Indicate the termination of a flow.
-<ul>
-<li><strong>Activity Final Node:</strong> (Circled solid circle / bullseye) Terminates the <em>entire</em> activity, stopping all concurrent flows within it.</li>
-<li><strong>Flow Final Node:</strong> (Circled X) Terminates only the <em>specific flow</em> reaching it; other concurrent flows may continue.</li>
-</ul></li>
-<li><strong>Decision Node:</strong> (Diamond) Represents a conditional branch point (like an <code>if</code> statement). It has one incoming edge and multiple outgoing edges, each labeled with a <strong>guard condition</strong> (e.g., <code>[loss covered]</code>). Only one outgoing path is taken based on which guard evaluates to true.</li>
-<li><strong>Merge Node:</strong> (Diamond) Merges multiple alternative flows back into one. It has multiple incoming edges and one outgoing edge. It passes through any token arriving on any incoming edge (no synchronization). It’s the counterpart to a Decision Node.</li>
-<li><strong>Fork Node:</strong> (Thick bar) Splits a single flow into multiple concurrent (parallel) flows. It has one incoming edge and multiple outgoing edges. A token arriving at a fork is duplicated across all outgoing edges, initiating parallel execution.</li>
-<li><strong>Join Node:</strong> (Thick bar) Synchronizes multiple concurrent flows. It has multiple incoming edges and one outgoing edge. It waits for tokens to arrive on <em>all</em> incoming edges before allowing a single token to proceed on the outgoing edge. It’s the counterpart to a Fork Node.</li>
-</ul>
-</section>
-<section id="object-nodes-and-object-flows" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="object-nodes-and-object-flows"><span class="header-section-number">11.5</span> Object Nodes and Object Flows</h2>
-<p>While Control Nodes and Control Flows manage the sequence of actions, <strong>Object Nodes</strong> and <strong>Object Flows</strong> manage the data and objects that are used or produced by actions.</p>
-<p><strong>Notation:</strong> Object Nodes are represented by rectangles. They can show the object’s name, its class, and optionally its state in square brackets (e.g., <code>Claim [Registered]</code>).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/object-node-notations.png" class="img-fluid figure-img" style="width:90.0%" alt="Various ways to depict Object Nodes in UML Activity Diagrams."></p>
-<figcaption>Different notations for Object Nodes, including standalone, pins, and on edges.</figcaption>
-</figure>
 </div>
-<ul>
-<li><strong>Object Node:</strong> Represents an object or a set of objects that are involved in the activity flow. They often act as buffers holding the output of one action until it’s consumed by the next.</li>
-<li><strong>Pins:</strong> Object Nodes can also appear as small squares attached to an Action Node, called <strong>Input Pins</strong> (receiving data) and <strong>Output Pins</strong> (producing data). This notation visually links the data directly to the action that uses or creates it.</li>
-<li><strong>Object Flow Edge:</strong> (Solid arrow) Connects an output pin/object node to an input pin/object node, indicating that the object/data produced by the source is available to the target.</li>
-</ul>
-<p>Object Flows allow modeling data dependencies: an action requiring an object as input cannot start until that object is available via an incoming Object Flow edge.</p>
-</section>
-<section id="activity-partitions-swimlanes" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="activity-partitions-swimlanes"><span class="header-section-number">11.6</span> Activity Partitions (Swimlanes)</h2>
-<p>Activity Partitions, often called <strong>Swimlanes</strong>, are used to organize the actions within an activity diagram based on who or what is responsible for performing them. Partitions can represent: * Actors (e.g., <code>Client</code>, <code>Assistant director</code>) * Organizational units (e.g., <code>Brokerage office</code>, <code>Loss management department</code>) * System components (e.g., <code>Information System</code>)</p>
-<p><strong>Notation:</strong> Swimlanes are shown as visual regions (columns or rows) separated by solid lines. Each partition is labeled with the name of the responsible party. Actions are placed within the lane corresponding to their performer.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/swimlanes-example.png" class="img-fluid figure-img" style="width:100.0%" alt="Activity Diagram organized with vertical swimlanes."></p>
-<figcaption>An Activity Diagram with vertical swimlanes assigning actions to different roles like Client, Employee, and System.</figcaption>
-</figure>
-</div>
-<p>Swimlanes improve readability by clearly showing the distribution of tasks. They can also be nested hierarchically (e.g., a <code>Sales Department</code> lane containing sub-lanes for <code>Pre-Sales</code> and <code>Post-Sales</code>).</p>
-</section>
-<section id="semantics-token-flow" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="semantics-token-flow"><span class="header-section-number">11.7</span> Semantics: Token Flow</h2>
-<p>The execution semantics of an Activity Diagram are often explained using the concept of <strong>tokens</strong>.</p>
-<ul>
-<li>A <strong>token</strong> represents a thread of control (for Control Flows) or a piece of data/object (for Object Flows).</li>
-<li>Execution starts when a token is placed on the <strong>Initial Node</strong>.</li>
-<li>Tokens flow along edges from node to node.</li>
-<li>An <strong>Action</strong> can start only when tokens are available on <em>all</em> its incoming edges (implicit join). When an action finishes, it places tokens on <em>all</em> its outgoing edges (implicit fork).</li>
-<li><strong>Control Nodes</strong> manipulate tokens according to their rules (e.g., a Decision Node passes the token to only one outgoing edge based on guards; a Fork Node duplicates the token onto all outgoing edges).</li>
-<li>The activity finishes when all tokens are consumed by Final Nodes or destroyed (e.g., by reaching a Flow Final Node).</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/token-flow-example.png" class="img-fluid figure-img" style="width:100.0%" alt="Diagrams showing tokens moving through actions, forks, joins, and decisions."></p>
-<figcaption>Sequence of diagrams illustrating token flow through an activity diagram.</figcaption>
-</figure>
-</div>
-<p>Understanding token flow helps visualize how sequences, choices, and parallelism work within the diagram.</p>
-</section>
-<section id="advanced-constructs" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="advanced-constructs"><span class="header-section-number">11.8</span> Advanced Constructs</h2>
-<p>Activity Diagrams offer several advanced features for modeling more complex scenarios:</p>
-<ul>
-<li><strong>Pre/Post-conditions:</strong> Can be specified for the entire activity or locally for specific actions.</li>
-<li><strong>Sub-activity Invocation (Call Behavior Action):</strong> An action that invokes another, separate Activity Diagram, allowing for modularity and reuse. Represented by an action node with a rake symbol (Ψ).</li>
-<li><strong>Send Signal / Accept Event Actions:</strong> Actions used for explicit communication between activities or with objects outside the activity (asynchronous messaging).</li>
-<li><strong>Interruptible Activity Regions:</strong> A region within the diagram where all executing flows can be abruptly terminated if a specific event occurs (e.g., a <code>Cancel request</code>).</li>
-<li><strong>Expansion Regions:</strong> A structured region representing a loop that executes its internal logic once for each item in an input collection (like a <code>for-each</code> loop).</li>
-<li><strong>Connectors:</strong> Named circles used to break long edge paths and improve diagram layout, connecting two parts of the diagram without drawing a long line.</li>
-</ul>
-</section>
-<section id="conclusion" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11.9</span> Conclusion</h2>
-<p>Activity Diagrams are a powerful tool for modeling processes and workflows. They clearly depict the sequence of actions, conditional logic, parallelism, responsibilities (via swimlanes), and data flow. While their semantics can sometimes be complex, especially with advanced features, they provide a valuable visual language for analyzing, designing, and communicating system behaviour. They share similarities with BPMN (Business Process Model and Notation) but are integrated within the broader UML ecosystem, making them particularly useful for software engineers modeling system logic or detailed use case flows.</p>
 
 
 </section>
@@ -790,14 +765,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-practical-exercices-state-machine-modelisation.html" class="pagination-link" aria-label="Practical Exercises: Building State Machine">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></span>
+      <a href="./15-use-case-diagrams.html" class="pagination-link" aria-label="Use Case Diagrams">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Use Case Diagrams</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./12-practical-exercices-activity-diagrams.html" class="pagination-link" aria-label="Practical Exercises: Activity Diagrams">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

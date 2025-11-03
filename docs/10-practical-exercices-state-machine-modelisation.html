@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Practical Exercises: State Machine Diagrams – AMSI-TUTORIALS</title>
+<title>10&nbsp; Practical Exercises: Building State Machine – AMSI-TUTORIALS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-practical-exercices-state-machine-modelisation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machine Diagrams</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-practical-exercices-state-machine-modelisation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-practical-exercices-state-machine-modelisation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machine Diagrams</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,6 +183,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./12-practical-exercices-activity-diagrams.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-InteractionDiagram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">13-InteractionDiagram.html</span></span></a>
   </div>
 </li>
     </ul>
@@ -205,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machine Diagrams</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></h1>
 </div>
 
 
@@ -222,10 +228,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter provides practical exercises to apply the concepts of UML State Machine Diagrams. Each exercise presents a problem description and a context (like a class diagram), followed by the task of modeling the dynamic behavior using a state machine.</p>
+<p>This chapter provides practical exercises to apply the concepts of UML State Machine Diagrams. Each exercise presents a problem description and a context (like a class diagram), followed by the task of modeling the dynamic behaviour using a state machine.</p>
 <section id="exercise-1-traffic-light-system" class="level3" data-number="10.0.1">
 <h3 data-number="10.0.1" class="anchored" data-anchor-id="exercise-1-traffic-light-system"><span class="header-section-number">10.0.1</span> Exercise 1: Traffic Light System</h3>
-<p><strong>Problem:</strong> Model the behavior of a traffic light system located at the intersection of two major roads. The system controls three bulbs (red, orange, green), includes an internal clock, and a sensor to detect if at least 5 cars are waiting. The system operates in three modes: <strong>Initialization</strong>, <strong>Day Mode</strong>, and <strong>Night Mode</strong>.</p>
+<p><strong>Problem:</strong> Model the behaviour of a traffic light system located at the intersection of two major roads. The system controls three bulbs (red, orange, green), includes an internal clock, and a sensor to detect if at least 5 cars are waiting. The system operates in three modes: <strong>Initialization</strong>, <strong>Day Mode</strong>, and <strong>Night Mode</strong>.</p>
 <ul>
 <li><strong>Initialization:</strong> Triggered on power-up. Checks sensors and bulbs. If okay, transitions to Day or Night mode based on the current time.</li>
 <li><strong>Day Mode:</strong> Active from 05:00:00 to 22:59:59. Starts with Red for 30s. Red and Green lights normally last 30s each. However, if the sensor detects &gt;= 5 cars just before switching to Green, the Green light lasts 60s instead. The transition from Green to Red includes a 2s Orange light.</li>
@@ -241,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><strong>Task:</strong></p>
 <ol type="1">
-<li>Model the traffic light’s behavior using a UML State Machine Diagram.</li>
+<li>Model the traffic light’s behaviour using a UML State Machine Diagram.</li>
 <li>Modify the diagram to handle synchronization with an identical traffic light on the intersecting road: when one light goes from Green to Orange, the other goes from Red to Green. Document any assumptions made.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Click to see the solution">
@@ -296,7 +302,7 @@ Click to see the solution
 <li><strong>Transitions:</strong> Showing changes between states based on time or conditions.</li>
 <li><strong>Triggers:</strong> Using <code>after()</code> and <code>at()</code> for Time Events, <code>when()</code> for Change Events, and operation calls.</li>
 <li><strong>Guards:</strong> Using conditions like time ranges or car count (<code>&gt; 4</code>) to direct flow.</li>
-<li><strong>Entry Actions:</strong> Defining behavior executed upon entering a state (e.g., activating a light bulb).</li>
+<li><strong>Entry Actions:</strong> Defining behaviour executed upon entering a state (e.g., activating a light bulb).</li>
 <li><strong>Choice Pseudostate:</strong> Modeling conditional paths based on sensor reading.</li>
 </ul>
 </div>
@@ -305,7 +311,7 @@ Click to see the solution
 </section>
 <section id="exercise-2-vcr-magnetoscope" class="level3" data-number="10.0.2">
 <h3 data-number="10.0.2" class="anchored" data-anchor-id="exercise-2-vcr-magnetoscope"><span class="header-section-number">10.0.2</span> Exercise 2: VCR (Magnetoscope)</h3>
-<p><strong>Problem:</strong> Model the behavior of a simplified VCR (Magnetoscope) using a State Machine Diagram. The VCR interacts with a <code>Drawer</code> (which holds the cassette) and has signals corresponding to button presses (<code>power</code>, <code>play</code>, <code>stop</code>, <code>record</code>, <code>FF</code>, <code>eject</code>).</p>
+<p><strong>Problem:</strong> Model the behaviour of a simplified VCR (Magnetoscope) using a State Machine Diagram. The VCR interacts with a <code>Drawer</code> (which holds the cassette) and has signals corresponding to button presses (<code>power</code>, <code>play</code>, <code>stop</code>, <code>record</code>, <code>FF</code>, <code>eject</code>).</p>
 <ul>
 <li><strong>Power:</strong> <code>power</code> toggles the VCR between <code>IDLED</code> (standby, <code>isOn=false</code>) and <code>ON</code> (<code>isOn=true</code>).</li>
 <li><strong>Loading:</strong> The <code>Drawer</code> class handles <code>load()</code>/<code>unload()</code> operations, reflected by its <code>loaded: Boolean</code> attribute.</li>
@@ -408,7 +414,7 @@ Click to see the solution (Part 1 - VCR Behavior)
 <li><strong>Event Handling:</strong> Transitions triggered by button presses (signals) like <code>play</code>, <code>record</code>, <code>stop</code>, <code>FF</code>, <code>eject</code>, <code>power</code>.</li>
 <li><strong>Guards:</strong> Using conditions like <code>[loaded]</code> to enable/disable transitions.</li>
 <li><strong>Entry Actions:</strong> Setting attributes (<code>isOn</code>, <code>drawer-&gt;speed</code>, <code>drawer-&gt;loaded</code>) upon entering states or as effects of transitions.</li>
-<li><strong>Modeling Complex Lifecycles:</strong> Capturing the intricate behavior of the VCR through states and transitions.</li>
+<li><strong>Modeling Complex Lifecycles:</strong> Capturing the intricate behaviour of the VCR through states and transitions.</li>
 </ul>
 </div>
 </div>

@@ -147,7 +147,7 @@ For the highly complex state machine below, trace the configuration starting fro
 
 **Key Concepts Illustrated:**
 
-* **The UML Priority Rule:** This exercise provides a clear, practical example of conflict resolution. The rule—"deepest source state wins"—is not just theoretical; it dictates the machine's behavior.
+* **The UML Priority Rule:** This exercise provides a clear, practical example of conflict resolution. The rule—"deepest source state wins"—is not just theoretical; it dictates the machine's behaviour.
 * **Reactions and Internal Events:** Demonstrates how a transition's action can trigger a new event that is immediately processed within the same "run-to-completion" step.
 * **Complex Transitions:** Shows how to trace execution across multiple levels of hierarchy and through exit points that depend on the configuration of multiple orthogonal regions.
 

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; Interaction Diagrams – AMSI-TUTORIALS</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./14-practical-exercices-interaction-diagrams.html" rel="next">
+<link href="./12-practical-exercices-activity-diagrams.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./13-InteractionDiagram.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Interaction Diagrams</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AMSI-TUTORIALS</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro-modelling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Modelling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-intro-uml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to UML</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-class-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Class and Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-practical-exercises-class-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Practical Exercises: Class Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-practical-exercises-object-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Practical Exercises: Object Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Object Constraint Language (OCL): An Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-practical-exercises-ocl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Practical Exercises: OCL Constraints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-state-machine-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">State Machine Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-practical-exercises-state-machine-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Practical Exercises: State Machines</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-practical-exercices-state-machine-modelisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Practical Exercises: Building State Machine</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-ActivityDiagram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Activity Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-practical-exercices-activity-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-InteractionDiagram.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Interaction Diagrams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-practical-exercices-interaction-diagrams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">14-practical-exercices-interaction-diagrams.html</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-interaction-diagrams" id="toc-overview-of-interaction-diagrams" class="nav-link active" data-scroll-target="#overview-of-interaction-diagrams"><span class="header-section-number">13.1</span> Overview of Interaction Diagrams</a></li>
+  <li><a href="#sequence-diagrams-modeling-scenarios" id="toc-sequence-diagrams-modeling-scenarios" class="nav-link" data-scroll-target="#sequence-diagrams-modeling-scenarios"><span class="header-section-number">13.2</span> Sequence Diagrams: Modeling Scenarios</a></li>
+  <li><a href="#the-anatomy-of-a-sequence-diagram" id="toc-the-anatomy-of-a-sequence-diagram" class="nav-link" data-scroll-target="#the-anatomy-of-a-sequence-diagram"><span class="header-section-number">13.3</span> The Anatomy of a Sequence Diagram</a>
+  <ul class="collapse">
+  <li><a href="#lifelines" id="toc-lifelines" class="nav-link" data-scroll-target="#lifelines"><span class="header-section-number">13.3.1</span> Lifelines</a></li>
+  <li><a href="#messages-the-core-of-interaction" id="toc-messages-the-core-of-interaction" class="nav-link" data-scroll-target="#messages-the-core-of-interaction"><span class="header-section-number">13.3.2</span> Messages: The Core of Interaction</a></li>
+  <li><a href="#execution-specifications-activation-bars" id="toc-execution-specifications-activation-bars" class="nav-link" data-scroll-target="#execution-specifications-activation-bars"><span class="header-section-number">13.3.3</span> Execution Specifications (Activation Bars)</a></li>
+  </ul></li>
+  <li><a href="#advanced-scenarios-combined-fragments" id="toc-advanced-scenarios-combined-fragments" class="nav-link" data-scroll-target="#advanced-scenarios-combined-fragments"><span class="header-section-number">13.4</span> Advanced Scenarios: Combined Fragments</a>
+  <ul class="collapse">
+  <li><a href="#alt-alternative" id="toc-alt-alternative" class="nav-link" data-scroll-target="#alt-alternative"><span class="header-section-number">13.4.1</span> <code>alt</code> (Alternative)</a></li>
+  <li><a href="#opt-optional" id="toc-opt-optional" class="nav-link" data-scroll-target="#opt-optional"><span class="header-section-number">13.4.2</span> <code>opt</code> (Optional)</a></li>
+  <li><a href="#loop-iteration" id="toc-loop-iteration" class="nav-link" data-scroll-target="#loop-iteration"><span class="header-section-number">13.4.3</span> <code>loop</code> (Iteration)</a></li>
+  <li><a href="#other-common-fragments" id="toc-other-common-fragments" class="nav-link" data-scroll-target="#other-common-fragments"><span class="header-section-number">13.4.4</span> Other Common Fragments</a></li>
+  </ul></li>
+  <li><a href="#semantics-ordering-and-time" id="toc-semantics-ordering-and-time" class="nav-link" data-scroll-target="#semantics-ordering-and-time"><span class="header-section-number">13.5</span> Semantics: Ordering and Time</a></li>
+  <li><a href="#other-interaction-diagrams" id="toc-other-interaction-diagrams" class="nav-link" data-scroll-target="#other-interaction-diagrams"><span class="header-section-number">13.6</span> Other Interaction Diagrams</a>
+  <ul class="collapse">
+  <li><a href="#interaction-overview-diagrams" id="toc-interaction-overview-diagrams" class="nav-link" data-scroll-target="#interaction-overview-diagrams"><span class="header-section-number">13.6.1</span> Interaction Overview Diagrams</a></li>
+  <li><a href="#communication-diagrams" id="toc-communication-diagrams" class="nav-link" data-scroll-target="#communication-diagrams"><span class="header-section-number">13.6.2</span> Communication Diagrams</a></li>
+  <li><a href="#timing-diagrams" id="toc-timing-diagrams" class="nav-link" data-scroll-target="#timing-diagrams"><span class="header-section-number">13.6.3</span> Timing Diagrams</a></li>
+  </ul></li>
+  <li><a href="#conclusion-pros-and-cons" id="toc-conclusion-pros-and-cons" class="nav-link" data-scroll-target="#conclusion-pros-and-cons"><span class="header-section-number">13.7</span> Conclusion: Pros and Cons</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Interaction Diagrams</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter dives into the UML diagrams that model <strong>dynamic behavior</strong>. While Class Diagrams show the static <em>structure</em> of a system, <strong>Interaction Diagrams</strong> show how objects <em>collaborate</em> over time. We will focus on the most common type, the <strong>Sequence Diagram</strong>, exploring its basic components and the advanced fragments used to model complex scenarios. We will also briefly cover the other three types of interaction diagrams: Communication, Interaction Overview, and Timing diagrams.</p>
+<section id="overview-of-interaction-diagrams" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="overview-of-interaction-diagrams"><span class="header-section-number">13.1</span> Overview of Interaction Diagrams</h2>
+<p>Interaction Diagrams are used to model the system’s runtime evolution for a particular scenario (e.g., a single path through a use case). Their primary purpose is to visualize the <strong>sequence of messages</strong> or events exchanged between different objects.</p>
+<p>While State Machines model “all stories for one object” and Activity Diagrams model “some stories for some objects,” Interaction Diagrams model <strong>“one story for all involved objects.”</strong></p>
+<p>UML defines four types of Interaction Diagrams, each with a different focus:</p>
+<ul>
+<li><strong>Sequence Diagram:</strong> Emphasizes the <em>temporal order</em> of messages.</li>
+<li><strong>Communication Diagram:</strong> Emphasizes the <em>structural links</em> between objects.</li>
+<li><strong>Interaction Overview Diagram:</strong> Shows the <em>high-level flow</em> between different interactions.</li>
+<li><strong>Timing Diagram:</strong> Focuses on <em>precise time constraints</em> and state changes.</li>
+</ul>
+</section>
+<section id="sequence-diagrams-modeling-scenarios" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="sequence-diagrams-modeling-scenarios"><span class="header-section-number">13.2</span> Sequence Diagrams: Modeling Scenarios</h2>
+<p>The <strong>Sequence Diagram</strong> is the most frequently used interaction diagram. It provides an intuitive way to visualize a scenario, making it an excellent tool for analysis, design, and documentation.</p>
+<p>It is organized along two axes:</p>
+<ul>
+<li><strong>Horizontal Axis:</strong> Represents the different objects (or participants) in the interaction.</li>
+<li><strong>Vertical Axis:</strong> Represents <strong>time</strong>, which flows from top to bottom.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/simple-sequence-diagram.png" class="img-fluid figure-img" style="width:80.0%" alt="A simple sequence diagram with lifelines and messages."></p>
+<figcaption>A simple sequence diagram showing object interactions over time.</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-anatomy-of-a-sequence-diagram" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="the-anatomy-of-a-sequence-diagram"><span class="header-section-number">13.3</span> The Anatomy of a Sequence Diagram</h2>
+<p>A sequence diagram is built from a few core components that together tell a complete story.</p>
+<section id="lifelines" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="lifelines"><span class="header-section-number">13.3.1</span> Lifelines</h3>
+<p>A <strong>Lifeline</strong> represents a single participant in the interaction. It consists of:</p>
+<ul>
+<li><strong>Head:</strong> A rectangle at the top, which names the participant. The format is <code>objectName:ClassName</code>, such as <code>John:Owner</code> or <code>:Alarm</code> for an anonymous object.</li>
+<li><strong>Stem:</strong> A vertical dashed line that represents the object’s lifetime during this specific scenario.</li>
+</ul>
+</section>
+<section id="messages-the-core-of-interaction" class="level3" data-number="13.3.2">
+<h3 data-number="13.3.2" class="anchored" data-anchor-id="messages-the-core-of-interaction"><span class="header-section-number">13.3.2</span> Messages: The Core of Interaction</h3>
+<p>A <strong>Message</strong> is the communication between two lifelines, shown as a horizontal arrow. The type of arrowhead is critical and defines the nature of the communication.</p>
+<ul>
+<li><strong>Synchronous Message (Call):</strong> A solid line with a <strong>filled arrowhead</strong>. This represents a standard operation call. The sender is <em>blocked</em> (waits) until the receiver finishes processing the message and returns a reply.</li>
+<li><strong>Reply Message:</strong> A dashed line with an <strong>open arrowhead</strong>. This shows the return of control (and data) from a synchronous message.</li>
+<li><strong>Asynchronous Message:</strong> A solid line with an <strong>open arrowhead</strong>. The sender sends the message and <em>immediately</em> continues with its own execution, without waiting for a reply. This is common for event-based systems or signals.</li>
+<li><strong>Object Creation:</strong> A message (often named <code>create()</code> or <code>&lt;&lt;create&gt;&gt;</code>) that points to the <em>head</em> of a lifeline. This shows that the object is created at this point in time.</li>
+<li><strong>Object Destruction:</strong> A large <strong>X</strong> at the end of a lifeline’s stem, often initiated by a <code>&lt;&lt;destroy&gt;&gt;</code> message from another object. This indicates the object is removed from the system.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-message-types.png" class="img-fluid figure-img" style="width:100.0%" alt="Visual notation for different UML message types."></p>
+<figcaption>The different types of messages in a sequence diagram: synchronous, asynchronous, reply, create, and destroy.</figcaption>
+</figure>
+</div>
+</section>
+<section id="execution-specifications-activation-bars" class="level3" data-number="13.3.3">
+<h3 data-number="13.3.3" class="anchored" data-anchor-id="execution-specifications-activation-bars"><span class="header-section-number">13.3.3</span> Execution Specifications (Activation Bars)</h3>
+<p>An <strong>Execution Specification</strong> (or “activation bar”) is the thin, tall rectangle shown on a lifeline’s stem. It visualizes the period during which an object is “active” or “busy” (either executing its own code or waiting for a reply from another object it called).</p>
+</section>
+</section>
+<section id="advanced-scenarios-combined-fragments" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="advanced-scenarios-combined-fragments"><span class="header-section-number">13.4</span> Advanced Scenarios: Combined Fragments</h2>
+<p>Real-world scenarios are not just simple, linear sequences. They involve loops, conditions, and exceptions. To model this, sequence diagrams use <strong>Combined Fragments</strong>, which are drawn as a box enclosing a portion of the interaction. A label in the top-left corner, called an <strong>operator</strong>, defines the fragment’s logic.</p>
+<section id="alt-alternative" class="level3" data-number="13.4.1">
+<h3 data-number="13.4.1" class="anchored" data-anchor-id="alt-alternative"><span class="header-section-number">13.4.1</span> <code>alt</code> (Alternative)</h3>
+<p>The <code>alt</code> fragment models a conditional “if-then-else” structure. The box is divided into sections by dashed lines, each section (called an “operand”) has a guard condition in square brackets. Only the operand whose guard is <code>true</code> will be executed.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: alt">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: alt
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>alt</code> (Alternative):</strong> Used for conditional logic. Only the operand whose guard condition evaluates to true is executed. An optional <code>[else]</code> guard can be used for the default case.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-Altfragments.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using combined fragments for loop and alternative logic."></p>
+<figcaption>A sequence diagram showing alt fragments.</figcaption>
+</figure>
+</div>
+</section>
+<section id="opt-optional" class="level3" data-number="13.4.2">
+<h3 data-number="13.4.2" class="anchored" data-anchor-id="opt-optional"><span class="header-section-number">13.4.2</span> <code>opt</code> (Optional)</h3>
+<p>The <code>opt</code> fragment is a simplified <code>alt</code> with only one operand. It models an “if-then” block. The interaction inside the box only happens if the guard condition is <code>true</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: opt">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: opt
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>opt</code> (Optional):</strong> The fragment is executed only if its guard condition is true. If false, the fragment is skipped.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-Optfragments.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using combined fragments for loop and alternative logic."></p>
+<figcaption>A sequence diagram showing optional fragments.</figcaption>
+</figure>
+</div>
+</section>
+<section id="loop-iteration" class="level3" data-number="13.4.3">
+<h3 data-number="13.4.3" class="anchored" data-anchor-id="loop-iteration"><span class="header-section-number">13.4.3</span> <code>loop</code> (Iteration)</h3>
+<p>The <code>loop</code> fragment indicates that the sequence inside the box will be repeated. You can specify constraints on the loop, such as <code>loop (1..3)</code> (for 1 to 3 attempts) or <code>loop [PIN incorrect]</code> (loop as long as the PIN is incorrect).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: loop">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: loop
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>loop</code> (Iteration):</strong> The sequence inside the fragment is repeated. A guard can specify the condition for looping or the number of iterations.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-Loopfragments.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using combined fragments for loop and alternative logic."></p>
+<figcaption>A sequence diagram showing loop and alt fragments.</figcaption>
+</figure>
+</div>
+<p>sequence-diagram-Optfragments</p>
+</section>
+<section id="other-common-fragments" class="level3" data-number="13.4.4">
+<h3 data-number="13.4.4" class="anchored" data-anchor-id="other-common-fragments"><span class="header-section-number">13.4.4</span> Other Common Fragments</h3>
+<section id="ref-reference" class="level4" data-number="13.4.4.1">
+<h4 data-number="13.4.4.1" class="anchored" data-anchor-id="ref-reference"><span class="header-section-number">13.4.4.1</span> <code>ref</code> (Reference)</h4>
+<p>The <code>ref</code> fragment (or InteractionUse) acts like a function call for your diagrams. It creates a “window” that <strong>references</strong> another, separate sequence diagram. This is essential for modularity, allowing you to break down a very complex interaction (like a full “login” process) into its own diagram and then just <code>ref</code> it wherever it’s used.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: ref">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: ref
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>ref</code> (Reference):</strong> Allows a sequence diagram to include (or “call”) another sequence diagram. It is used to break down complex interactions into smaller, reusable parts.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-ref-fragment.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using a 'ref' fragment to include a separate login interaction."></p>
+<figcaption>A sequence diagram showing a ‘ref’ fragment for a login process.</figcaption>
+</figure>
+</div>
+</section>
+<section id="par-parallel" class="level4" data-number="13.4.4.2">
+<h4 data-number="13.4.4.2" class="anchored" data-anchor-id="par-parallel"><span class="header-section-number">13.4.4.2</span> <code>par</code> (Parallel)</h4>
+<p>The <code>par</code> fragment indicates that the enclosed interactions are happening <strong>concurrently</strong>. The fragment box is divided into multiple operands (compartments) separated by dashed lines. The event sequences in each operand can execute in parallel, meaning their traces can be interleaved in any order, as long as the internal order of each individual operand is respected.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: par">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: par
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>par</code> (Parallel):</strong> The sequences in the different operands (compartments) of the fragment are executed concurrently.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-par-fragment.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using a 'par' fragment to model parallel operations."></p>
+<figcaption>A sequence diagram showing a ‘par’ fragment for parallel ticket printing and note dispensing.</figcaption>
+</figure>
+</div>
+</section>
+<section id="break-break" class="level4" data-number="13.4.4.3">
+<h4 data-number="13.4.4.3" class="anchored" data-anchor-id="break-break"><span class="header-section-number">13.4.4.3</span> <code>break</code> (Break)</h4>
+<p>The <code>break</code> fragment models an <strong>exception</strong> or a break in the normal flow. It almost always has a guard condition (e.g., <code>[PIN incorrect]</code>). If the guard evaluates to <code>true</code>, the sequence inside the <code>break</code> fragment is executed, and then the rest of the enclosing interaction (or fragment) is <strong>skipped</strong>. It’s the equivalent of a <code>break</code> in a programming loop.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: break">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: break
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>break</code> (Break):</strong> Models an exception. If the fragment’s guard is true, the fragment’s sequence is executed, and the rest of the enclosing interaction is skipped.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-break-fragment.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using a 'break' fragment to model an exception flow."></p>
+<figcaption>A sequence diagram showing a ‘break’ fragment for an incorrect PIN.</figcaption>
+</figure>
+</div>
+</section>
+<section id="neg-negative" class="level4" data-number="13.4.4.4">
+<h4 data-number="13.4.4.4" class="anchored" data-anchor-id="neg-negative"><span class="header-section-number">13.4.4.4</span> <code>neg</code> (Negative)</h4>
+<p>The <code>neg</code> fragment specifies an <strong>invalid</strong> or <strong>forbidden</strong> sequence of events. It describes an “anti-scenario”—something that <em>must not</em> happen for the model to be valid. For example, you could use a <code>neg</code> fragment with the guard <code>[PIN incorrect]</code> to show a sequence where <code>withdraw(X)</code> is followed by <code>notes_delivered(X)</code>, indicating this specific trace is explicitly forbidden.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: neg">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: neg
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>neg</code> (Negative):</strong> Specifies an “anti-scenario,” or a sequence of events that is explicitly forbidden and must not occur.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-neg-fragment.png" class="img-fluid figure-img" style="width:45.0%" alt="A sequence diagram using a 'neg' fragment to model a forbidden scenario."></p>
+<figcaption>A sequence diagram showing a ‘neg’ fragment to forbid withdrawing money with an incorrect PIN.</figcaption>
+</figure>
+</div>
+</section>
+<section id="assert-assertion" class="level4" data-number="13.4.4.5">
+<h4 data-number="13.4.4.5" class="anchored" data-anchor-id="assert-assertion"><span class="header-section-number">13.4.4.5</span> <code>assert</code> (Assertion)</h4>
+<p>The <code>assert</code> fragment designates a sequence of events as the <strong>only</strong> valid continuation of the interaction. It is used to state that, given the state at the beginning of the fragment, the sequence of events shown inside <em>must</em> occur. Any other sequence at that point is considered an invalid trace. It’s often used to check for critical, expected outcomes, like ensuring notes are delivered <em>only if</em> the PIN is correct and funds are sufficient.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: assert">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: assert
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>assert</code> (Assertion):</strong> Specifies that the sequence within the fragment is the only valid continuation. Any other behavior at this point is considered invalid.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-assert-fragment.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using an 'assert' fragment to validate an interaction."></p>
+<figcaption>A sequence diagram showing an ‘assert’ fragment ensuring notes are delivered after a successful withdrawal.</figcaption>
+</figure>
+</div>
+</section>
+<section id="strict-strict-sequencing" class="level4" data-number="13.4.4.6">
+<h4 data-number="13.4.4.6" class="anchored" data-anchor-id="strict-strict-sequencing"><span class="header-section-number">13.4.4.6</span> <code>strict</code> (Strict Sequencing)</h4>
+<p>By default, sequence diagrams have a ‘partial ordering’ where events on different lifelines are not strictly ordered unless causally linked by a message. The <code>strict</code> fragment overrides this. Inside a <code>strict</code> fragment, all event occurrences are forced into a single, strict sequence based <em>only</em> on their vertical position, regardless of which lifeline they are on. This ensures that the event at the top happens before the event just below it, even if they are on different lifelines.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: strict">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: strict
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>strict</code> (Strict Sequencing):</strong> Enforces a strict top-to-bottom order for <em>all</em> event occurrences within the fragment, even across different lifelines.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-strict-fragment.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using a 'strict' fragment."></p>
+<figcaption>A sequence diagram showing a ‘strict’ fragment to enforce a specific order of events like returning a card before requesting notes.</figcaption>
+</figure>
+</div>
+</section>
+<section id="seq-weak-sequencing" class="level4" data-number="13.4.4.7">
+<h4 data-number="13.4.4.7" class="anchored" data-anchor-id="seq-weak-sequencing"><span class="header-section-number">13.4.4.7</span> <code>seq</code> (Weak Sequencing)</h4>
+<p>[cite_start]The <code>seq</code> fragment is used to model ‘weak sequencing’. [cite_start]This is the default ordering for combined fragments. Unlike <code>strict</code>, <code>seq</code> does not enforce a total top-to-bottom order across all lifelines. [cite_start]It states that the operands must be executed in sequence, but it allows a “parallel merge” for operands that are on different sets of participants. The order of events on any <em>single</em> lifeline must be maintained, but events on different lifelines can be interleaved.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Fragment: seq">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fragment: seq
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>seq</code> (Weak Sequencing):</strong> Defines a sequence of operands. [cite_start]The order of events within any single lifeline is maintained, but events on different lifelines can be interleaved (a ‘parallel merge’).</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sequence-diagram-seq-fragment.png" class="img-fluid figure-img" style="width:80.0%" alt="A sequence diagram using a 'seq' fragment."></p>
+<figcaption>A sequence diagram showing a ‘seq’ fragment.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="semantics-ordering-and-time" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="semantics-ordering-and-time"><span class="header-section-number">13.5</span> Semantics: Ordering and Time</h2>
+<p>It is critical to understand that the vertical axis in a sequence diagram represents <strong>sequence (order), not linear time</strong>. A large gap between two messages does not necessarily mean a long delay.</p>
+<p>This leads to the concept of <strong>Partial Ordering</strong>.</p>
+<ul>
+<li>Events on a <em>single</em> lifeline are strictly ordered from top to bottom.</li>
+<li>Events on <em>different</em> lifelines are <strong>not ordered</strong> relative to each other, <em>unless</em> they are causally linked by a message.</li>
+</ul>
+<p>For example, if <code>SanGoKu</code> sends a message to <code>Freezer</code>, and <code>SanGoHan</code> sends a message to <code>BooBoo</code>, there is no way to know which attack happens first. Both <code>(attack1, attack2)</code> and <code>(attack2, attack1)</code> are valid traces. If you <em>must</em> enforce that one event happens before another (e.g., SanGoHan can only attack after SanGoKu), you must use a <code>GeneralOrdering</code> construct or a coordinating message.</p>
+</section>
+<section id="other-interaction-diagrams" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="other-interaction-diagrams"><span class="header-section-number">13.6</span> Other Interaction Diagrams</h2>
+<p>While Sequence Diagrams are the most common, the other three types provide different, valuable perspectives.</p>
+<section id="interaction-overview-diagrams" class="level3" data-number="13.6.1">
+<h3 data-number="13.6.1" class="anchored" data-anchor-id="interaction-overview-diagrams"><span class="header-section-number">13.6.1</span> Interaction Overview Diagrams</h3>
+<p>This is a high-level diagram that orchestrates other interactions. It has the look and feel of an <strong>Activity Diagram</strong>, but its nodes are not simple actions; they are <strong><code>ref</code></strong> fragments that point to other, more detailed Sequence Diagrams. It’s the best way to show the “big picture” of how different scenarios (like <code>login</code>, <code>withdraw</code>, <code>checkBalance</code>) are connected by decisions and loops.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/interaction-overview-diagram.png" class="img-fluid figure-img" style="width:80.0%" alt="An Interaction Overview Diagram showing a high-level process flow."></p>
+<figcaption>An Interaction Overview Diagram showing a high-level process flow.</figcaption>
+</figure>
+</div>
+</section>
+<section id="communication-diagrams" class="level3" data-number="13.6.2">
+<h3 data-number="13.6.2" class="anchored" data-anchor-id="communication-diagrams"><span class="header-section-number">13.6.2</span> Communication Diagrams</h3>
+<p>This diagram (formerly “collaboration diagram”) emphasizes the <strong>structural links</strong> between objects rather than the flow of time. There is no vertical timeline. Instead, it shows the objects and their relationships (like a simple Object Diagram), and the messages are drawn as arrows next to the links. The order of messages is indicated by a <strong>decimal numbering scheme</strong> (e.g., <code>1: checkBalance</code>, <code>1.1: getAccount</code>, <code>1.2: calculate</code>, <code>2: display</code>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/communication-diagram.png" class="img-fluid figure-img" style="width:60.0%" alt="A Communication Diagram showing object links and numbered messages."></p>
+<figcaption>A Communication Diagram showing object links and numbered messages.</figcaption>
+</figure>
+</div>
+</section>
+<section id="timing-diagrams" class="level3" data-number="13.6.3">
+<h3 data-number="13.6.3" class="anchored" data-anchor-id="timing-diagrams"><span class="header-section-number">13.6.3</span> Timing Diagrams</h3>
+<p>This diagram is used to explore the <strong>precise time constraints</strong> of an interaction. The axis is <strong>horizontal for time</strong> (often with a ruler), and the lifelines show their <strong>change in state</strong> over that time. It is a very specialized diagram, essential for real-time and embedded systems where meeting a deadline (e.g., “the airbag must deploy in &lt; 15ms”) is critical.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/timing-diagram.png" class="img-fluid figure-img" style="width:80.0%" alt="A Timing Diagram showing state changes along a time ruler."></p>
+<figcaption>A Timing Diagram showing state changes along a time ruler.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion-pros-and-cons" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="conclusion-pros-and-cons"><span class="header-section-number">13.7</span> Conclusion: Pros and Cons</h2>
+<p>Interaction Diagrams, and Sequence Diagrams in particular, are a fundamental tool for analysts and developers.</p>
+<ul>
+<li><strong>Pros:</strong>
+<ul>
+<li>They are highly intuitive and easy to read for simple scenarios.</li>
+<li>They are excellent for documenting and validating use case scenarios.</li>
+<li>They clearly show the responsibilities of each object (i.e., which messages it needs to handle), which directly helps in defining class operations.</li>
+<li>They can be used to generate test cases.</li>
+</ul></li>
+<li><strong>Cons:</strong>
+<ul>
+<li>They can become extremely large and complex (“spaghetti diagrams”) very quickly.</li>
+<li>They only show one specific path (one “story”) at a time. It’s impossible to model all possible paths in one diagram.</li>
+<li>Advanced fragments (<code>par</code>, <code>strict</code>, <code>neg</code>) can be difficult to interpret correctly.</li>
+</ul></li>
+</ul>
+<p>Despite these challenges, they remain one of the most valuable diagram types for communicating the dynamic behavior of an object-oriented system.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./12-practical-exercices-activity-diagrams.html" class="pagination-link" aria-label="Practical Exercises: Activity Diagrams">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Practical Exercises: Activity Diagrams</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./14-practical-exercices-interaction-diagrams.html" class="pagination-link" aria-label="14-practical-exercices-interaction-diagrams.html">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">14-practical-exercices-interaction-diagrams.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
